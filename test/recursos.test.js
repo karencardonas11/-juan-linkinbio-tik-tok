@@ -44,7 +44,7 @@ function reboot(saved, url = URL_BASE) {
   return { w, d: w.document };
 }
 
-const TOTAL = 19;
+const TOTAL = 20;
 const all      = (d) => [...d.querySelectorAll('.res')];
 const visibles = (d) => all(d).filter(c => !c.hidden && c.style.display !== 'none');
 const ord      = (c) => Number(c.style.order);
@@ -88,7 +88,7 @@ console.log('\n── 2. Ruta "Empiezo de cero" — ordena sin ocultar ──');
      'orden: ' + ids(ruta).join(' → '));
   is(ruta.map(c => c.querySelector('.stepn').textContent).join() === '1,2,3,4,5', 'numerados 1..5');
   const fuera = resto(d);
-  is(fuera.length === 14, `los otros 14 siguen presentes (vi ${fuera.length})`);
+  is(fuera.length === 15, `los otros 15 siguen presentes (vi ${fuera.length})`);
   is(fuera.every(c => !c.querySelector('.stepn').textContent), 'los de fuera no llevan número');
   is(Math.max(...ruta.map(ord)) < Math.min(...fuera.map(ord)), 'la ruta va por encima del resto');
   is(!d.getElementById('rest-head').hidden, 'separador "el resto" visible');
@@ -97,7 +97,7 @@ console.log('\n── 2. Ruta "Empiezo de cero" — ordena sin ocultar ──');
      'el separador queda justo entre ruta y resto');
   is([...d.querySelectorAll('.g-head:not(.rest)')].every(h => h.hidden), 'encabezados de grupo se repliegan');
   is(d.querySelector('[data-path="cero"]').getAttribute('aria-pressed') === 'true', 'botón marcado');
-  is(/Los otros 14 quedan abajo/.test(d.getElementById('ctx-t').textContent), 'el texto avisa que el resto sigue abajo');
+  is(/Los otros 15 quedan abajo/.test(d.getElementById('ctx-t').textContent), 'el texto avisa que el resto sigue abajo');
 }
 
 console.log('\n── 3. Ruta "Reemplazar mi agencia" — arranca por el prerequisito ──');
@@ -110,7 +110,7 @@ console.log('\n── 3. Ruta "Reemplazar mi agencia" — arranca por el prerequ
   is(ruta[0].dataset.id === 'mcp', 'el paso 1 es el MCP de Meta');
   is(ids(ruta).join() === 'mcp,skills22,anuncios3,paidmedia,masterprompt,clonar',
      'orden: ' + ids(ruta).join(' → '));
-  is(resto(d).length === 13, 'y los otros 13 quedan abajo');
+  is(resto(d).length === 14, 'y los otros 14 quedan abajo');
 }
 
 console.log('\n── 4. Ruta "Conectar a mis cuentas" ──');
@@ -121,7 +121,7 @@ console.log('\n── 4. Ruta "Conectar a mis cuentas" ──');
   const ruta = enRuta(d);
   is(ids(ruta).join() === 'mcp,tutorial,googleads,masterprompt,paidmedia,docsmeta',
      'orden: ' + ids(ruta).join(' → '));
-  is(resto(d).length === 13, 'los otros 13 abajo');
+  is(resto(d).length === 14, 'los otros 14 abajo');
 }
 
 console.log('\n── 5. Cambiar de ruta y quitar el orden ──');
@@ -156,7 +156,7 @@ console.log('\n── 6. Estado: visitado, avance y prerequisito cumplido ──
   is(mcp.dataset.visited === '1', 'la tarjeta queda marcada');
   is(d.getElementById('tk-done').textContent === '1', 'contador = 1');
   is(!d.getElementById('track').hidden, 'aparece la barra de avance');
-  is(d.getElementById('tk-bar').style.width === (1/19*100) + '%', 'barra al ' + (100/19).toFixed(1) + '%');
+  is(d.getElementById('tk-bar').style.width === (1/20*100) + '%', 'barra al ' + (100/20).toFixed(1) + '%');
   const dep = d.querySelector('[data-prereq="mcp"]');
   is(dep.dataset.prereqDone === '1', 'el dependiente marca el prereq como cumplido');
   is(/Listo: ya abriste/.test(dep.querySelector('.pre').textContent), 'texto cambia a "Listo"');
