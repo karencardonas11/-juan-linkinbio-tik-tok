@@ -102,6 +102,21 @@
     box-shadow:0 0 10px rgba(232,200,125,.5);transition:width .6s cubic-bezier(.2,.7,.2,1)}
 
   /* ===== Selector de ruta ===== */
+  /* Banda "Lo nuevo" — destacado del último recurso publicado */
+  .nuevo{display:flex;align-items:center;gap:13px;width:100%;margin-top:26px;padding:12px 16px;
+    border-radius:14px;background:var(--panel);border:1px solid rgba(232,200,125,.28);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);text-decoration:none;color:var(--ink);
+    transition:border-color .35s,transform .35s,background .35s}
+  .nuevo:hover{border-color:rgba(232,200,125,.6);transform:translateY(-2px);
+    background:linear-gradient(150deg,rgba(232,200,125,.08),rgba(26,21,13,.5))}
+  .nv-tag{flex-shrink:0;display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:700;
+    letter-spacing:.15em;text-transform:uppercase;color:var(--gold-2);white-space:nowrap}
+  .nv-tag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold-2);
+    box-shadow:0 0 0 3px rgba(232,200,125,.16)}
+  .nv-t{flex:1;min-width:0;font-size:14px;font-weight:600;letter-spacing:.01em;line-height:1.35}
+  .nv-arr{flex-shrink:0;color:var(--gold-2);opacity:.75;transition:transform .35s,opacity .35s}
+  .nuevo:hover .nv-arr{transform:translateX(4px);opacity:1}
+  .nv-arr svg{width:16px;height:16px;display:block}
   .chooser{width:100%;margin-top:40px}
   .ch-q{text-align:center;font-family:'Fraunces',serif;font-weight:500;font-size:23px;letter-spacing:-.01em;
     margin-bottom:8px}
@@ -322,6 +337,22 @@
     <div class="kicker reveal">Comunidad oficial de SaleADS</div>
     <h1 class="title reveal">Recursos <em>gratis</em></h1>
     <p class="sub reveal">Bienvenido, crack. Todo lo de esta página es <b>tuyo y es gratis</b>. Pero no los abras al azar: dime dónde estás y te doy el orden.</p>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         BANDA "LO NUEVO" — al publicar un recurso nuevo se cambian 3 cosas:
+           1. data-for  → el data-id de la tarjeta correspondiente (abajo)
+           2. href      → el mismo enlace de esa tarjeta
+           3. el texto de .nv-t → el título de esa tarjeta
+         NO lleva class="res" a propósito: si la llevara, la página contaría
+         un recurso de más en la barra de avance y en las pruebas.
+         ═══════════════════════════════════════════════════════════════════ -->
+    <a class="nuevo reveal" id="nuevo" data-for="hyperframes"
+       href="https://drive.google.com/file/d/1PnAbv18XyVLQX6WtMR8Fp6-ZjLza5qHC/view?usp=sharing"
+       target="_blank" rel="noopener">
+      <span class="nv-tag">Lo nuevo</span>
+      <span class="nv-t">Edita videos con Claude</span>
+      <span class="nv-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
 
     <!-- Avance -->
     <div class="track reveal" id="track" hidden>
@@ -935,6 +966,22 @@
 
   cards.forEach(pintarPrereq);
   pintarAvance();
+
+  /* ---------- Banda "Lo nuevo": cuenta igual que abrir la tarjeta ---------- */
+  var nuevo = document.getElementById('nuevo');
+  if (nuevo) {
+    nuevo.addEventListener('click', function(){
+      var id = nuevo.dataset.for, c = byId[id];
+      if (c && state.visited.indexOf(id) === -1) {
+        state.visited.push(id);
+        save();
+        c.dataset.visited = '1';
+        cards.forEach(pintarPrereq);
+        pintarAvance();
+      }
+      track('recurso_click', { recurso_id: id, origen: 'destacado', ruta_activa: state.path || 'ninguna' });
+    });
+  }
 
   document.getElementById('cta').addEventListener('click', function(){
     track('cta_saleads', { origen: 'recursos', ruta_activa: state.path || 'ninguna' });

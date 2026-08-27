@@ -35,6 +35,22 @@ El link corto de soporte es el mismo en ambas redes, así que el tráfico de sop
 
 20 recursos en tres grupos, con tres rutas guiadas que reordenan la lista sin ocultar nada. El estado (recursos abiertos y ruta elegida) se guarda en `localStorage` bajo `jads_recursos_v1`. Todo va embebido en un archivo: sin build, sin dependencias, sin peticiones externas.
 
+### La banda "Lo nuevo" (destacado de arriba)
+
+Es el bloque `<a class="nuevo" id="nuevo">` que va encima del selector de rutas y apunta al último
+recurso publicado. **No lleva `class="res"` a propósito:** si la llevara, la página contaría un
+recurso de más en la barra de avance y las pruebas fallarían.
+
+Al publicar un recurso nuevo se cambian tres cosas dentro de ese bloque:
+
+1. `data-for` → el `data-id` de la tarjeta correspondiente
+2. `href` → el mismo enlace de esa tarjeta
+3. El texto de `.nv-t` → el título de esa tarjeta
+
+Al hacer clic marca la tarjeta como visitada igual que si se hubiera abierto desde su grupo, y manda
+el evento `recurso_click` con `origen: "destacado"`, para poder separar en analítica quién entra por
+la banda y quién baja a buscarlo.
+
 ### Al agregar o quitar un recurso hay que tocar
 
 En `recursos/index.html`:
