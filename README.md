@@ -33,7 +33,7 @@ El link corto de soporte es el mismo en ambas redes, así que el tráfico de sop
 
 ## Página de recursos (`/recursos`)
 
-23 recursos en tres grupos, con tres rutas guiadas que reordenan la lista sin ocultar nada. El estado (recursos abiertos y ruta elegida) se guarda en `localStorage` bajo `jads_recursos_v1`. Todo va embebido en un archivo: sin build, sin dependencias, sin peticiones externas.
+24 recursos en tres grupos, con tres rutas guiadas que reordenan la lista sin ocultar nada. El estado (recursos abiertos y ruta elegida) se guarda en `localStorage` bajo `jads_recursos_v1`. Todo va embebido en un archivo: sin build, sin dependencias, sin peticiones externas.
 
 ### La banda "Lo nuevo" (destacado de arriba)
 
