@@ -2,27 +2,42 @@
      SaleADS.ai · link in bio · Instagram        VERSIÓN PROVISIONAL
      ---------------------------------------------------------------
      Construida sobre el Manual de marca v3 (agosto 2026).
-     PENDIENTE 1 · Tipografía: Genova solo tiene licencia de escritorio.
-       Hasta confirmarla con la fundición se usa la reserva del manual
-       (Avenir Next → sans del sistema). Al llegar el WOFF2 se cambia
-       solo la variable --fuente y se agrega el @font-face.
-     PENDIENTE 2 · Logo: falta saleads-simbolo.svg. Va dentro de
-       .marca, que ya tiene la superficie púrpura y el área de
-       protección correctas.
+     PENDIENTE 1 · Tipografía: Genova YA está incrustada (WOFF2 recortado
+       al español). Falta la confirmación de licencia web con Graphicxell
+       que exige el manual v3 p.29 — por eso la página no se publica.
+     PENDIENTE 2 · RESUELTO. Va el isotipo, marca/saleads-simbolo.svg, que
+       ya trae su plano púrpura. El lockup completo queda disponible en
+       marca/saleads-logotipo.svg por si se necesita.
      PENDIENTE 3 · Los cuatro href son "#": faltan los códigos de
        tracking de Instagram.
      ===================================================================== -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SaleADS.ai</title>
-<meta name="description" content="Tu cliente ya te está buscando. Solo falta que te encuentre.">
+<meta name="description" content="Tu cliente ya te está buscando. Solo falta que te encuentre. SaleADS.ai lo hace por ti a través de pauta en redes sociales.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bio.saleads.co/saleads/">
 <meta property="og:site_name" content="SaleADS.ai">
 <meta property="og:title" content="SaleADS.ai">
-<meta property="og:description" content="Tu cliente ya te está buscando. Solo falta que te encuentre.">
+<meta property="og:description" content="Tu cliente ya te está buscando. Solo falta que te encuentre. SaleADS.ai lo hace por ti a través de pauta en redes sociales.">
 <meta property="og:locale" content="es_LA">
 <meta name="twitter:card" content="summary">
+
+<style>
+  /* ---------- Genova · subconjunto al español, tres caras, 84 KB ----------
+     ⚠️ LICENCIA: los archivos traen fsType=0 (el archivo no restringe la
+     incrustación), pero eso NO es una licencia web. El manual v3, p.29, exige
+     confirmar el uso web incrustado con Graphicxell antes de publicar.
+     Hasta esa confirmación esta página no sale a bio.saleads.co.
+     Las cinco caras restantes (Thin, itálicas) están sin convertir: hoy no se
+     usan. Thin solo entraría por encima de 28 px.                        */
+  @font-face{font-family:'Genova';src:url('fuentes/genova-400.woff2') format('woff2');
+    font-weight:400;font-style:normal;font-display:swap}
+  @font-face{font-family:'Genova';src:url('fuentes/genova-500.woff2') format('woff2');
+    font-weight:500;font-style:normal;font-display:swap}
+  @font-face{font-family:'Genova';src:url('fuentes/genova-900.woff2') format('woff2');
+    font-weight:900;font-style:normal;font-display:swap}
+</style>
 
 <style>
   /* ---------- Los seis colores del manual ---------- */
@@ -34,7 +49,7 @@
     --distancia:#4800FF;    /* profundidad · 1,5% */
     --clic:#F2FFC4;         /* el instante · 0,5% · UNA SOLA VEZ */
     /* Reserva del manual mientras no haya licencia web de Genova */
-    --fuente:'Avenir Next','Avenir',system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',sans-serif;
+    --fuente:'Genova','Avenir Next','Avenir',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
     --celda:12px;           /* ancho de celda: define el margen exterior */
   }
 
@@ -83,38 +98,28 @@
 
   /* ---------- El logo · superficie púrpura, una sola vez por pieza ---------- */
   /* Área de protección = ancho de una barra del símbolo (~12% del lado). */
-  .marca{
-    width:92px; height:92px; border-radius:20px;
-    background:var(--ventana);
-    display:flex; align-items:center; justify-content:center;
-    padding:11px;
-  }
-  .marca .hueco{
-    width:100%; height:100%; border-radius:4px;
-    border:1px dashed rgba(254,252,247,.42);
-  }
+  /* El símbolo va tal como está entregado: el SVG ya trae su propio plano
+     púrpura con el redondeo del archivo (rx 33 sobre 1016). No se le agrega
+     fondo, borde ni sombra. Mínimo del manual: 24 px. */
+  .marca{display:inline-flex}
+  .marca img{display:block; width:96px; height:96px}
 
   /* ---------- Tipografía · escala del manual ---------- */
-  /* RÓTULO: Medium 500, versales, 10-12px, tracking +13% */
-  .rotulo{
-    margin-top:26px;
-    font-size:11px; font-weight:500; text-transform:uppercase;
-    letter-spacing:.13em; color:var(--reflejo); opacity:.62;
-    text-align:center;
-  }
   /* GOLPE: Black 900, versales, interlínea 1.02, tracking -1,2% */
   .golpe{
-    margin:18px 0 0;
+    margin:32px 0 0;
     font-size:clamp(34px,10.5vw,46px); font-weight:900; text-transform:uppercase;
     line-height:1.02; letter-spacing:-.012em; text-align:center;
     text-wrap:balance;
   }
   /* ENTRADILLA: Regular 400, 18-22px, interlínea 1.42, caja normal */
   .entradilla{
-    margin:20px 0 0; max-width:30ch;
+    margin:20px 0 0; max-width:38ch;
     font-size:18px; font-weight:400; line-height:1.42;
     text-align:center; opacity:.78;
   }
+
+
 
   /* ---------- Los enlaces ---------- */
   /* El aire entre bloques es el doble del interlineado del texto. */
@@ -145,6 +150,11 @@
     background:rgba(72,0,255,.30);
   }
   .bloque.clic .ic{background:rgba(20,14,29,.10)}
+  /* El isotipo dentro del botón va tal como está entregado: trae su propio
+     plano púrpura y su propio redondeo. No se le aplica fondo ni se recorta
+     con border-radius — eso sería encerrarlo en una caja ajena. */
+  .ic.sello{background:none; border-radius:0}
+  .ic.sello img{display:block; width:100%; height:100%}
   .ic svg{width:19px; height:19px; display:block}
 
   .ct{flex:1; min-width:0}
@@ -205,22 +215,20 @@
 <main class="wrap">
 
   <!-- El logo va una sola vez por pieza: aquí, no en el cierre. -->
-  <div class="marca sube d1"><div class="hueco"></div></div>
-
-  <p class="rotulo sube d1">Cada ventana es un universo</p>
+  <div class="marca sube d1"><img src="marca/saleads-simbolo.svg" alt="SaleADS.ai" width="96" height="96"></div>
 
   <!-- Estructura del manual: una verdad que ya es cierta → lo único que falta -->
-  <h1 class="golpe sube d2">Tu cliente ya te está buscando</h1>
-  <p class="entradilla sube d2">Solo falta que te encuentre.</p>
+  <h1 class="golpe sube d1">Tu cliente ya te está buscando</h1>
+  <p class="entradilla sube d2">Solo falta que te encuentre. SaleADS.ai lo hace por ti a través de pauta en redes sociales.</p>
+
 
   <nav class="enlaces">
 
-    <!-- EL CLIC · único elemento lima de la pantalla -->
-    <a class="bloque clic sube d3" href="#" rel="noopener">
-      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 18.5v-13Z"/><path d="M8.5 12h7M12 8.5v7"/></svg></span>
+    <a class="bloque sube d3" href="#" rel="noopener">
+      <span class="ic sello"><img src="marca/saleads-simbolo.svg" alt="" width="38" height="38"></span>
       <span class="ct">
-        <span class="t">Crea tu primera campaña</span>
-        <span class="s">Cuéntale qué vendes y del resto se encarga él.</span>
+        <span class="t">Ingresa a SaleADS Ahora</span>
+        <span class="s">Crea campañas de alta conversión en minutos y duplica las ventas de tu negocio con IA</span>
       </span>
       <span class="flecha"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
@@ -228,17 +236,18 @@
     <a class="bloque sube d4" href="#" rel="noopener">
       <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 11.6a8 8 0 0 1-11.5 7.2L4 20.5l1.7-4.9A8 8 0 1 1 20.5 11.6Z"/></svg></span>
       <span class="ct">
-        <span class="t">Resuélvelo con nosotros</span>
-        <span class="s">Escríbenos y lo vemos juntos, sin vueltas.</span>
+        <span class="t">¿Tienes dudas para activar SaleADS?</span>
+        <span class="s">Si tienes dudas para ingresar a SaleADS, contacta con nuestro equipo ahora mismo</span>
       </span>
       <span class="flecha"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
 
-    <a class="bloque sube d5" href="#" rel="noopener">
+    <!-- EL CLIC · único elemento lima de la pantalla -->
+    <a class="bloque clic sube d5" href="#" rel="noopener">
       <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3.5 19.5 12 6 20.5 6 3.5"/></svg></span>
       <span class="ct">
-        <span class="t">Mira cómo funciona</span>
-        <span class="s">En pocos minutos ves el recorrido completo.</span>
+        <span class="t">La IA que duplica tus ventas</span>
+        <span class="s">Mira cómo conseguir de 100 a 500 ventas con anuncios creados por IA</span>
       </span>
       <span class="flecha"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
@@ -246,15 +255,14 @@
     <a class="bloque sube d6" href="#" rel="noopener">
       <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.4"/><path d="M12 16.4v-3.9a2.6 2.6 0 1 0-2.6-2.6"/><path d="M12 8.2h.01"/></svg></span>
       <span class="ct">
-        <span class="t">Pide ayuda con tu cuenta</span>
-        <span class="s">Alguien te responde y te explica mientras lo hace.</span>
+        <span class="t">Soporte SaleADS</span>
+        <span class="s">Si ya eres usuario activo y necesitas ayuda para lanzar tus campañas, toca aquí para contactar con nuestro equipo de soporte</span>
       </span>
       <span class="flecha"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
 
   </nav>
 
-  <p class="cierre sube d6">Entre todas las ventanas, el mensaje encuentra la suya y la ilumina.</p>
 
   <div class="redes sube d6">
     <a class="red" href="#" aria-label="Instagram de SaleADS">
@@ -265,6 +273,6 @@
     </a>
   </div>
 
-  <p class="pie">saleads.ai</p>
+  <p class="pie">© 2026 · SaleADS.ai</p>
 
 </main>
