@@ -1,6 +1,7 @@
 .vercel
 
-# Genova solo tiene licencia de escritorio. Este repo es público, así que los
+# Genova solo tiene licencia de escritorio y este repo es público, así que sus
 # WOFF2 no se suben hasta que Graphicxell confirme la licencia web.
 # Se regeneran desde los .otf con: pyftsubset --flavor=woff2
-saleads/fuentes/
+# Archivo sí sube: es SIL Open Font y permite redistribución.
+saleads/fuentes/genova-*.woff2
