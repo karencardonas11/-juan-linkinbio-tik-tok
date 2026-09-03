@@ -33,7 +33,7 @@ El link corto de soporte es el mismo en ambas redes, así que el tráfico de sop
 
 ## Página de recursos (`/recursos`)
 
-25 recursos en tres grupos, con tres rutas guiadas que reordenan la lista sin ocultar nada. El estado (recursos abiertos y ruta elegida) se guarda en `localStorage` bajo `jads_recursos_v1`. Sin build y sin dependencias: todo el contenido va embebido en un archivo. Sí hace dos peticiones externas: las tipografías de Google Fonts y **Microsoft Clarity** (ID `ybp8htwt62`), que graba sesión y mapas de calor.
+26 recursos en tres grupos, con tres rutas guiadas que reordenan la lista sin ocultar nada. El estado (recursos abiertos y ruta elegida) se guarda en `localStorage` bajo `jads_recursos_v1`. Sin build y sin dependencias: todo el contenido va embebido en un archivo. Sí hace dos peticiones externas: las tipografías de Google Fonts y **Microsoft Clarity** (ID `ybp8htwt62`), que graba sesión y mapas de calor.
 
 ⚠️ **Al tocar el bloque de Clarity:** la suite de pruebas extrae el código de la página buscando la primera etiqueta de script sin atributos. Por eso la de Clarity lleva `type="text/javascript"`, y por eso su comentario no escribe esa etiqueta de forma literal — si se escribe, el test captura el trozo equivocado y falla con `Invalid regular expression`.
 
