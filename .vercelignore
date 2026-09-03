@@ -1,3 +1,8 @@
 test/
 node_modules/
-saleads/
+
+# Genova solo tiene licencia de escritorio: el manual v3 p.29 exige confirmar el
+# uso web con Graphicxell. Estos archivos NO pueden quedar accesibles en el
+# dominio público. Vercel sube desde el disco, no desde git, así que el
+# .gitignore no basta: hace falta esta línea también.
+saleads/fuentes/genova-*.woff2
