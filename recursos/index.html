@@ -377,18 +377,18 @@
          NO lleva class="res" a propósito: si la llevara, la página contaría
          un recurso de más en la barra de avance y en las pruebas.
          ═══════════════════════════════════════════════════════════════════ -->
-    <a class="nuevo reveal" id="nuevo" data-for="gstack"
-       href="https://drive.google.com/file/d/1RmWRgSLwsA8NkVP71_T0EDcqDeFfYtR0/view?usp=drive_link"
+    <a class="nuevo reveal" id="nuevo" data-for="avatar"
+       href="https://drive.google.com/file/d/1nkT-xMJ0P43jfCwQXxVt6aFvGOZsPbtv/view?usp=drive_link"
        target="_blank" rel="noopener">
       <span class="nv-tag">Lo nuevo</span>
-      <span class="nv-t">CEO, diseño, QA y release: el equipo de YC en Claude</span>
+      <span class="nv-t">Convierte una foto en un avatar que habla</span>
       <span class="nv-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
 
     <!-- Avance -->
     <div class="track reveal" id="track" hidden>
       <div class="track-top">
-        <span class="track-l"><b id="tk-done">0</b> de <b id="tk-total">26</b> recursos abiertos</span>
+        <span class="track-l"><b id="tk-done">0</b> de <b id="tk-total">27</b> recursos abiertos</span>
         <button class="track-r" id="tk-reset" type="button" hidden>Reiniciar</button>
       </div>
       <div class="bar"><i id="tk-bar"></i></div>
@@ -397,7 +397,7 @@
     <!-- ==================== SELECTOR DE RUTA ==================== -->
     <section class="chooser reveal" aria-labelledby="ch-q">
       <h2 class="ch-q" id="ch-q">¿Dónde estás <em>hoy</em>?</h2>
-      <p class="ch-s">Elige una y te ordeno los recursos. No se esconde nada: los 26 siguen ahí, siempre.</p>
+      <p class="ch-s">Elige una y te ordeno los recursos. No se esconde nada: los 27 siguen ahí, siempre.</p>
 
       <div class="opts" role="group" aria-labelledby="ch-q">
 
@@ -749,6 +749,19 @@
       </a>
 
       <a class="res reveal" style="order:25"
+         data-id="avatar" data-nivel="Básico" data-tiempo="15 min" data-formato="PDF" data-added="2026-09-04"
+         href="https://drive.google.com/file/d/1nkT-xMJ0P43jfCwQXxVt6aFvGOZsPbtv/view?usp=drive_link" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.4" r="4"/><path d="M4.6 20.4a7.6 7.6 0 0 1 14.8 0"/><path d="M20.6 6.4v4M22.8 5.2v6.4"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
+        <span class="ct">
+          <span class="hd"><span class="stepn"></span><span class="t">Convierte una foto en un avatar que habla</span></span>
+          <span class="s">LongCat, de Meituan, con licencia MIT. Le subes una foto y un audio y sale hablando. Se prueba en el navegador sin instalar nada, y aguanta varias personas en la misma escena.</span>
+          <span class="meta"></span>
+          <span class="pre"></span>
+          <span class="bot"><span class="open"><span>Abrir recurso</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+        </span>
+      </a>
+
+      <a class="res reveal" style="order:26"
          data-id="paginaventas" data-nivel="Intermedio" data-tiempo="Referencia" data-formato="GitHub" data-added="2026-08-26"
          href="https://github.com/anthropics/claude-code/blob/main/plugins/frontend-design/skills/frontend-design/SKILL.md" target="_blank" rel="noopener">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2.4"/><path d="M3 8.6h18"/><path d="M6.4 6.3h.01M9 6.3h.01"/><path d="M7 12h6M7 15.4h9"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
@@ -761,7 +774,7 @@
         </span>
       </a>
 
-      <a class="res reveal" style="order:26"
+      <a class="res reveal" style="order:27"
          data-id="paidmedia" data-nivel="Avanzado" data-tiempo="15 min" data-formato="GitHub" data-added="" data-prereq="mcp"
          href="https://github.com/adkit/ads-skills" target="_blank" rel="noopener">
         <span class="ic"><svg viewBox="0 0 24 24" fill="#e8c87d"><path d="M12 1.8a10.2 10.2 0 0 0-3.2 19.9c.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .8.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.8-.1-.2-.4-1.2.1-2.6 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.6.6.8 1 1.7 1 2.8 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.2 10.2 0 0 0 12 1.8Z"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
@@ -774,7 +787,7 @@
         </span>
       </a>
 
-      <a class="res reveal" style="order:27"
+      <a class="res reveal" style="order:28"
          data-id="scraper" data-nivel="Avanzado" data-tiempo="Referencia" data-formato="GitHub" data-added="2026-08-25"
          href="https://github.com/ScrapeGraphAI/Scrapegraph-ai" target="_blank" rel="noopener">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.8" rx="7.6" ry="2.9"/><path d="M4.4 5.8v6c0 1.6 3.4 2.9 7.6 2.9s7.6-1.3 7.6-2.9v-6"/><path d="M4.4 11.8v6c0 1.6 3.4 2.9 7.6 2.9s7.6-1.3 7.6-2.9v-6"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
@@ -788,7 +801,7 @@
       </a>
 
 
-      <a class="res reveal" style="order:28"
+      <a class="res reveal" style="order:29"
          data-id="gstack" data-nivel="Avanzado" data-tiempo="20 min" data-formato="PDF" data-added="2026-09-03"
          href="https://drive.google.com/file/d/1RmWRgSLwsA8NkVP71_T0EDcqDeFfYtR0/view?usp=drive_link" target="_blank" rel="noopener">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2.6 8.4 4.2-8.4 4.2L3.6 6.8 12 2.6Z"/><path d="m3.6 12 8.4 4.2 8.4-4.2"/><path d="m3.6 17.2 8.4 4.2 8.4-4.2"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
