@@ -6,3 +6,8 @@ node_modules/
 # dominio público. Vercel sube desde el disco, no desde git, así que el
 # .gitignore no basta: hace falta esta línea también.
 saleads/fuentes/genova-*.woff2
+
+# La página de recursos de SaleADS todavía no está aprobada. Sin esta línea se
+# publicaría sola en el próximo deploy, porque Vercel sube todo lo que hay en
+# disco. Se quita cuando Karen dé el visto bueno.
+saleads/recursos/
