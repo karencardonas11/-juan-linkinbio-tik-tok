@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cuáles skills instalar en Claude, y en qué orden · Juan ADS</title>
+<meta name="description" content="Las cinco skills que sí valen, con el repositorio y el comando exacto de cada una, y cuál poner primero según si vendes, produces contenido o ya usas Claude a diario.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23080706'/%3E%3Cpath d='M16 4 27 16 16 28 5 16Z' fill='%23e8c87d'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#080706">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://bio.saleads.co/recursos/cuales-skills-instalar/">
+<meta property="og:title" content="Cuáles skills instalar en Claude, y en qué orden · Juan ADS">
+<meta property="og:description" content="Las cinco del video, con su repositorio y su comando para copiar.">
+<meta property="og:image" content="https://bio.saleads.co/og.jpg">
+
+<!-- Clarity. Sin esta etiqueta el recorrido se corta justo donde la persona
+     empieza a leer. No escribir la etiqueta de cierre literal en comentarios. -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ybp8htwt62");
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/recursos/recurso.css">
+</head>
+<body data-recurso="cuales-skills-instalar">
+  <div class="bg"><div class="glow g1"></div><div class="glow g2"></div></div>
+
+  <main class="wrap">
+
+    <div class="top">
+      <a class="back" href="/recursos/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        Recursos
+      </a>
+      <span class="brand">Juan ADS · Recurso</span>
+    </div>
+
+    <div class="eyebrow">Comentaste Skills</div>
+    <h1>Las skills de Claude que <em>sí</em> valen</h1>
+    <p class="lead">Todo el mundo dice que las skills hacen a Claude cien veces más poderoso y
+      nadie te dice cuáles instalar. <b>Estas son las cinco del video, con el repositorio y el
+      comando exacto de cada una.</b></p>
+
+    <div class="chips">
+      <span class="chip">Intermedio</span>
+      <span class="chip">20 min</span>
+      <span class="chip">Cinco skills</span>
+      <span class="chip">Necesitas Node</span>
+    </div>
+
+    <h2>Las cinco</h2>
+    <div class="h2s">Qué te da <em>cada</em> una</div>
+    <table class="tabla">
+      <thead><tr><th>Skill</th><th>Qué te da</th></tr></thead>
+      <tbody>
+        <tr><td>1 · Marketing Skills</td><td>Más de 40 skills de marketing: SEO, CRO, copy, correo, anuncios, precios. La de <b>product-marketing</b> es la base y las demás la leen primero, así que todo sale con tu producto adentro.</td></tr>
+        <tr><td>2 · Awesome Claude Skills</td><td>El directorio: más de mil skills y plugins listados y ordenados por uso. <b>No se instala</b> — es donde buscas la que te falta.</td></tr>
+        <tr><td>3 · Banana Claude</td><td>Genera imágenes con Nano Banana (Gemini) sin salir de Claude, y con Claude haciendo de director creativo: interpreta lo que quieres y arma el prompt.</td></tr>
+        <tr><td>4 · Remotion</td><td>Videos y motion graphics escritos en código. Es la que usa Juan para las franjas animadas de sus videos.</td></tr>
+        <tr><td>5 · Context Engineering</td><td>La plantilla para darle contexto completo antes de pedirle nada. Menos vueltas, menos tokens quemados en explicarle lo mismo.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Antes de instalar nada</h2>
+    <div class="h2s">Tres cosas que <em>conviene</em> saber</div>
+    <ol class="lista">
+      <li><span class="k">01</span><span>Las skills se instalan <b>por carpeta de proyecto</b>
+        (en <code>.claude/skills/</code>) o <b>para todo</b> (en <code>~/.claude/skills/</code>).
+        Elige a conciencia.</span></li>
+      <li><span class="k">02</span><span><b>Necesitas Node:</b> casi todas se instalan con
+        <code>npx</code>.</span></li>
+      <li><span class="k">03</span><span>Una skill es <b>texto que le dice a Claude cómo
+        trabajar</b>: criterio empaquetado, no un modelo distinto.</span></li>
+    </ol>
+
+    <div class="nota" style="margin-top:20px"><b>Lee antes de correr.</b> Estas skills vienen de
+      gente que no conoces y algunas ejecutan scripts. Pídele a Claude que te resuma los
+      <code>SKILL.md</code> de lo que instalaste antes de largarlo a trabajar sobre tu cuenta o
+      tus archivos.</div>
+
+    <h2>El comando de cada una</h2>
+    <div class="h2s">Instálalas en <em>cinco</em> minutos</div>
+
+    <div class="paso">
+      <div class="pn">01</div>
+      <div class="pt">Marketing Skills</div>
+      <p>Abre la terminal en la carpeta de tu proyecto y corre:</p>
+      <div class="copia">
+        <div class="copia-hd">
+          <span class="copia-lb">Marketing Skills</span>
+          <button class="btn" type="button" data-copia="c1">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+            <span>Copiar</span>
+          </button>
+        </div>
+        <pre><code id="c1">npx skills add coreyhaines31/marketingskills</code></pre>
+      </div>
+      <p>Si se lo pides desde adentro de Claude Code, agrégale <b>-a claude-code</b> o las
+        instala donde Claude no las lee. ¿Solo algunas? <b>--skill cro copywriting</b>.</p>
+    </div>
+
+    <div class="paso">
+      <div class="pn">02</div>
+      <div class="pt">Banana Claude</div>
+      <p>Se instala como plugin, escribiendo esto dentro de Claude Code:</p>
+      <div class="copia">
+        <div class="copia-hd">
+          <span class="copia-lb">Banana Claude · dos líneas</span>
+          <button class="btn" type="button" data-copia="c2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+            <span>Copiar</span>
+          </button>
+        </div>
+        <pre><code id="c2">/plugin marketplace add AgriciDaniel/banana-claude
+/plugin install banana-claude@banana-claude-marketplace</code></pre>
+      </div>
+      <p>Pide una API key gratis en <b>aistudio.google.com/apikey</b>.</p>
+    </div>
+
+    <div class="paso">
+      <div class="pn">03</div>
+      <div class="pt">Context Engineering</div>
+      <p>Es una plantilla de proyecto: la clonas y trabajas adentro.</p>
+      <div class="copia">
+        <div class="copia-hd">
+          <span class="copia-lb">Context Engineering</span>
+          <button class="btn" type="button" data-copia="c3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+            <span>Copiar</span>
+          </button>
+        </div>
+        <pre><code id="c3">git clone https://github.com/coleam00/context-engineering-intro.git</code></pre>
+      </div>
+      <p>Tus reglas van en <b>CLAUDE.md</b>, lo que quieres en <b>INITIAL.md</b>, y después
+        <b>/generate-prp INITIAL.md</b>.</p>
+    </div>
+
+    <div class="paso">
+      <div class="pn">04</div>
+      <div class="pt">Remotion</div>
+      <p>Aquí no hay skill que instalar: armas el proyecto y Claude escribe el video.</p>
+      <div class="copia">
+        <div class="copia-hd">
+          <span class="copia-lb">Remotion</span>
+          <button class="btn" type="button" data-copia="c4">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+            <span>Copiar</span>
+          </button>
+        </div>
+        <pre><code id="c4">npx create-video@latest</code></pre>
+      </div>
+      <p>Después le pides la pieza en español —«una intro de 5 segundos con el logo»— y él
+        escribe el código.</p>
+    </div>
+
+    <div class="paso">
+      <div class="pn">05</div>
+      <div class="pt">Awesome Claude Skills</div>
+      <p>Esta no se instala. Es el directorio donde buscas la que te falta:
+        <b>github.com/ComposioHQ/awesome-claude-skills</b></p>
+    </div>
+
+    <h2>Cuáles pondría Juan primero</h2>
+    <div class="h2s">Según en qué <em>andas</em></div>
+    <ol class="lista">
+      <li><span class="k">A</span><span><b>Si vendes:</b> Marketing Skills. Se nota el mismo
+        día.</span></li>
+      <li><span class="k">B</span><span><b>Si produces contenido:</b> Banana Claude y
+        Remotion.</span></li>
+      <li><span class="k">C</span><span><b>Si ya usas Claude todos los días:</b> Context
+        Engineering. Aburrida, y la que más rinde.</span></li>
+    </ol>
+
+    <div class="cta">
+      <div class="ct">¿Quieres elevar tu negocio al <em>siguiente</em> nivel?</div>
+      <p>Habla con Sofía, de nuestro equipo, y te atiende.</p>
+      <!-- ⚠️ PENDIENTE · código de tracking propio de este recurso. Hoy usa
+           _0RM, que es "Recursos Gratis Post Juan (PSJU)": los leads entran
+           marcados como si vinieran de un post. Karen lo aprobó así por ahora. -->
+      <a id="cta" href="https://app.saleads.co/_0RM" target="_blank" rel="noopener">
+        Hablar con Sofía
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <a class="volver" href="/recursos/">← Ver todos los recursos</a>
+    <p class="foot">Juan ADS · Piensa mejor, decide mejor</p>
+
+  </main>
+<script src="/recursos/medicion.js" defer></script>
+<script src="/recursos/recurso.js" defer></script>
+</body>
+</html>

@@ -44,7 +44,7 @@ function reboot(saved, url = URL_BASE) {
   return { w, d: w.document };
 }
 
-const TOTAL = 29;
+const TOTAL = 30;
 const all      = (d) => [...d.querySelectorAll('.res')];
 const visibles = (d) => all(d).filter(c => !c.hidden && c.style.display !== 'none');
 const ord      = (c) => Number(c.style.order);
@@ -63,10 +63,16 @@ console.log('\n── 1. Arranque limpio ──');
   const { d, errors } = boot();
   is(errors.length === 0, 'sin errores de JS' + (errors.length ? ': ' + errors[0] : ''));
   nadaOculto(d, 'arranque');
-  is([...d.querySelectorAll('.g-head:not(.rest)')].every(h => !h.hidden), 'los 3 encabezados de grupo visibles');
+  is(d.querySelectorAll('.g-head:not(.rest)').length === 5, 'hay 5 grupos');
+  is(d.querySelectorAll('.opt').length === 4, 'hay 4 botones de ruta');
+  is(![...d.querySelectorAll('.ot, .os')].some(x => /pauta/i.test(x.textContent)),
+     'ningún botón usa la palabra «pauta»');
+  is([...d.querySelectorAll('.g-head:not(.rest)')].every(h => !h.hidden), 'los 5 encabezados de grupo visibles');
   is(d.getElementById('rest-head').hidden, 'separador "el resto" oculto sin ruta');
   is(d.body.dataset.mode === 'all', 'modo = all');
   is(d.getElementById('ctx').hidden, 'banda de contexto oculta');
+  is(d.getElementById('ch-n').textContent === String(TOTAL),
+     `el "los N siguen ahí" dice ${TOTAL} (dice ${d.getElementById('ch-n').textContent})`);
   is(d.getElementById('track').hidden, 'barra de avance oculta (0 abiertos)');
   is(all(d).every(c => c.querySelector('.meta').innerHTML.trim()), 'todas pintaron metadatos');
   is(all(d).every(c => !c.querySelector('.stepn').textContent), 'ninguna muestra número de paso');
@@ -75,7 +81,7 @@ console.log('\n── 1. Arranque limpio ──');
   is(/MCP de Meta/.test(pre.textContent), 'y nombra el recurso correcto');
 }
 
-console.log('\n── 2. Ruta "Empiezo de cero" — ordena sin ocultar ──');
+console.log('\n── 2. Ruta "Quiero organizar mi negocio con IA" — ordena sin ocultar ──');
 {
   const { d, errors } = boot();
   d.querySelector('[data-path="cero"]').click();
@@ -84,11 +90,11 @@ console.log('\n── 2. Ruta "Empiezo de cero" — ordena sin ocultar ──');
   is(d.body.dataset.mode === 'path', 'modo = path');
   const ruta = enRuta(d);
   is(ruta.length === 5, `5 recursos en la ruta (vi ${ruta.length})`);
-  is(ids(ruta).join() === 'dominar,academy,skills5,clonar,mundialistas',
+  is(ids(ruta).join() === 'dominar,academy,instalaskills,skills5,clonar',
      'orden: ' + ids(ruta).join(' → '));
   is(ruta.map(c => c.querySelector('.stepn').textContent).join() === '1,2,3,4,5', 'numerados 1..5');
   const fuera = resto(d);
-  is(fuera.length === 24, `los otros 24 siguen presentes (vi ${fuera.length})`);
+  is(fuera.length === 25, `los otros 25 siguen presentes (vi ${fuera.length})`);
   is(fuera.every(c => !c.querySelector('.stepn').textContent), 'los de fuera no llevan número');
   is(Math.max(...ruta.map(ord)) < Math.min(...fuera.map(ord)), 'la ruta va por encima del resto');
   is(!d.getElementById('rest-head').hidden, 'separador "el resto" visible');
@@ -97,31 +103,46 @@ console.log('\n── 2. Ruta "Empiezo de cero" — ordena sin ocultar ──');
      'el separador queda justo entre ruta y resto');
   is([...d.querySelectorAll('.g-head:not(.rest)')].every(h => h.hidden), 'encabezados de grupo se repliegan');
   is(d.querySelector('[data-path="cero"]').getAttribute('aria-pressed') === 'true', 'botón marcado');
-  is(/Los otros 24 quedan abajo/.test(d.getElementById('ctx-t').textContent), 'el texto avisa que el resto sigue abajo');
+  is(/Los otros 25 quedan abajo/.test(d.getElementById('ctx-t').textContent), 'el texto avisa que el resto sigue abajo');
 }
 
-console.log('\n── 3. Ruta "Reemplazar mi agencia" — arranca por el prerequisito ──');
+console.log('\n── 3. Ruta "Quiero conseguir más clientes" ──');
 {
   const { d } = boot();
   d.querySelector('[data-path="agencia"]').click();
   nadaOculto(d, 'ruta agencia');
   const ruta = enRuta(d);
   is(ruta.length === 6, `6 en la ruta (vi ${ruta.length})`);
-  is(ruta[0].dataset.id === 'mcp', 'el paso 1 es el MCP de Meta');
-  is(ids(ruta).join() === 'mcp,skills22,anuncios3,paidmedia,masterprompt,clonar',
+  is(ruta[0].dataset.id === 'captacion', 'el paso 1 es investigar a quién le hablas');
+  is(ids(ruta).join() === 'captacion,scraper,estructura,anuncios3,carruseles,paginaventas',
      'orden: ' + ids(ruta).join(' → '));
-  is(resto(d).length === 23, 'y los otros 23 quedan abajo');
+  is(resto(d).length === 24, 'y los otros 24 quedan abajo');
 }
 
-console.log('\n── 4. Ruta "Conectar a mis cuentas" ──');
+console.log('\n── 4. Ruta "Quiero optimizar lo que invierto en anuncios" ──');
 {
   const { d } = boot();
   d.querySelector('[data-path="conectar"]').click();
   nadaOculto(d, 'ruta conectar');
   const ruta = enRuta(d);
-  is(ids(ruta).join() === 'mcp,tutorial,googleads,masterprompt,paidmedia,docsmeta',
+  is(ids(ruta).join() === 'mcpoficial,mcp,tutorial,googleads,paidmedia,docsmeta',
      'orden: ' + ids(ruta).join(' → '));
-  is(resto(d).length === 23, 'los otros 23 abajo');
+  is(resto(d).length === 24, 'los otros 24 abajo');
+}
+
+console.log('\n── 4b. Ruta "Quiero invertir mejor mi dinero en anuncios" (nueva) ──');
+{
+  const { d, errors } = boot();
+  d.querySelector('[data-path="pauta"]').click();
+  is(errors.length === 0, 'sin errores al seleccionarla' + (errors.length ? ': ' + errors[0] : ''));
+  nadaOculto(d, 'ruta pauta');
+  const ruta = enRuta(d);
+  is(ruta.length === 5, `5 en la ruta (vi ${ruta.length})`);
+  is(ruta[0].dataset.id === 'estructura', 'el paso 1 es cómo se arma la campaña');
+  is(ids(ruta).join() === 'estructura,anuncios3,carruseles,mcpoficial,clonar',
+     'orden: ' + ids(ruta).join(' → '));
+  is(resto(d).length === TOTAL - 5, `y los otros ${TOTAL - 5} quedan abajo`);
+  is(/invertir mejor mi dinero/.test(d.getElementById('ctx-t').textContent), 'la banda nombra la ruta');
 }
 
 console.log('\n── 5. Cambiar de ruta y quitar el orden ──');
@@ -138,7 +159,7 @@ console.log('\n── 5. Cambiar de ruta y quitar el orden ──');
   is(d.body.dataset.mode === 'all', 'vuelve a modo all');
   is(all(d).every(c => !c.dataset.inPath), 'se limpia la marca de ruta');
   is(d.getElementById('rest-head').hidden, 'separador vuelve a ocultarse');
-  is([...d.querySelectorAll('.g-head:not(.rest)')].every(h => !h.hidden), 'encabezados de grupo vuelven');
+  is([...d.querySelectorAll('.g-head:not(.rest)')].every(h => !h.hidden), 'los 5 encabezados de grupo vuelven');
   const o = all(d).map(ord);
   is(JSON.stringify(o) === JSON.stringify([...o].sort((a,b)=>a-b)), 'orden original restaurado');
 
@@ -146,6 +167,18 @@ console.log('\n── 5. Cambiar de ruta y quitar el orden ──');
   d.querySelector('[data-path="cero"]').click();
   is(d.body.dataset.mode === 'all', 'pulsar dos veces la misma ruta la apaga');
   nadaOculto(d, 'tras el doble clic');
+}
+
+console.log('\n── 5b. El número de cada botón coincide con su ruta ──');
+{
+  const { d } = boot();
+  [...d.querySelectorAll('.opt')].forEach(b => {
+    const { d: d2 } = boot();
+    d2.querySelector(`[data-path="${b.dataset.path}"]`).click();
+    const n = enRuta(d2).length;
+    is(String(n) === b.querySelector('.on').textContent,
+       `${b.dataset.path}: el botón dice ${b.querySelector('.on').textContent} y la ruta trae ${n}`);
+  });
 }
 
 console.log('\n── 6. Estado: visitado, avance y prerequisito cumplido ──');
@@ -156,7 +189,7 @@ console.log('\n── 6. Estado: visitado, avance y prerequisito cumplido ──
   is(mcp.dataset.visited === '1', 'la tarjeta queda marcada');
   is(d.getElementById('tk-done').textContent === '1', 'contador = 1');
   is(!d.getElementById('track').hidden, 'aparece la barra de avance');
-  is(d.getElementById('tk-bar').style.width === (1/29*100) + '%', 'barra al ' + (100/29).toFixed(1) + '%');
+  is(d.getElementById('tk-bar').style.width === (1/30*100) + '%', 'barra al ' + (100/30).toFixed(1) + '%');
   const dep = d.querySelector('[data-prereq="mcp"]');
   is(dep.dataset.prereqDone === '1', 'el dependiente marca el prereq como cumplido');
   is(/Listo: ya abriste/.test(dep.querySelector('.pre').textContent), 'texto cambia a "Listo"');

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conecta Claude con Facebook Ads · Juan ADS</title>
+<meta name="description" content="El servidor MCP oficial de Meta: sin app de desarrollador ni token, en diez minutos. Los cinco pasos y cinco pedidos listos para copiar.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23080706'/%3E%3Cpath d='M16 4 27 16 16 28 5 16Z' fill='%23e8c87d'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#080706">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://bio.saleads.co/recursos/conectar-facebook-ads/">
+<meta property="og:title" content="Conecta Claude con Facebook Ads · Juan ADS">
+<meta property="og:description" content="Cinco pasos para conectarlo y cinco pedidos que funcionan tal cual.">
+<meta property="og:image" content="https://bio.saleads.co/og.jpg">
+
+<!-- Clarity. Sin esta etiqueta el recorrido se corta justo donde la persona
+     empieza a leer. No escribir la etiqueta de cierre literal en comentarios. -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ybp8htwt62");
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/recursos/recurso.css">
+</head>
+<body data-recurso="conectar-facebook-ads">
+  <div class="bg"><div class="glow g1"></div><div class="glow g2"></div></div>
+
+  <main class="wrap">
+
+    <div class="top">
+      <a class="back" href="/recursos/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        Recursos
+      </a>
+      <span class="brand">Juan ADS · Recurso</span>
+    </div>
+
+    <div class="eyebrow">Comentaste Facebook</div>
+    <h1>Conecta Claude con <em>Facebook</em> Ads</h1>
+    <p class="lead">Es el servidor MCP oficial de Meta. <b>No hace falta app de desarrollador
+      ni token:</b> se agrega como conector y se autoriza con tu propia cuenta.</p>
+
+    <div class="chips">
+      <span class="chip">Intermedio</span>
+      <span class="chip">10 min</span>
+      <span class="chip">Cinco pasos</span>
+      <span class="chip">Conector oficial</span>
+    </div>
+
+    <h2>Antes de empezar</h2>
+    <div class="h2s">Tres cosas, y <em>nada</em> más</div>
+    <ol class="lista">
+      <li><span class="k">01</span><span><b>Una cuenta de Facebook</b> con acceso a la cuenta
+        publicitaria. Sin ese acceso el conector se autoriza pero no ve nada.</span></li>
+      <li><span class="k">02</span><span><b>Claude abierto</b>, en el navegador o en la app de
+        escritorio. Cualquiera de los dos sirve.</span></li>
+      <li><span class="k">03</span><span><b>Diez minutos.</b> La parte lenta es elegir bien los
+        permisos.</span></li>
+    </ol>
+
+    <h2>El paso a paso</h2>
+    <div class="h2s">Cinco pasos, <em>en orden</em></div>
+
+    <div class="paso">
+      <div class="pn">Paso 01</div>
+      <div class="pt">Entra a los conectores</div>
+      <p>En Claude: tu perfil → <b>Settings</b> → <b>Connectors</b>.</p>
+    </div>
+
+    <div class="paso">
+      <div class="pn">Paso 02</div>
+      <div class="pt">Agrega un conector personalizado</div>
+      <p><b>Add custom connector.</b> Ponle un nombre que reconozcas —Facebook Ads MCP— y pega
+        esta URL:</p>
+      <div class="copia">
+        <div class="copia-hd">
+          <span class="copia-lb">La URL del conector</span>
+          <button class="btn" type="button" data-copia="url">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+            <span>Copiar</span>
+          </button>
+        </div>
+        <pre><code id="url">https://mcp.facebook.com/ads</code></pre>
+      </div>
+      <div class="nota">Esa dirección <b>no se abre en el navegador</b>: es el punto de
+        conexión y va pegada en el campo del conector.</div>
+    </div>
+
+    <div class="paso">
+      <div class="pn">Paso 03</div>
+      <div class="pt">Inicia sesión y elige el negocio</div>
+      <p>Te manda al login de Facebook. Después eliges a qué business portfolios o cuentas
+        publicitarias le das acceso. <b>Empieza por una sola.</b></p>
+    </div>
+
+    <div class="paso">
+      <div class="pn">Paso 04 · no te lo saltes</div>
+      <div class="pt">Deja todo en Need approval</div>
+      <p>Con eso, <b>cada cambio que Claude quiera hacer en tu cuenta te lo pide primero.</b>
+        Tú apruebas.</p>
+    </div>
+
+    <div class="paso">
+      <div class="pn">Paso 05</div>
+      <div class="pt">Enciéndelo en el chat</div>
+      <p>Abre una conversación nueva, toca el <b>+</b> → Connectors, y confirma que el conector
+        esté encendido para ese chat.</p>
+      <div class="nota"><b>Si no te aparece:</b> Meta lo está soltando por cuenta y hay cuentas
+        que todavía no lo tienen habilitado. Si el conector no engancha, no es tu configuración
+        — es el rollout.</div>
+    </div>
+
+    <h2>Qué pedirle</h2>
+    <div class="h2s">Tres preguntas de <em>cada mañana</em></div>
+    <p class="lead" style="font-size:15.5px;margin-top:4px">Funcionan tal cual. Copia y pega.</p>
+      <div class="copia">
+        <div class="copia-hd">
+          <span class="copia-lb">Pedido 01 · el costo más alto</span>
+          <button class="btn" type="button" data-copia="r1">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+            <span>Copiar</span>
+          </button>
+        </div>
+        <pre><code id="r1">Revisa mis campañas activas y dime cuál tiene el costo por adquisición más alto de los últimos 7 días.</code></pre>
+      </div>
+      <div class="copia">
+        <div class="copia-hd">
+          <span class="copia-lb">Pedido 02 · el método de pago</span>
+          <button class="btn" type="button" data-copia="r2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+            <span>Copiar</span>
+          </button>
+        </div>
+        <pre><code id="r2">¿Hay algún error en el método de pago o alguna cuenta con saldo pendiente ahora mismo?</code></pre>
+      </div>
+      <div class="copia">
+        <div class="copia-hd">
+          <span class="copia-lb">Pedido 03 · qué se movió</span>
+          <button class="btn" type="button" data-copia="r3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+            <span>Copiar</span>
+          </button>
+        </div>
+        <pre><code id="r3">Compara el CPA de esta semana contra la anterior por conjunto de anuncios y dime qué se movió.</code></pre>
+      </div>
+
+    <h2>Para decidir</h2>
+    <div class="h2s">Dos que te ahorran la <em>duda</em></div>
+      <div class="copia">
+        <div class="copia-hd">
+          <span class="copia-lb">Pedido 04 · a quién ya se puede juzgar</span>
+          <button class="btn" type="button" data-copia="r4">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+            <span>Copiar</span>
+          </button>
+        </div>
+        <pre><code id="r4">De los creativos activos, ¿cuáles ya gastaron lo suficiente para juzgarlos y cuáles todavía no?</code></pre>
+      </div>
+      <div class="copia">
+        <div class="copia-hd">
+          <span class="copia-lb">Pedido 05 · el resumen de la semana</span>
+          <button class="btn" type="button" data-copia="r5">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+            <span>Copiar</span>
+          </button>
+        </div>
+        <pre><code id="r5">Arma el resumen de la semana como se lo mandaría a un cliente: gasto, resultados, qué funcionó y qué apagaría.</code></pre>
+      </div>
+
+    <h2>Mientras aprendes</h2>
+    <div class="h2s">Cinco reglas que <em>no</em> se saltan</div>
+    <table class="tabla">
+      <thead><tr><th>Regla</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td>Una cuenta por vez</td><td>Dale acceso a una sola hasta que confíes en lo que hace.</td></tr>
+        <tr><td>Need approval siempre</td><td>Todo lo que escribe queda en pausa hasta que tú lo actives.</td></tr>
+        <tr><td>Pídele evidencia</td><td>«Dime de qué campaña sacaste ese número» — si no lo sostiene, no lo uses.</td></tr>
+        <tr><td>No le pases todo el presupuesto al principio</td><td>Que primero te muestre que lee bien antes de dejarlo tocar.</td></tr>
+        <tr><td>Lo que no hace</td><td>No genera creativos. Es para leer, comparar y montar estructura, no para diseñar.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="nota" style="margin-top:24px"><b>Sobre las alertas automáticas.</b> El conector
+      no se despierta solo: lee y ejecuta cuando tú se lo pides. Para que algo pase sin que
+      abras Claude hace falta un disparador aparte que lo despierte. Es un tema propio y lo
+      vamos a sacar en su propio recurso.</div>
+
+    <div class="cta">
+      <div class="ct">¿Quieres elevar tu negocio al <em>siguiente</em> nivel?</div>
+      <p>Habla con Sofía, de nuestro equipo, y te atiende.</p>
+      <!-- ⚠️ PENDIENTE · código de tracking propio de este recurso. Hoy usa
+           _0RM, que es "Recursos Gratis Post Juan (PSJU)": los leads entran
+           marcados como si vinieran de un post. Karen lo aprobó así por ahora. -->
+      <a id="cta" href="https://app.saleads.co/_0RM" target="_blank" rel="noopener">
+        Hablar con Sofía
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <a class="volver" href="/recursos/">← Ver todos los recursos</a>
+    <p class="foot">Juan ADS · Piensa mejor, decide mejor</p>
+
+  </main>
+<script src="/recursos/medicion.js" defer></script>
+<script src="/recursos/recurso.js" defer></script>
+</body>
+</html>

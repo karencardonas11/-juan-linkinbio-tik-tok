@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edita videos con Claude · Juan ADS</title>
+<meta name="description" content="HyperFrames, de HeyGen, instalado como skills en Claude Code. Le pides el video en español y él lo arma cuadro por cuadro: subtítulos, animaciones, pantalla dividida.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23080706'/%3E%3Cpath d='M16 4 27 16 16 28 5 16Z' fill='%23e8c87d'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#080706">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://bio.saleads.co/recursos/editar-video-con-claude/">
+<meta property="og:title" content="Edita videos con Claude · Juan ADS">
+<meta property="og:description" content="Los cinco pasos de instalación y los dos pedidos que funcionan tal cual.">
+<meta property="og:image" content="https://bio.saleads.co/og.jpg">
+
+<!-- Clarity. Sin esta etiqueta el recorrido se corta justo donde la persona
+     empieza a leer. No escribir la etiqueta de cierre literal en comentarios. -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ybp8htwt62");
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/recursos/recurso.css">
+</head>
+<body data-recurso="editar-video-con-claude">
+  <div class="bg"><div class="glow g1"></div><div class="glow g2"></div></div>
+
+  <main class="wrap">
+
+    <div class="top">
+      <a class="back" href="/recursos/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        Recursos
+      </a>
+      <span class="brand">Juan ADS · Recurso</span>
+    </div>
+
+    <div class="eyebrow">Comentaste Video</div>
+    <h1>Edita video <em>escribiendo</em>, dentro de Claude</h1>
+    <p class="lead">Esto es HyperFrames, de HeyGen. Se instala como skills adentro de Claude
+      Code y a partir de ahí <b>le pides el video en español normal:</b> él escribe el HTML
+      cuadro por cuadro y te lo arma.</p>
+
+    <div class="chips"><span class="chip">Avanzado</span><span class="chip">20 min</span>
+      <span class="chip">Cinco pasos</span><span class="chip">Necesitas Claude Code y Node</span></div>
+
+    <h2>Antes de empezar</h2>
+    <div class="h2s">Tres cosas <em>obligatorias</em></div>
+    <ol class="lista">
+      <li><span class="k">01</span><span><b>Claude Code</b> — la app de escritorio (pestaña
+        Code) o la terminal.</span></li>
+      <li><span class="k">02</span><span><b>Node instalado</b> — el instalador corre con
+        <code>npx</code>.</span></li>
+      <li><span class="k">03</span><span><b>Una carpeta de proyecto:</b> las skills se instalan
+        ahí adentro, no en el sistema.</span></li>
+    </ol>
+
+    <h2>El paso a paso</h2>
+    <div class="h2s">Cinco pasos y <em>listo</em></div>
+
+    <div class="paso">
+      <div class="pn">Paso 01</div>
+      <div class="pt">Busca el comando en la fuente</div>
+      <p>Busca <b>hyperframes quickstart</b> y entra al primer resultado, o ve directo a
+        <b>hyperframes.heygen.com/quickstart</b>. Baja hasta <i>Install the skills</i> y copia el
+        comando de ahí: <b>si lo cambian, esa página está al día.</b></p>
+    </div>
+
+    <div class="paso">
+      <div class="pn">Paso 02</div>
+      <div class="pt">Pégalo en Claude Code y dale enter</div>
+      <p>Abre Claude Code, eliges la carpeta del proyecto (<i>Select folder…</i>) y pega:</p>
+      <div class="copia">
+        <div class="copia-hd">
+          <span class="copia-lb">El comando de instalación</span>
+          <button class="btn" type="button" data-copia="inst">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+            <span>Copiar</span>
+          </button>
+        </div>
+        <pre><code id="inst">npx skills add heygen-com/hyperframes --full-depth</code></pre>
+      </div>
+      <p>El <b>--full-depth</b> es el que usa Juan: baja la versión actual del repositorio
+        completo.</p>
+    </div>
+
+    <div class="paso">
+      <div class="pn">Paso 03</div>
+      <div class="pt">Elige Core Skills en el selector</div>
+      <p>Te va a preguntar qué grupo instalar. <b>Core Skills.</b> Es lo que da el motor; lo
+        demás son formatos que se agregan después.</p>
+    </div>
+
+    <div class="paso">
+      <div class="pn">Paso 04</div>
+      <div class="pt">Reinicia el agente en esa carpeta</div>
+      <p>Cierra y abre la sesión para que las cargue. A Juan le quedaron <b>26 skills</b>.</p>
+    </div>
+
+    <div class="paso">
+      <div class="pn">Paso 05</div>
+      <div class="pt">Comprueba que quedó</div>
+      <p>Escribe <b>/hyperframes</b> en el chat: si autocompleta, quedó conectado. Los archivos
+        van a <code>.claude/skills/</code> de tu carpeta.</p>
+    </div>
+
+    <h2>Qué pedirle</h2>
+    <div class="h2s">De un pedido en español a un anuncio <em>armado</em></div>
+    <p class="lead" style="font-size:15.5px;margin-top:4px">Le hablas como al editor: qué video
+      es, qué quieres que pase y en qué formato.</p>
+      <div class="copia">
+        <div class="copia-hd">
+          <span class="copia-lb">El primero, para probar</span>
+          <button class="btn" type="button" data-copia="v1">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+            <span>Copiar</span>
+          </button>
+        </div>
+        <pre><code id="v1">Usando /hyperframes, haz una intro de producto de 10 segundos para https://mi-sitio.com</code></pre>
+      </div>
+      <div class="copia">
+        <div class="copia-hd">
+          <span class="copia-lb">El que usó Juan en el video</span>
+          <button class="btn" type="button" data-copia="v2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+            <span>Copiar</span>
+          </button>
+        </div>
+        <pre><code id="v2">Usando /hyperframes, edítame este video con pantalla dividida, animaciones y subtítulos, en 9:16.</code></pre>
+      </div>
+
+    <div class="nota" style="margin-top:20px">Le subes el archivo al chat y <b>ese es todo el
+      brief.</b> Claude abre su propio editor y arma el video entero escribiendo código HTML de
+      verdad: cada cuadro, cada transición, cada animación.</div>
+
+    <div class="cta">
+      <div class="ct">¿Quieres elevar tu negocio al <em>siguiente</em> nivel?</div>
+      <p>Habla con Sofía, de nuestro equipo, y te atiende.</p>
+      <!-- ⚠️ PENDIENTE · código de tracking propio de este recurso. Hoy usa
+           _0RM, que es "Recursos Gratis Post Juan (PSJU)": los leads entran
+           marcados como si vinieran de un post. Karen lo aprobó así por ahora. -->
+      <a id="cta" href="https://app.saleads.co/_0RM" target="_blank" rel="noopener">
+        Hablar con Sofía
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <a class="volver" href="/recursos/">← Ver todos los recursos</a>
+    <p class="foot">Juan ADS · Piensa mejor, decide mejor</p>
+
+  </main>
+<script src="/recursos/medicion.js" defer></script>
+<script src="/recursos/recurso.js" defer></script>
+</body>
+</html>

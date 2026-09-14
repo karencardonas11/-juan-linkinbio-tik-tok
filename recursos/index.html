@@ -370,19 +370,19 @@
     <p class="sub reveal">Bienvenido, crack. Todo lo de esta página es <b>tuyo y es gratis</b>. Pero no los abras al azar: dime dónde estás y te doy el orden.</p>
 
     <!-- ═══════════════════════════════════════════════════════════════════
-         BANDA DESTACADA — ya NO es «lo nuevo»: es el recurso que más le sirve
-         a quien llega. Al cambiarlo se tocan 3 cosas:
+         BANDA DESTACADA — vuelve a ser «lo nuevo»: el recurso del día, el que
+         se acabó de prometer en el video. Se rota cada vez que entra uno.
+         Al cambiarlo se tocan 3 cosas:
            1. data-for  → el data-id de la tarjeta correspondiente (abajo)
            2. href      → el mismo enlace de esa tarjeta
            3. el texto de .nv-t → el título de esa tarjeta
          NO lleva class="res" a propósito: si la llevara, la página contaría
          un recurso de más en la barra de avance y en las pruebas.
          ═══════════════════════════════════════════════════════════════════ -->
-    <a class="nuevo reveal" id="nuevo" data-for="estructura"
-       href="https://drive.google.com/file/d/1kx6KDNdqJIRhgXGG55D8uHWW7i_vzWk1/view?usp=drive_link"
-       target="_blank" rel="noopener">
-      <span class="nv-tag">Empieza por aquí</span>
-      <span class="nv-t">Estructura de campañas ganadoras para Meta</span>
+    <a class="nuevo reveal" id="nuevo" data-for="tienda"
+       href="/recursos/tienda-online/">
+      <span class="nv-tag">Lo nuevo</span>
+      <span class="nv-t">Tu tienda online completa, armada en un chat</span>
       <span class="nv-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
 
@@ -398,37 +398,45 @@
     <!-- ==================== SELECTOR DE RUTA ==================== -->
     <section class="chooser reveal" aria-labelledby="ch-q">
       <h2 class="ch-q" id="ch-q">¿Dónde estás <em>hoy</em>?</h2>
-      <p class="ch-s">Elige una y te ordeno los recursos. No se esconde nada: los 29 siguen ahí, siempre.</p>
+      <p class="ch-s">Elige una y te ordeno los recursos. No se esconde nada: los <span id="ch-n">30</span> siguen ahí, siempre.</p>
 
       <div class="opts" role="group" aria-labelledby="ch-q">
 
         <button class="opt" type="button" data-path="cero" aria-pressed="false">
           <span class="oi"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.2"/><path d="M12 7.5v5l3 2"/></svg></span>
           <span class="oc">
-            <span class="ot">Empiezo de cero</span>
-            <span class="os">Nunca he usado Claude en serio</span>
+            <span class="ot">Quiero organizar mi negocio con IA</span>
+            <span class="os">Mi negocio ya vende, pero lo llevo a pulso</span>
           </span>
           <span class="on">5</span>
         </button>
 
-        <button class="opt" type="button" data-path="conectar" aria-pressed="false">
-          <span class="oi"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 14.5a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14.5 9.5a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></span>
+        <button class="opt" type="button" data-path="pauta" aria-pressed="false">
+          <span class="oi"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.6"/><circle cx="12" cy="12" r="4.4"/><circle cx="12" cy="12" r="1.1" fill="#e8c87d" stroke="none"/></svg></span>
           <span class="oc">
-            <span class="ot">Quiero conectarlo a mis cuentas</span>
-            <span class="os">Ya uso Claude, ahora va contra Meta y Google</span>
+            <span class="ot">Quiero invertir mejor mi dinero en anuncios</span>
+            <span class="os">Ya gasté algo en anuncios, pero fue a ciegas</span>
           </span>
-          <span class="on">6</span>
+          <span class="on">5</span>
         </button>
 
         <button class="opt" type="button" data-path="agencia" aria-pressed="false">
           <span class="oi"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-8.5 10.5h6L11 22l8.5-10.5h-6L13 2Z"/></svg></span>
           <span class="oc">
-            <span class="ot">Quiero reemplazar mi agencia</span>
-            <span class="os">Operar toda la pauta yo mismo, con IA</span>
+            <span class="ot">Quiero conseguir más clientes</span>
+            <span class="os">Necesito tener clientes todos los días</span>
           </span>
           <span class="on">6</span>
         </button>
 
+        <button class="opt" type="button" data-path="conectar" aria-pressed="false">
+          <span class="oi"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 14.5a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14.5 9.5a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></span>
+          <span class="oc">
+            <span class="ot">Quiero conectar mis cuentas y ver mis números</span>
+            <span class="os">Ya tengo campañas corriendo</span>
+          </span>
+          <span class="on">6</span>
+        </button>
       </div>
     </section>
 
@@ -442,29 +450,29 @@
     <!-- ==================== LISTA ==================== -->
     <div class="list" id="list">
 
-      <!-- ---------- Grupo 1 ---------- -->
+      <!-- ---------- Grupo 01 · Arranca sin saber nada ---------- -->
       <div class="g-head" data-group="1" style="order:0">
         <span class="gn">01</span>
-        <h2>Empieza aquí</h2>
+        <h2>Arranca sin saber nada</h2>
         <span class="gline"></span>
       </div>
 
       <a class="res hi reveal" style="order:1"
-         data-id="dominar" data-nivel="Básico" data-tiempo="Un fin de semana" data-formato="Carpeta" data-added=""
-         href="https://drive.google.com/drive/folders/1VzoEZp8dZAdkmBUpwp96kf6sV4YU30FT?usp=sharing" target="_blank" rel="noopener">
+         data-id="dominar" data-nivel="Básico" data-tiempo="Un fin de semana" data-formato="Página" data-added=""
+         href="/recursos/domina-claude/">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 12.5h6L11 22l8.5-10.5h-6L13 2Z"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
         <span class="ct">
           <span class="hd"><span class="stepn"></span><span class="t">Domina Claude en un fin de semana</span></span>
           <span class="s">De cero a operativo en dos días. Solo lo que de verdad se usa, sin relleno.</span>
           <span class="meta"></span>
           <span class="pre"></span>
-          <span class="bot"><span class="open"><span>Abrir recurso</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          <span class="bot"><span class="open"><span>Ver en la página</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </span>
       </a>
 
       <a class="res hi reveal" style="order:2"
-         data-id="academy" data-nivel="Básico" data-tiempo="Cursos cortos" data-formato="Plataforma" data-added=""
-         href="https://saleads.academy/?utm_source=bio&amp;utm_medium=recursos&amp;utm_campaign=comunidad_recursos&amp;utm_content=academy" target="_blank" rel="noopener">
+         data-id="academy" data-nivel="Básico" data-tiempo="Cursos cortos" data-formato="Página" data-added=""
+         href="/recursos/saleads-academy/">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/><path d="M22 8v6"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
         <span class="ct">
           <span class="hd"><span class="stepn"></span><span class="t">SaleADS Academy</span></span>
@@ -476,91 +484,287 @@
       </a>
 
       <a class="res reveal" style="order:3"
-         data-id="instalaskills" data-nivel="Básico" data-tiempo="10 min" data-formato="PDF" data-added="2026-08-21"
-         href="https://drive.google.com/file/d/1aUWBeUVfggtWIElQvxBg57G8kQYnrsFf/view?usp=sharing" target="_blank" rel="noopener">
+         data-id="instalaskills" data-nivel="Básico" data-tiempo="10 min" data-formato="Página" data-added="2026-08-21"
+         href="/recursos/skills-de-marketing/">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11M8.2 10.2 12 14l3.8-3.8"/><path d="M4 16.5V18a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-1.5"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
         <span class="ct">
           <span class="hd"><span class="stepn"></span><span class="t">Instala skills de marketing en Claude</span></span>
           <span class="s">Un repositorio abierto con 49 skills gratis. Dónde están, cuál elegir y cómo dejarlas instaladas.</span>
           <span class="meta"></span>
           <span class="pre"></span>
-          <span class="bot"><span class="open"><span>Abrir recurso</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          <span class="bot"><span class="open"><span>Ver en la página</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </span>
       </a>
 
       <a class="res reveal" style="order:4"
-         data-id="cualesskills" data-nivel="Intermedio" data-tiempo="10 min" data-formato="PDF" data-added="2026-08-29"
-         href="https://drive.google.com/file/d/1XlM8ktB2_e08kbW5ZDciHs4MA5gwKky5/view?usp=drive_link" target="_blank" rel="noopener">
+         data-id="cualesskills" data-nivel="Intermedio" data-tiempo="10 min" data-formato="Página" data-added="2026-08-29"
+         href="/recursos/cuales-skills-instalar/">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5h3M4 12h3M4 17.5h3"/><path d="M10.5 6.5h9.5M10.5 12h9.5M10.5 17.5h6"/><circle cx="5.5" cy="6.5" r="2.4"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
         <span class="ct">
           <span class="hd"><span class="stepn"></span><span class="t">Cuáles skills instalar en Claude, y en qué orden</span></span>
           <span class="s">Cinco que valen la pena, con su repositorio y su comando. Y cuál poner primero según si vendes, produces contenido o ya usas Claude a diario.</span>
           <span class="meta"></span>
           <span class="pre"></span>
-          <span class="bot"><span class="open"><span>Abrir recurso</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          <span class="bot"><span class="open"><span>Ver en la página</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </span>
       </a>
 
       <a class="res reveal" style="order:5"
-         data-id="skills5" data-nivel="Básico" data-tiempo="20 min" data-formato="Carpeta" data-added=""
-         href="https://drive.google.com/drive/folders/1K9BymsI90wh_WSbeRyWCHDDN1WHBLEIF?usp=sharing" target="_blank" rel="noopener">
+         data-id="skills5" data-nivel="Básico" data-tiempo="20 min" data-formato="Página" data-added=""
+         href="/recursos/5-skills-marketing-digital/">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
         <span class="ct">
           <span class="hd"><span class="stepn"></span><span class="t">5 Skills para marketing digital</span></span>
           <span class="s">Cinco habilidades listas para instalar. Copiar, pegar, ejecutar.</span>
           <span class="meta"></span>
           <span class="pre"></span>
-          <span class="bot"><span class="open"><span>Abrir recurso</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          <span class="bot"><span class="open"><span>Ver en la página</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </span>
       </a>
 
       <a class="res hi reveal" style="order:6"
-         data-id="clonar" data-nivel="Básico" data-tiempo="10 min" data-formato="Carpeta" data-added=""
-         href="https://drive.google.com/drive/folders/18-4wrt0QR4QcM9okh4VzuMR8soCWEdpI?usp=drive_link" target="_blank" rel="noopener">
+         data-id="clonar" data-nivel="Básico" data-tiempo="10 min" data-formato="Página" data-added=""
+         href="/recursos/clonar-a-juan/">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 1 5 5v1a4 4 0 0 1 0 8v1a5 5 0 0 1-10 0v-1a4 4 0 0 1 0-8V7a5 5 0 0 1 5-5Z"/><path d="M12 2v20M8.5 8.5h7M8.5 15.5h7"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
         <span class="ct">
           <span class="hd"><span class="stepn"></span><span class="t">Clona a Juan ADS como tu estratega personal</span></span>
           <span class="s">El prompt para que Claude piense con mi criterio y te acompañe en cada decisión de pauta.</span>
           <span class="meta"></span>
           <span class="pre"></span>
-          <span class="bot"><span class="open"><span>Abrir recurso</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          <span class="bot"><span class="open"><span>Ver en la página</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </span>
       </a>
 
-      <a class="res reveal" style="order:7"
-         data-id="mundialistas" data-nivel="Básico" data-tiempo="10 min" data-formato="PDF" data-added=""
-         href="https://drive.google.com/file/d/1gdKvZ0cPPd3ETvGhCvaE5A1Bcm_E-DIX/view?usp=sharing" target="_blank" rel="noopener">
+      <!-- ---------- Grupo 02 · Consigue clientes ---------- -->
+      <div class="g-head" data-group="2" style="order:7">
+        <span class="gn">02</span>
+        <h2>Consigue clientes</h2>
+        <span class="gline"></span>
+      </div>
+
+      <a class="res reveal" style="order:8"
+         data-id="captacion" data-nivel="Intermedio" data-tiempo="30 min" data-formato="Página" data-added="2026-08-24"
+         href="/recursos/skills-de-captacion/">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.4"/><circle cx="12" cy="12" r="3.2"/><path d="M12 1.8v3.2M12 19v3.2M1.8 12H5M19 12h3.2"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
+        <span class="ct">
+          <span class="hd"><span class="stepn"></span><span class="t">5 skills: competencia, correos y contenido</span></span>
+          <span class="s">Espía la estructura de los anuncios de tu competencia, detecta sus puntos ciegos y arma lead magnets, secuencias de correo y correo en frío.</span>
+          <span class="meta"></span>
+          <span class="pre"></span>
+          <span class="bot"><span class="open"><span>Ver en la página</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+        </span>
+      </a>
+
+      <a class="res reveal" style="order:9"
+         data-id="scraper" data-nivel="Avanzado" data-tiempo="Referencia" data-formato="Página" data-added="2026-08-25"
+         href="/recursos/leads-gratis/">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.8" rx="7.6" ry="2.9"/><path d="M4.4 5.8v6c0 1.6 3.4 2.9 7.6 2.9s7.6-1.3 7.6-2.9v-6"/><path d="M4.4 11.8v6c0 1.6 3.4 2.9 7.6 2.9s7.6-1.3 7.6-2.9v-6"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
+        <span class="ct">
+          <span class="hd"><span class="stepn"></span><span class="t">Leads GRATIS para tu negocio</span></span>
+          <span class="s">ScrapeGraphAI, el repositorio que Juan usa en el video. Le pides los datos en español y hace el scraping en la web por ti. Requiere Python y un LLM: sale $0 si lo corres local con Ollama.</span>
+          <span class="meta"></span>
+          <span class="pre"></span>
+          <span class="bot"><span class="open"><span>Ver en la página</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+        </span>
+      </a>
+
+      <a class="res reveal" style="order:10"
+         data-id="mundialistas" data-nivel="Básico" data-tiempo="10 min" data-formato="Página" data-added=""
+         href="/recursos/prompts-mundialistas/">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.2"/><path d="m12 5.6 4.3 3.1-1.7 5.1H9.4L7.7 8.7 12 5.6Z"/><path d="M12 2.8v2.8M2.9 9.6l4.8-.9M5.8 20l3.6-4.2M18.2 20l-3.6-4.2M21.1 9.6l-4.8-.9"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
         <span class="ct">
           <span class="hd"><span class="stepn"></span><span class="t">Prompts Mundialistas</span></span>
           <span class="s">La tanda de prompts para aprovechar la temporada mundialista.</span>
           <span class="meta"></span>
           <span class="pre"></span>
-          <span class="bot"><span class="open"><span>Abrir recurso</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          <span class="bot"><span class="open"><span>Ver en la página</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </span>
       </a>
 
-      <!-- ---------- Grupo 2 ---------- -->
-      <div class="g-head" data-group="2" style="order:8">
-        <span class="gn">02</span>
-        <h2>Conecta y automatiza</h2>
+      <!-- ---------- Grupo 03 · Haz tus anuncios, tu página y tu tienda ---------- -->
+      <div class="g-head" data-group="3" style="order:11">
+        <span class="gn">03</span>
+        <h2>Haz tus anuncios, tu página y tu tienda</h2>
         <span class="gline"></span>
       </div>
 
-      <a class="res hi reveal" style="order:9"
-         data-id="mcpoficial" data-nivel="Intermedio" data-tiempo="10 min" data-formato="PDF" data-added="2026-09-01"
-         href="https://drive.google.com/file/d/1_Arhe7aI0694wtaedz9noUo8zDXX5XWH/view?usp=sharing" target="_blank" rel="noopener">
+      <a class="res hi reveal" style="order:12"
+         data-id="estructura" data-nivel="Intermedio" data-tiempo="10 min" data-formato="Página" data-added="2026-08-28"
+         href="/recursos/estructura-campanas/">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2.6" width="6" height="5" rx="1.4"/><rect x="2.4" y="16.4" width="6" height="5" rx="1.4"/><rect x="15.6" y="16.4" width="6" height="5" rx="1.4"/><path d="M12 7.6v4.4M5.4 16.4v-2.8h13.2v2.8"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
+        <span class="ct">
+          <span class="hd"><span class="stepn"></span><span class="t">Estructura de campañas ganadoras para Meta</span></span>
+          <span class="s">Dos campañas: una para aprender y otra para vender. Cada conjunto lleva el nombre de un ángulo, no de un público, y el targeting va amplio en todos.</span>
+          <span class="meta"></span>
+          <span class="pre"></span>
+          <span class="bot"><span class="open"><span>Ver en la página</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+        </span>
+      </a>
+
+      <a class="res reveal" style="order:13"
+         data-id="skills22" data-nivel="Avanzado" data-tiempo="1 h" data-formato="Página" data-added=""
+         href="/recursos/22-skills-de-marketing/">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.6"/><rect x="14" y="3" width="7" height="7" rx="1.6"/><rect x="3" y="14" width="7" height="7" rx="1.6"/><rect x="14" y="14" width="7" height="7" rx="1.6"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
+        <span class="ct">
+          <span class="hd"><span class="stepn"></span><span class="t">22 Skills para reemplazar una agencia de marketing</span></span>
+          <span class="s">El paquete completo. Veintidós habilidades, un solo operador: tú.</span>
+          <span class="meta"></span>
+          <span class="pre"></span>
+          <span class="bot"><span class="open"><span>Ver en la página</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+        </span>
+      </a>
+
+      <a class="res reveal" style="order:14"
+         data-id="anuncios3" data-nivel="Intermedio" data-tiempo="20 min" data-formato="Página" data-added=""
+         href="/recursos/3-skills-para-tus-anuncios/">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4h13A2.5 2.5 0 0 1 21 6.5v8a2.5 2.5 0 0 1-2.5 2.5H8l-5 4V6.5Z"/><path d="M8 10h8M8 13.5h5"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
+        <span class="ct">
+          <span class="hd"><span class="stepn"></span><span class="t">3 Skills para crear tus anuncios</span></span>
+          <span class="s">Del brief al anuncio publicado, sin pasar por la agencia.</span>
+          <span class="meta"></span>
+          <span class="pre"></span>
+          <span class="bot"><span class="open"><span>Ver en la página</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+        </span>
+      </a>
+
+      <a class="res reveal" style="order:15"
+         data-id="googleia" data-nivel="Básico" data-tiempo="Referencia" data-formato="Página" data-added="2026-08-30"
+         href="/recursos/herramientas-google-gratis/">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.4" height="7.4" rx="1.6"/><rect x="13.6" y="3" width="7.4" height="7.4" rx="1.6"/><rect x="3" y="13.6" width="7.4" height="7.4" rx="1.6"/><path d="M17.3 13.6v7.4M13.6 17.3h7.4"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
+        <span class="ct">
+          <span class="hd"><span class="stepn"></span><span class="t">15 herramientas de IA de Google, GRATIS</span></span>
+          <span class="s">Pomelli, Stitch, Opal, Antigravity, NotebookLM y diez más, con el link de cada una y para qué sirve. Ojo: casi todas tienen cupo diario o lista de espera.</span>
+          <span class="meta"></span>
+          <span class="pre"></span>
+          <span class="bot"><span class="open"><span>Ver en la página</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+        </span>
+      </a>
+
+      <a class="res reveal" style="order:16"
+         data-id="promptsimg" data-nivel="Básico" data-tiempo="Referencia" data-formato="Página" data-added="2026-08-22"
+         href="/recursos/prompts-para-imagenes/">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2.4"/><circle cx="8.6" cy="9.6" r="1.7"/><path d="m4 17.5 4.6-4.6 3 3L15 12l5 5"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
+        <span class="ct">
+          <span class="hd"><span class="stepn"></span><span class="t">10.000+ prompts para generar imágenes</span></span>
+          <span class="s">Biblioteca gratis de prompts para Nano Banana Pro, el generador de Google. Buscas por estilo, copias y generas.</span>
+          <span class="meta"></span>
+          <span class="pre"></span>
+          <span class="bot"><span class="open"><span>Ver en la página</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+        </span>
+      </a>
+
+      <a class="res reveal" style="order:17"
+         data-id="carruseles" data-nivel="Básico" data-tiempo="20 min" data-formato="Página" data-added="2026-09-06"
+         href="/recursos/carruseles-con-tu-marca/">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7.4" y="4" width="9.2" height="16" rx="2"/><path d="M4 7.4v9.2M20 7.4v9.2"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
+        <span class="ct">
+          <span class="hd"><span class="stepn"></span><span class="t">Haz carruseles con tu marca sin saber diseñar</span></span>
+          <span class="s">Un prompt maestro que pegas una vez en un proyecto de Claude. Después escribes el tema y sale el carrusel completo, con tu color y tu tipografía, listo para exportar.</span>
+          <span class="meta"></span>
+          <span class="pre"></span>
+          <span class="bot"><span class="open"><span>Ver en la página</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+        </span>
+      </a>
+
+      <a class="res reveal" style="order:18"
+         data-id="videoia" data-nivel="Básico" data-tiempo="15 min" data-formato="Página" data-added="2026-08-23"
+         href="/recursos/ideas-a-video-con-ia/">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.6" y="6" width="12.8" height="12" rx="2.4"/><path d="m15.4 10.6 5.4-3.1v9l-5.4-3.1z"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
+        <span class="ct">
+          <span class="hd"><span class="stepn"></span><span class="t">Convierte tus ideas en video con IA</span></span>
+          <span class="s">Agent Opus, de OpusClip. Le das un texto, un link o un audio y te arma el video. Tiene plan gratis con marca de agua.</span>
+          <span class="meta"></span>
+          <span class="pre"></span>
+          <span class="bot"><span class="open"><span>Ver en la página</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+        </span>
+      </a>
+
+      <a class="res reveal" style="order:19"
+         data-id="director" data-nivel="Intermedio" data-tiempo="20 min" data-formato="Página" data-added="2026-08-31"
+         href="/recursos/video-cinematografico/">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.4h18v10a1.8 1.8 0 0 1-1.8 1.8H4.8A1.8 1.8 0 0 1 3 19.4v-10Z"/><path d="m3.6 9.2 1.5-4.4 17 2.3-.7 2.3"/><path d="m8.6 5.5 2.6 3.6M13.4 6.2 16 9.4"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
+        <span class="ct">
+          <span class="hd"><span class="stepn"></span><span class="t">Crea videos cinematográficos hasta de 5 minutos con IA</span></span>
+          <span class="s">OpenArt Director. Le describes la pieza como a un director y arma el arco completo, con personajes que se sostienen y sin que unas clips. Empieza gratis; los planes pagos van desde 13 USD al mes.</span>
+          <span class="meta"></span>
+          <span class="pre"></span>
+          <span class="bot"><span class="open"><span>Ver en la página</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+        </span>
+      </a>
+
+      <a class="res reveal" style="order:20"
+         data-id="hyperframes" data-nivel="Intermedio" data-tiempo="20 min" data-formato="Página" data-added="2026-08-27"
+         href="/recursos/editar-video-con-claude/">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.6" y="5" width="18.8" height="14" rx="2.4"/><path d="M2.6 9.4h18.8M2.6 14.6h18.8M7.4 5v14M16.6 5v14"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
+        <span class="ct">
+          <span class="hd"><span class="stepn"></span><span class="t">Edita videos con Claude</span></span>
+          <span class="s">HyperFrames, de HeyGen, instalado como skills en Claude Code. Le pides el video en español y él lo arma cuadro por cuadro: subtítulos, animaciones, pantalla dividida. Necesitas Claude Code y Node.</span>
+          <span class="meta"></span>
+          <span class="pre"></span>
+          <span class="bot"><span class="open"><span>Ver en la página</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+        </span>
+      </a>
+
+      <a class="res reveal" style="order:21"
+         data-id="avatar" data-nivel="Básico" data-tiempo="15 min" data-formato="Página" data-added="2026-09-04"
+         href="/recursos/avatar-que-habla/">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.4" r="4"/><path d="M4.6 20.4a7.6 7.6 0 0 1 14.8 0"/><path d="M20.6 6.4v4M22.8 5.2v6.4"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
+        <span class="ct">
+          <span class="hd"><span class="stepn"></span><span class="t">Convierte una foto en un avatar que habla</span></span>
+          <span class="s">LongCat, de Meituan, con licencia MIT. Le subes una foto y un audio y sale hablando. Se prueba en el navegador sin instalar nada, y aguanta varias personas en la misma escena.</span>
+          <span class="meta"></span>
+          <span class="pre"></span>
+          <span class="bot"><span class="open"><span>Ver en la página</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+        </span>
+      </a>
+
+      <a class="res reveal" style="order:22"
+         data-id="paginaventas" data-nivel="Intermedio" data-tiempo="Referencia" data-formato="Página" data-added="2026-08-26"
+         href="/recursos/pagina-de-ventas/">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2.4"/><path d="M3 8.6h18"/><path d="M6.4 6.3h.01M9 6.3h.01"/><path d="M7 12h6M7 15.4h9"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
+        <span class="ct">
+          <span class="hd"><span class="stepn"></span><span class="t">Arma tu página de ventas en menos de una hora sin experiencia</span></span>
+          <span class="s">La skill oficial de diseño de Anthropic. Le das los dolores de tu cliente, tu solución y tus diferenciales, y la página deja de verse genérica.</span>
+          <span class="meta"></span>
+          <span class="pre"></span>
+          <span class="bot"><span class="open"><span>Ver en la página</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+        </span>
+      </a>
+
+      <a class="res reveal" style="order:23"
+         data-id="tienda" data-nivel="Básico" data-tiempo="20 min" data-formato="Página" data-added="2026-09-10"
+         href="/recursos/tienda-online/">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.6h17.2v10.6a1.5 1.5 0 0 1-1.5 1.5H4.9a1.5 1.5 0 0 1-1.5-1.5V8.6Z"/><path d="M2.4 8.6 4.9 3.3h14.2l2.5 5.3"/><path d="M9.5 20.7v-5.9h5v5.9"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
+        <span class="ct">
+          <span class="hd"><span class="stepn"></span><span class="t">Tu tienda online completa, armada en un chat</span></span>
+          <span class="s">Ocho prompts literales, en orden: la página, tres paquetes con upsells, las imágenes de producto sacadas de una foto del celular, las reseñas, el panel de pedidos y los pagos. El precio, el envío y la garantía los pones tú, o se los inventa.</span>
+          <span class="meta"></span>
+          <span class="pre"></span>
+          <span class="bot"><span class="open"><span>Ver en la página</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+        </span>
+      </a>
+
+      <!-- ---------- Grupo 04 · Conecta tus cuentas y mide ---------- -->
+      <div class="g-head" data-group="4" style="order:24">
+        <span class="gn">04</span>
+        <h2>Conecta tus cuentas y mide</h2>
+        <span class="gline"></span>
+      </div>
+
+      <a class="res hi reveal" style="order:25"
+         data-id="mcpoficial" data-nivel="Intermedio" data-tiempo="10 min" data-formato="Página" data-added="2026-09-01"
+         href="/recursos/conectar-facebook-ads/">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.6 14.4a4.2 4.2 0 0 0 6 0l3.1-3.1a4.2 4.2 0 0 0-6-6l-1 1"/><path d="M14.4 9.6a4.2 4.2 0 0 0-6 0l-3.1 3.1a4.2 4.2 0 0 0 6 6l1-1"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
         <span class="ct">
           <span class="hd"><span class="stepn"></span><span class="t">Conecta Claude a Meta Ads para optimizar y escalar tus anuncios</span></span>
           <span class="s">El servidor MCP oficial de Meta: sin app de desarrollador ni token, en diez minutos. Trae cinco pedidos listos y las alertas de CPA y método de pago.</span>
           <span class="meta"></span>
           <span class="pre"></span>
-          <span class="bot"><span class="open"><span>Abrir recurso</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          <span class="bot"><span class="open"><span>Ver en la página</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </span>
       </a>
 
-      <a class="res hi reveal" style="order:10"
+      <a class="res hi reveal" style="order:26"
          data-id="mcp" data-nivel="Intermedio" data-tiempo="30 min" data-formato="PDF" data-added="" data-key="1"
          href="https://drive.google.com/file/d/1UapYKNZvi1oZcDVUtAuQmyxwEw1epomz/view?usp=drive_link" target="_blank" rel="noopener">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 14.5a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14.5 9.5a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
@@ -573,9 +777,9 @@
         </span>
       </a>
 
-      <a class="res reveal" style="order:11"
-         data-id="tutorial" data-nivel="Intermedio" data-tiempo="Video" data-formato="YouTube" data-added=""
-         href="https://youtu.be/u0RboYxr6S8?si=YUvjWTT-AEi8VwNy" target="_blank" rel="noopener">
+      <a class="res reveal" style="order:27"
+         data-id="tutorial" data-nivel="Intermedio" data-tiempo="Video" data-formato="Página" data-added=""
+         href="/recursos/tutorial-claude-code-meta-ads/">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
         <span class="ct">
           <span class="hd"><span class="stepn"></span><span class="t">Tutorial completo: Claude Code + Meta Ads</span></span>
@@ -586,262 +790,91 @@
         </span>
       </a>
 
-      <a class="res reveal" style="order:12"
-         data-id="googleads" data-nivel="Intermedio" data-tiempo="30 min" data-formato="Carpeta" data-added=""
-         href="https://drive.google.com/drive/folders/1AtMomB6f3LGKuX9Hqcecn7kt1XG2gRpM?usp=sharing" target="_blank" rel="noopener">
+      <a class="res reveal" style="order:28"
+         data-id="googleads" data-nivel="Intermedio" data-tiempo="30 min" data-formato="Página" data-added=""
+         href="/recursos/conectar-google-ads/">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.2"/><path d="M12 2.8a14 14 0 0 1 0 18.4M12 2.8a14 14 0 0 0 0 18.4M3 9h18M3 15h18"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
         <span class="ct">
           <span class="hd"><span class="stepn"></span><span class="t">Conecta Claude con Google Ads</span></span>
           <span class="s">Que la IA lea tus campañas de Google y te diga dónde estás quemando presupuesto.</span>
           <span class="meta"></span>
           <span class="pre"></span>
-          <span class="bot"><span class="open"><span>Abrir recurso</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          <span class="bot"><span class="open"><span>Ver en la página</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </span>
       </a>
 
-      <a class="res reveal" style="order:13"
-         data-id="masterprompt" data-nivel="Intermedio" data-tiempo="10 min" data-formato="PDF" data-added="" data-prereq="mcp"
-         href="https://drive.google.com/file/d/1V5VahvttKiaKVUDi1nzn93QakJ9VO74p/view?usp=sharing" target="_blank" rel="noopener">
+      <a class="res reveal" style="order:29"
+         data-id="masterprompt" data-nivel="Básico" data-tiempo="15 min" data-formato="Página" data-added="2026-09-13" data-prereq="mcp"
+         href="/recursos/informe-meta-ads/">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
         <span class="ct">
           <span class="hd"><span class="stepn"></span><span class="t">Master Prompt · Informe de Meta Ads</span></span>
           <span class="s">Un prompt. Un informe de cuenta que de verdad se entiende y con el que puedes decidir.</span>
           <span class="meta"></span>
           <span class="pre"></span>
-          <span class="bot"><span class="open"><span>Abrir recurso</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          <span class="bot"><span class="open"><span>Ver en la página</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </span>
       </a>
 
-      <a class="res reveal" style="order:14"
-         data-id="docsmeta" data-nivel="Avanzado" data-tiempo="Referencia" data-formato="Docs" data-added=""
-         href="https://developers.facebook.com/documentation/ads-commerce/marketing-api/overview/rate-limiting" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H18a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5.5A1.5 1.5 0 0 1 4 19.5v-15Z"/><path d="M8 7.5h8M8 11h8M8 14.5h5"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
-        <span class="ct">
-          <span class="hd"><span class="stepn"></span><span class="t">Documentación oficial de Meta</span></span>
-          <span class="s">Rate limiting de la Marketing API. La fuente directa, sin intermediarios.</span>
-          <span class="meta"></span>
-          <span class="pre"></span>
-          <span class="bot"><span class="open"><span>Abrir recurso</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-        </span>
-      </a>
-
-      <!-- ---------- Grupo 3 ---------- -->
-      <div class="g-head" data-group="3" style="order:15">
-        <span class="gn">03</span>
-        <h2>Opera como agencia</h2>
-        <span class="gline"></span>
-      </div>
-
-      <a class="res hi reveal" style="order:16"
-         data-id="estructura" data-nivel="Intermedio" data-tiempo="10 min" data-formato="PDF" data-added="2026-08-28"
-         href="https://drive.google.com/file/d/1kx6KDNdqJIRhgXGG55D8uHWW7i_vzWk1/view?usp=drive_link" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2.6" width="6" height="5" rx="1.4"/><rect x="2.4" y="16.4" width="6" height="5" rx="1.4"/><rect x="15.6" y="16.4" width="6" height="5" rx="1.4"/><path d="M12 7.6v4.4M5.4 16.4v-2.8h13.2v2.8"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
-        <span class="ct">
-          <span class="hd"><span class="stepn"></span><span class="t">Estructura de campañas ganadoras para Meta</span></span>
-          <span class="s">Dos campañas: una para aprender y otra para vender. Cada conjunto lleva el nombre de un ángulo, no de un público, y el targeting va amplio en todos.</span>
-          <span class="meta"></span>
-          <span class="pre"></span>
-          <span class="bot"><span class="open"><span>Abrir recurso</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-        </span>
-      </a>
-
-      <a class="res reveal" style="order:17"
-         data-id="skills22" data-nivel="Avanzado" data-tiempo="1 h" data-formato="PDF" data-added=""
-         href="https://drive.google.com/file/d/1rQghjs3jvgUisg7DQDfBDkxslGTUBFFn/view?usp=sharing" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.6"/><rect x="14" y="3" width="7" height="7" rx="1.6"/><rect x="3" y="14" width="7" height="7" rx="1.6"/><rect x="14" y="14" width="7" height="7" rx="1.6"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
-        <span class="ct">
-          <span class="hd"><span class="stepn"></span><span class="t">22 Skills para reemplazar una agencia de marketing</span></span>
-          <span class="s">El paquete completo. Veintidós habilidades, un solo operador: tú.</span>
-          <span class="meta"></span>
-          <span class="pre"></span>
-          <span class="bot"><span class="open"><span>Abrir recurso</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-        </span>
-      </a>
-
-      <a class="res reveal" style="order:18"
-         data-id="anuncios3" data-nivel="Intermedio" data-tiempo="20 min" data-formato="PDF" data-added=""
-         href="https://drive.google.com/file/d/1UDFyucbYudxQ37G_-wOLRntNyoFTCrlH/view?usp=sharing" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4h13A2.5 2.5 0 0 1 21 6.5v8a2.5 2.5 0 0 1-2.5 2.5H8l-5 4V6.5Z"/><path d="M8 10h8M8 13.5h5"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
-        <span class="ct">
-          <span class="hd"><span class="stepn"></span><span class="t">3 Skills para crear tus anuncios</span></span>
-          <span class="s">Del brief al anuncio publicado, sin pasar por la agencia.</span>
-          <span class="meta"></span>
-          <span class="pre"></span>
-          <span class="bot"><span class="open"><span>Abrir recurso</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-        </span>
-      </a>
-
-      <a class="res reveal" style="order:19"
-         data-id="captacion" data-nivel="Intermedio" data-tiempo="30 min" data-formato="Carpeta" data-added="2026-08-24"
-         href="https://drive.google.com/drive/folders/1kK9WdKoy-qopkOilo0W_UXcc2SsnK-bt?usp=sharing" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.4"/><circle cx="12" cy="12" r="3.2"/><path d="M12 1.8v3.2M12 19v3.2M1.8 12H5M19 12h3.2"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
-        <span class="ct">
-          <span class="hd"><span class="stepn"></span><span class="t">5 skills: competencia, correos y contenido</span></span>
-          <span class="s">Espía la estructura de los anuncios de tu competencia, detecta sus puntos ciegos y arma lead magnets, secuencias de correo y correo en frío.</span>
-          <span class="meta"></span>
-          <span class="pre"></span>
-          <span class="bot"><span class="open"><span>Abrir recurso</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-        </span>
-      </a>
-
-      <a class="res reveal" style="order:20"
-         data-id="smallbiz" data-nivel="Intermedio" data-tiempo="20 min" data-formato="PDF" data-added="2026-09-05"
-         href="https://drive.google.com/file/d/1vLZJGa13biC_LJO2Vu17eP7-rXtwQpS4/view?usp=drive_link" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.6 5 4.4h14l1.6 4.2"/><path d="M3.4 8.6h17.2v10.4a1.6 1.6 0 0 1-1.6 1.6H5a1.6 1.6 0 0 1-1.6-1.6V8.6Z"/><path d="M9.4 12.6h5.2"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
-        <span class="ct">
-          <span class="hd"><span class="stepn"></span><span class="t">Cobra desde $300 USD por montar sistemas de IA</span></span>
-          <span class="s">Claude for Small Business: 15 flujos listos de Anthropic que se activan como plugin y se conectan a QuickBooks, PayPal o Slack. Cobras el montaje y el mantenimiento, no el software.</span>
-          <span class="meta"></span>
-          <span class="pre"></span>
-          <span class="bot"><span class="open"><span>Abrir recurso</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-        </span>
-      </a>
-
-      <a class="res reveal" style="order:21"
-         data-id="googleia" data-nivel="Básico" data-tiempo="Referencia" data-formato="PDF" data-added="2026-08-30"
-         href="https://drive.google.com/file/d/1pFQLwSxWrIPz5Uk2CWbvMvlpudH2Tr1S/view?usp=drive_link" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.4" height="7.4" rx="1.6"/><rect x="13.6" y="3" width="7.4" height="7.4" rx="1.6"/><rect x="3" y="13.6" width="7.4" height="7.4" rx="1.6"/><path d="M17.3 13.6v7.4M13.6 17.3h7.4"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
-        <span class="ct">
-          <span class="hd"><span class="stepn"></span><span class="t">15 herramientas de IA de Google, GRATIS</span></span>
-          <span class="s">Pomelli, Stitch, Opal, Antigravity, NotebookLM y diez más, con el link de cada una y para qué sirve. Ojo: casi todas tienen cupo diario o lista de espera.</span>
-          <span class="meta"></span>
-          <span class="pre"></span>
-          <span class="bot"><span class="open"><span>Abrir recurso</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-        </span>
-      </a>
-
-      <a class="res reveal" style="order:22"
-         data-id="promptsimg" data-nivel="Básico" data-tiempo="Referencia" data-formato="Biblioteca" data-added="2026-08-22"
-         href="https://youmind.com/es-ES/nano-banana-pro-prompts/" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2.4"/><circle cx="8.6" cy="9.6" r="1.7"/><path d="m4 17.5 4.6-4.6 3 3L15 12l5 5"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
-        <span class="ct">
-          <span class="hd"><span class="stepn"></span><span class="t">10.000+ prompts para generar imágenes</span></span>
-          <span class="s">Biblioteca gratis de prompts para Nano Banana Pro, el generador de Google. Buscas por estilo, copias y generas.</span>
-          <span class="meta"></span>
-          <span class="pre"></span>
-          <span class="bot"><span class="open"><span>Abrir recurso</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-        </span>
-      </a>
-
-      <a class="res reveal" style="order:23"
-         data-id="carruseles" data-nivel="Básico" data-tiempo="20 min" data-formato="PDF" data-added="2026-09-06"
-         href="https://drive.google.com/file/d/1TCsa9pnBSSWusQTwQ2lmmDaW9QbO7sBs/view?usp=sharing" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7.4" y="4" width="9.2" height="16" rx="2"/><path d="M4 7.4v9.2M20 7.4v9.2"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
-        <span class="ct">
-          <span class="hd"><span class="stepn"></span><span class="t">Haz carruseles con tu marca sin saber diseñar</span></span>
-          <span class="s">Un prompt maestro que pegas una vez en un proyecto de Claude. Después escribes el tema y sale el carrusel completo, con tu color y tu tipografía, listo para exportar.</span>
-          <span class="meta"></span>
-          <span class="pre"></span>
-          <span class="bot"><span class="open"><span>Abrir recurso</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-        </span>
-      </a>
-
-      <a class="res reveal" style="order:24"
-         data-id="videoia" data-nivel="Básico" data-tiempo="15 min" data-formato="Plataforma" data-added="2026-08-23"
-         href="https://agent.opus.pro/" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.6" y="6" width="12.8" height="12" rx="2.4"/><path d="m15.4 10.6 5.4-3.1v9l-5.4-3.1z"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
-        <span class="ct">
-          <span class="hd"><span class="stepn"></span><span class="t">Convierte tus ideas en video con IA</span></span>
-          <span class="s">Agent Opus, de OpusClip. Le das un texto, un link o un audio y te arma el video. Tiene plan gratis con marca de agua.</span>
-          <span class="meta"></span>
-          <span class="pre"></span>
-          <span class="bot"><span class="open"><span>Abrir recurso</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-        </span>
-      </a>
-
-      <a class="res reveal" style="order:25"
-         data-id="director" data-nivel="Intermedio" data-tiempo="20 min" data-formato="PDF" data-added="2026-08-31"
-         href="https://drive.google.com/file/d/15m9m3LWD_lv3LiYCqihzvfA6uCdCd2uR/view?usp=drive_link" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.4h18v10a1.8 1.8 0 0 1-1.8 1.8H4.8A1.8 1.8 0 0 1 3 19.4v-10Z"/><path d="m3.6 9.2 1.5-4.4 17 2.3-.7 2.3"/><path d="m8.6 5.5 2.6 3.6M13.4 6.2 16 9.4"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
-        <span class="ct">
-          <span class="hd"><span class="stepn"></span><span class="t">Crea videos cinematográficos hasta de 5 minutos con IA</span></span>
-          <span class="s">OpenArt Director. Le describes la pieza como a un director y arma el arco completo, con personajes que se sostienen y sin que unas clips. Empieza gratis; los planes pagos van desde 13 USD al mes.</span>
-          <span class="meta"></span>
-          <span class="pre"></span>
-          <span class="bot"><span class="open"><span>Abrir recurso</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-        </span>
-      </a>
-
-      <a class="res reveal" style="order:26"
-         data-id="hyperframes" data-nivel="Intermedio" data-tiempo="20 min" data-formato="PDF" data-added="2026-08-27"
-         href="https://drive.google.com/file/d/1PnAbv18XyVLQX6WtMR8Fp6-ZjLza5qHC/view?usp=sharing" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.6" y="5" width="18.8" height="14" rx="2.4"/><path d="M2.6 9.4h18.8M2.6 14.6h18.8M7.4 5v14M16.6 5v14"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
-        <span class="ct">
-          <span class="hd"><span class="stepn"></span><span class="t">Edita videos con Claude</span></span>
-          <span class="s">HyperFrames, de HeyGen, instalado como skills en Claude Code. Le pides el video en español y él lo arma cuadro por cuadro: subtítulos, animaciones, pantalla dividida. Necesitas Claude Code y Node.</span>
-          <span class="meta"></span>
-          <span class="pre"></span>
-          <span class="bot"><span class="open"><span>Abrir recurso</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-        </span>
-      </a>
-
-      <a class="res reveal" style="order:27"
-         data-id="avatar" data-nivel="Básico" data-tiempo="15 min" data-formato="PDF" data-added="2026-09-04"
-         href="https://drive.google.com/file/d/1nkT-xMJ0P43jfCwQXxVt6aFvGOZsPbtv/view?usp=drive_link" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.4" r="4"/><path d="M4.6 20.4a7.6 7.6 0 0 1 14.8 0"/><path d="M20.6 6.4v4M22.8 5.2v6.4"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
-        <span class="ct">
-          <span class="hd"><span class="stepn"></span><span class="t">Convierte una foto en un avatar que habla</span></span>
-          <span class="s">LongCat, de Meituan, con licencia MIT. Le subes una foto y un audio y sale hablando. Se prueba en el navegador sin instalar nada, y aguanta varias personas en la misma escena.</span>
-          <span class="meta"></span>
-          <span class="pre"></span>
-          <span class="bot"><span class="open"><span>Abrir recurso</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-        </span>
-      </a>
-
-      <a class="res reveal" style="order:28"
-         data-id="paginaventas" data-nivel="Intermedio" data-tiempo="Referencia" data-formato="GitHub" data-added="2026-08-26"
-         href="https://github.com/anthropics/claude-code/blob/main/plugins/frontend-design/skills/frontend-design/SKILL.md" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2.4"/><path d="M3 8.6h18"/><path d="M6.4 6.3h.01M9 6.3h.01"/><path d="M7 12h6M7 15.4h9"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
-        <span class="ct">
-          <span class="hd"><span class="stepn"></span><span class="t">Arma tu página de ventas en menos de una hora sin experiencia</span></span>
-          <span class="s">La skill oficial de diseño de Anthropic. Le das los dolores de tu cliente, tu solución y tus diferenciales, y la página deja de verse genérica.</span>
-          <span class="meta"></span>
-          <span class="pre"></span>
-          <span class="bot"><span class="open"><span>Abrir recurso</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-        </span>
-      </a>
-
-      <a class="res reveal" style="order:29"
-         data-id="paidmedia" data-nivel="Avanzado" data-tiempo="15 min" data-formato="GitHub" data-added="" data-prereq="mcp"
-         href="https://github.com/adkit/ads-skills" target="_blank" rel="noopener">
+      <a class="res reveal" style="order:30"
+         data-id="paidmedia" data-nivel="Avanzado" data-tiempo="15 min" data-formato="Página" data-added="" data-prereq="mcp"
+         href="/recursos/skill-de-paid-media/">
         <span class="ic"><svg viewBox="0 0 24 24" fill="#e8c87d"><path d="M12 1.8a10.2 10.2 0 0 0-3.2 19.9c.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .8.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.8-.1-.2-.4-1.2.1-2.6 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.6.6.8 1 1.7 1 2.8 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.2 10.2 0 0 0 12 1.8Z"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
         <span class="ct">
           <span class="hd"><span class="stepn"></span><span class="t">Skill de Paid Media para Claude</span></span>
           <span class="s">El repositorio abierto: paid media dentro de Claude, mantenido en GitHub.</span>
           <span class="meta"></span>
           <span class="pre"></span>
-          <span class="bot"><span class="open"><span>Abrir recurso</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          <span class="bot"><span class="open"><span>Ver en la página</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </span>
       </a>
 
-      <a class="res reveal" style="order:30"
-         data-id="scraper" data-nivel="Avanzado" data-tiempo="Referencia" data-formato="GitHub" data-added="2026-08-25"
-         href="https://github.com/ScrapeGraphAI/Scrapegraph-ai" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.8" rx="7.6" ry="2.9"/><path d="M4.4 5.8v6c0 1.6 3.4 2.9 7.6 2.9s7.6-1.3 7.6-2.9v-6"/><path d="M4.4 11.8v6c0 1.6 3.4 2.9 7.6 2.9s7.6-1.3 7.6-2.9v-6"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
+      <!-- ---------- Grupo 05 · Terreno técnico ---------- -->
+      <div class="g-head" data-group="5" style="order:31">
+        <span class="gn">05</span>
+        <h2>Terreno técnico</h2>
+        <span class="gline"></span>
+      </div>
+
+      <a class="res reveal" style="order:32"
+         data-id="docsmeta" data-nivel="Avanzado" data-tiempo="Referencia" data-formato="Página" data-added=""
+         href="/recursos/documentacion-de-meta/">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H18a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5.5A1.5 1.5 0 0 1 4 19.5v-15Z"/><path d="M8 7.5h8M8 11h8M8 14.5h5"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
         <span class="ct">
-          <span class="hd"><span class="stepn"></span><span class="t">Leads GRATIS para tu negocio</span></span>
-          <span class="s">ScrapeGraphAI, el repositorio que Juan usa en el video. Le pides los datos en español y hace el scraping en la web por ti. Requiere Python y un LLM: sale $0 si lo corres local con Ollama.</span>
+          <span class="hd"><span class="stepn"></span><span class="t">Documentación oficial de Meta</span></span>
+          <span class="s">Rate limiting de la Marketing API. La fuente directa, sin intermediarios.</span>
           <span class="meta"></span>
           <span class="pre"></span>
-          <span class="bot"><span class="open"><span>Abrir recurso</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          <span class="bot"><span class="open"><span>Ver en la página</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </span>
       </a>
 
+      <a class="res reveal" style="order:33"
+         data-id="smallbiz" data-nivel="Intermedio" data-tiempo="20 min" data-formato="Página" data-added="2026-09-05"
+         href="/recursos/sistemas-de-ia-por-300-usd/">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.6 5 4.4h14l1.6 4.2"/><path d="M3.4 8.6h17.2v10.4a1.6 1.6 0 0 1-1.6 1.6H5a1.6 1.6 0 0 1-1.6-1.6V8.6Z"/><path d="M9.4 12.6h5.2"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
+        <span class="ct">
+          <span class="hd"><span class="stepn"></span><span class="t">Cobra desde $300 USD por montar sistemas de IA</span></span>
+          <span class="s">Claude for Small Business: 15 flujos listos de Anthropic que se activan como plugin y se conectan a QuickBooks, PayPal o Slack. Cobras el montaje y el mantenimiento, no el software.</span>
+          <span class="meta"></span>
+          <span class="pre"></span>
+          <span class="bot"><span class="open"><span>Ver en la página</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+        </span>
+      </a>
 
-      <a class="res reveal" style="order:31"
-         data-id="gstack" data-nivel="Avanzado" data-tiempo="20 min" data-formato="PDF" data-added="2026-09-03"
-         href="https://drive.google.com/file/d/1RmWRgSLwsA8NkVP71_T0EDcqDeFfYtR0/view?usp=drive_link" target="_blank" rel="noopener">
+      <a class="res reveal" style="order:34"
+         data-id="gstack" data-nivel="Avanzado" data-tiempo="20 min" data-formato="Página" data-added="2026-09-03"
+         href="/recursos/setup-de-claude-code-de-yc/">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c87d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2.6 8.4 4.2-8.4 4.2L3.6 6.8 12 2.6Z"/><path d="m3.6 12 8.4 4.2 8.4-4.2"/><path d="m3.6 17.2 8.4 4.2 8.4-4.2"/></svg><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span></span>
         <span class="ct">
           <span class="hd"><span class="stepn"></span><span class="t">CEO, diseño, QA y release: el equipo de YC en Claude</span></span>
           <span class="s">Los 23 comandos que Garry Tan, CEO de Y Combinator, usa a diario, liberados con licencia MIT. Necesitas Claude Code, Git y Bun; se instala con un solo comando.</span>
           <span class="meta"></span>
           <span class="pre"></span>
-          <span class="bot"><span class="open"><span>Abrir recurso</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          <span class="bot"><span class="open"><span>Ver en la página</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </span>
       </a>
 
-      <!-- ---------- El resto (solo en modo ruta) ---------- -->
       <div class="g-head rest" id="rest-head" style="order:50" hidden>
         <span class="gn">+</span>
         <h2>El resto de los recursos</h2>
@@ -881,6 +914,8 @@
 
   </main>
 
+<script src="/recursos/medicion.js" defer></script>
+
 <script>
 (function(){
   'use strict';
@@ -890,16 +925,27 @@
      Para agregar un recurso: crea la tarjeta arriba con su data-id
      y mete el id en las rutas donde corresponda.
      ============================================================ */
+  /* Las claves (cero/conectar/agencia) NO se renombran aunque las etiquetas
+     cambien: viven en el localStorage de quien ya visito la pagina y en los
+     links ?ruta= que ya se compartieron. Renombrarlas rompe ese estado. */
   var PATHS = {
-    cero:     { label: 'Empiezo de cero',
-                nota: 'En este orden: primero dominas la herramienta, después le das tu criterio.',
-                ids: ['dominar','academy','skills5','clonar','mundialistas'] },
-    conectar: { label: 'Conectar Claude a mis cuentas',
-                nota: 'Arranca por el MCP de Meta: sin esa conexión los demás no corren.',
-                ids: ['mcp','tutorial','googleads','masterprompt','paidmedia','docsmeta'] },
-    agencia:  { label: 'Reemplazar mi agencia',
-                nota: 'Conecta primero, después instala el arsenal. En ese orden, no al revés.',
-                ids: ['mcp','skills22','anuncios3','paidmedia','masterprompt','clonar'] }
+    cero:     { label: 'Quiero organizar mi negocio con IA',
+                nota: 'En este orden: primero la herramienta, después tu criterio. Sin saltarse pasos.',
+                ids: ['dominar','academy','instalaskills','skills5','clonar'] },
+    pauta:    { label: 'Quiero invertir mejor mi dinero en anuncios',
+                nota: 'Primero cómo se arma una campaña, después el anuncio. La conexión va al final, para ver lo que ya está corriendo.',
+                ids: ['estructura','anuncios3','carruseles','mcpoficial','clonar'] },
+    /* El titulo dice "conectar y ver", no "entender", porque hoy la ruta no puede
+       cumplir "entender": lo unico que vuelve legibles los datos es el Master Prompt
+       y esta fuera porque su link apunta a un manual de diseño, no a un informe de
+       Meta Ads. Cuando exista el archivo bueno: este label pasa a "Quiero entender
+       los números de mis anuncios" y masterprompt va de primero en los ids. */
+    conectar: { label: 'Quiero conectar mis cuentas y ver mis números',
+                nota: 'Arranca por el conector oficial; el método a mano queda de respaldo si ese no te sirve.',
+                ids: ['mcpoficial','mcp','tutorial','googleads','paidmedia','docsmeta'] },
+    agencia:  { label: 'Quiero conseguir más clientes',
+                nota: 'Primero averiguas a quién le hablas y consigues los contactos; después armas los anuncios y la página donde caen.',
+                ids: ['captacion','scraper','estructura','anuncios3','carruseles','paginaventas'] }
   };
 
   var DIAS_NUEVO = 21;           // cuántos días dura la etiqueta NUEVO
@@ -908,6 +954,11 @@
   var cards   = Array.prototype.slice.call(document.querySelectorAll('.res'));
   var heads   = Array.prototype.slice.call(document.querySelectorAll('.g-head'));
   var opts    = Array.prototype.slice.call(document.querySelectorAll('.opt'));
+
+  /* El "los N siguen ahí" se escribe solo. Estaba a mano y ya se desfasó una
+     vez al entrar un recurso nuevo: con esto deja de ser algo que mantener. */
+  var chN = document.getElementById('ch-n');
+  if (chN) chN.textContent = cards.length;
   var byId    = {};
   cards.forEach(function(c){ byId[c.dataset.id] = c; });
 

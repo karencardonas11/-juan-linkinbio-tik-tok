@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CEO, diseño, QA y release: el equipo de YC en Claude · Juan ADS</title>
+<meta name="description" content="El setup de Claude Code que Garry Tan, CEO de Y Combinator, usa a diario: 23 especialistas y 8 herramientas, todos comandos de barra. Open source, licencia MIT.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23080706'/%3E%3Cpath d='M16 4 27 16 16 28 5 16Z' fill='%23e8c87d'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#080706">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://bio.saleads.co/recursos/setup-de-claude-code-de-yc/">
+<meta property="og:title" content="CEO, diseño, QA y release: el equipo de YC en Claude · Juan ADS">
+<meta property="og:description" content="Lo que necesitas, el comando de instalación y cómo comprobar que quedó.">
+<meta property="og:image" content="https://bio.saleads.co/og.jpg">
+
+<!-- Clarity. Sin esta etiqueta el recorrido se corta justo donde la persona
+     empieza a leer. No escribir la etiqueta de cierre literal en comentarios. -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ybp8htwt62");
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/recursos/recurso.css">
+</head>
+<body data-recurso="setup-de-claude-code-de-yc">
+  <div class="bg"><div class="glow g1"></div><div class="glow g2"></div></div>
+
+  <main class="wrap">
+
+    <div class="top">
+      <a class="back" href="/recursos/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        Recursos
+      </a>
+      <span class="brand">Juan ADS · Recurso</span>
+    </div>
+
+    <div class="eyebrow">Comentaste YC</div>
+    <h1>El setup de Claude Code de <em>Y Combinator</em></h1>
+    <p class="lead">Garry Tan, presidente y CEO de Y Combinator, liberó el sistema con el que
+      trabaja todos los días: <b>23 especialistas y 8 herramientas de poder</b>, todos comandos
+      de barra. Open source, licencia MIT, gratis.</p>
+
+    <div class="chips"><span class="chip">Avanzado</span><span class="chip">15 min</span>
+      <span class="chip">Licencia MIT</span><span class="chip">Necesitas Claude Code, Git y Bun</span></div>
+
+    <div class="nota" style="margin-top:26px"><b>Esto es terreno técnico.</b> Si no trabajas con
+      código, este recurso no es para ti y no pasa nada: hay veintinueve más en la página.</div>
+
+    <h2>Dónde vive</h2>
+    <div class="h2s">Y qué tan <em>vivo</em> está</div>
+    <table class="tabla">
+      <thead><tr><th>Dato</th><th>Al 27 de agosto de 2026</th></tr></thead>
+      <tbody>
+        <tr><td>Repositorio</td><td>github.com/garrytan/gstack</td></tr>
+        <tr><td>Estrellas</td><td>130 mil</td></tr>
+        <tr><td>Forks</td><td>19.500</td></tr>
+        <tr><td>Licencia</td><td>MIT, con commits del mismo día</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Lo que necesitas</h2>
+    <div class="h2s">Cuatro cosas <em>antes</em> de correrlo</div>
+    <ol class="lista">
+      <li><span class="k">01</span><span><b>Claude Code</b> instalado y andando.</span></li>
+      <li><span class="k">02</span><span><b>Git</b> y una terminal.</span></li>
+      <li><span class="k">03</span><span><b>Bun 1.0 o superior.</b> Lo que más falla: sin Bun,
+        el <code>./setup</code> se cae. En Windows además, Node.</span></li>
+      <li><span class="k">04</span><span>Se instala en <code>~/.claude/skills/gstack</code>.
+        <b>No toca tus proyectos.</b></span></li>
+    </ol>
+
+    <h2>La instalación</h2>
+    <div class="h2s">Un <em>solo</em> comando</div>
+
+    <div class="paso">
+      <div class="pn">Paso 01</div>
+      <div class="pt">Clónalo y corre el setup</div>
+      <div class="copia">
+        <div class="copia-hd">
+          <span class="copia-lb">El comando · cópialo tal cual</span>
+          <button class="btn" type="button" data-copia="g1">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+            <span>Copiar</span>
+          </button>
+        </div>
+        <pre><code id="g1">git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git ~/.claude/skills/gstack && cd ~/.claude/skills/gstack && ./setup</code></pre>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="pn">Paso 02</div>
+      <div class="pt">Comprueba que quedó</div>
+      <p>Abre Claude Code y escribe <b>/</b>. Si aparecen <b>/ship</b>, <b>/review</b> o
+        <b>/qa</b>, está listo.</p>
+    </div>
+
+    <div class="paso">
+      <div class="pn">Paso 03</div>
+      <div class="pt">Si trabajas con equipo, modo equipo</div>
+      <p>Desde tu repositorio. Deja gstack para todos y <b>se actualiza solo</b>, sin copiar
+        archivos al proyecto.</p>
+    </div>
+
+    <div class="cta">
+      <div class="ct">¿Quieres elevar tu negocio al <em>siguiente</em> nivel?</div>
+      <p>Habla con Sofía, de nuestro equipo, y te atiende.</p>
+      <!-- ⚠️ PENDIENTE · código de tracking propio de este recurso. Hoy usa
+           _0RM, que es "Recursos Gratis Post Juan (PSJU)": los leads entran
+           marcados como si vinieran de un post. Karen lo aprobó así por ahora. -->
+      <a id="cta" href="https://app.saleads.co/_0RM" target="_blank" rel="noopener">
+        Hablar con Sofía
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <a class="volver" href="/recursos/">← Ver todos los recursos</a>
+    <p class="foot">Juan ADS · Piensa mejor, decide mejor</p>
+
+  </main>
+<script src="/recursos/medicion.js" defer></script>
+<script src="/recursos/recurso.js" defer></script>
+</body>
+</html>

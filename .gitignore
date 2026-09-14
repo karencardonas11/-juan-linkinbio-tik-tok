@@ -5,3 +5,6 @@
 # Se regeneran desde los .otf con: pyftsubset --flavor=woff2
 # Archivo sí sube: es SIL Open Font y permite redistribución.
 saleads/fuentes/genova-*.woff2
+
+# jsdom se instala solo para correr las pruebas. No va al repo.
+node_modules/
