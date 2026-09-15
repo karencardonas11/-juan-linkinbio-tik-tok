@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tu estudio audiovisual completo en Claude · Juan ADS</title>
+<meta name="description" content="Tres skills encadenadas dentro de Claude Code: una saca las fotos de producto, otra arma el anuncio y la tercera lo anima. Con los comandos y los tres pedidos listos para copiar.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23080706'/%3E%3Cpath d='M16 4 27 16 16 28 5 16Z' fill='%23e8c87d'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#080706">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://bio.saleads.co/recursos/estudio-audiovisual/">
+<meta property="og:title" content="Tu estudio audiovisual completo en Claude · Juan ADS">
+<meta property="og:description" content="Tres skills encadenadas: fotos de producto, anuncio y reel, sin salir de Claude.">
+<meta property="og:image" content="https://bio.saleads.co/og.jpg">
+
+<!-- Clarity. Sin esta etiqueta el recorrido se corta justo donde la persona
+     empieza a leer. No escribir la etiqueta de cierre literal en comentarios. -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ybp8htwt62");
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/recursos/recurso.css">
+</head>
+<body data-recurso="estudio-audiovisual">
+  <div class="bg"><div class="glow g1"></div><div class="glow g2"></div></div>
+
+  <main class="wrap">
+
+    <div class="top">
+      <a class="back" href="/recursos/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        Recursos
+      </a>
+      <span class="brand">Juan ADS · Recurso</span>
+    </div>
+
+    <div class="eyebrow">Comentaste Claude</div>
+    <h1>Tu estudio audiovisual <em>completo</em> en Claude</h1>
+    <p class="lead">Tres skills encadenadas: una saca las fotos de producto, otra arma el
+      anuncio y la tercera lo anima. <b>Todo vive dentro de Claude Code</b> — no estás brincando
+      entre cinco herramientas.</p>
+
+    <div class="chips"><span class="chip">Intermedio</span><span class="chip">30 min</span>
+      <span class="chip">Tres skills</span><span class="chip">Necesitas Node</span></div>
+
+    <div class="nota" style="margin-top:26px"><b>Requiere Node.js.</b> Si <code>npx</code> no
+      existe en tu terminal, instala Node antes de nada: todo lo demás depende de ese comando.</div>
+
+    <h2>El montaje</h2>
+    <div class="h2s">Tres pasos, una <em>sola</em> vez</div>
+
+    <div class="paso">
+      <div class="pn">Paso 01</div>
+      <div class="pt">Conecta el motor</div>
+      <p>Es lo que le da a Claude los modelos de imagen, video y audio. Abres la terminal y
+        pegas una línea:</p>
+      <div class="copia">
+        <div class="copia-hd">
+          <span class="copia-lb">El comando del MCP</span>
+          <button class="btn" type="button" data-copia="m1">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+            <span>Copiar</span>
+          </button>
+        </div>
+        <pre><code id="m1">claude mcp add --transport http picsart https://api.picsart.com/gen-ai/mcp</code></pre>
+      </div>
+      <p>Responde <b>Added HTTP MCP server picsart</b> y ya está. El enlace siempre vigente
+        vive en <b>picsart.com/gen-ai-mcp</b>.</p>
+    </div>
+
+    <div class="paso">
+      <div class="pn">Paso 02</div>
+      <div class="pt">Instala las skills</div>
+      <p>Un comando y entran todas — <code>generate</code>, <code>batch</code>,
+        <code>brand-gate</code>:</p>
+      <div class="copia">
+        <div class="copia-hd">
+          <span class="copia-lb">Con npx</span>
+          <button class="btn" type="button" data-copia="m2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+            <span>Copiar</span>
+          </button>
+        </div>
+        <pre><code id="m2">npx skills add PicsArt/gen-ai-skills</code></pre>
+      </div>
+      <p>O como plugin de Claude Code, que es lo más limpio:</p>
+      <div class="copia">
+        <div class="copia-hd">
+          <span class="copia-lb">Como plugin</span>
+          <button class="btn" type="button" data-copia="m3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+            <span>Copiar</span>
+          </button>
+        </div>
+        <pre><code id="m3">claude plugin marketplace add PicsArt/gen-ai-skills</code></pre>
+      </div>
+      <div class="nota">La primera vez se abre una pestaña y le das <b>Allow</b>.</div>
+    </div>
+
+    <div class="paso">
+      <div class="pn">Paso 03 · el que te ahorra todo lo demás</div>
+      <div class="pt">Dale tu marca, una sola vez</div>
+      <p>Antes del primer anuncio, pega esto en el proyecto:</p>
+      <div class="copia">
+        <div class="copia-hd">
+          <span class="copia-lb">Tu marca · cambia lo de los corchetes</span>
+          <button class="btn" type="button" data-copia="m4">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+            <span>Copiar</span>
+          </button>
+        </div>
+        <pre><code id="m4">Esta es mi marca.
+Colores: [fondo] y [acento], en hexadecimal.
+Tipografía: [tu tipografía]. Nunca serif.
+Tono: [directo / cercano / técnico].
+Guárdalo y aplícalo a todo lo que generes.</code></pre>
+      </div>
+      <p>De ahí en adelante <b>ya no vuelves a explicar tu diseño.</b></p>
+    </div>
+
+    <h2>Las tres skills</h2>
+    <div class="h2s">Cada una con su <em>pedido</em></div>
+
+    <div class="paso">
+      <div class="pn">01 · /product-shot</div>
+      <div class="pt">La que genera las fotos de producto</div>
+      <p>Le das la foto plana del producto —la del celular sirve— y saca los visuales que
+        cuadran con tu marca: escenas de uso, variantes de color, fondos.</p>
+      <div class="copia">
+        <div class="copia-hd">
+          <span class="copia-lb">/product-shot</span>
+          <button class="btn" type="button" data-copia="s1">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+            <span>Copiar</span>
+          </button>
+        </div>
+        <pre><code id="s1">/product-shot
+Toma esta foto de mi producto y sácame seis fotos de catálogo: tres en escena de uso real y tres sobre fondo limpio, con la paleta de mi marca.</code></pre>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="pn">02 · /ad-creative</div>
+      <div class="pt">La que arma el anuncio</div>
+      <p>Ya conoce tu marca, tu tipografía y tu branding. <b>No le explicas el estilo: le
+        explicas a quién le hablas.</b></p>
+      <div class="copia">
+        <div class="copia-hd">
+          <span class="copia-lb">/ad-creative</span>
+          <button class="btn" type="button" data-copia="s2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+            <span>Copiar</span>
+          </button>
+        </div>
+        <pre><code id="s2">/ad-creative
+Arma la tanda de anuncios estáticos para esta persona: mujer de 30 a 45 que compra por comodidad. Un ángulo por pieza, el mismo producto, cinco variantes de titular.</code></pre>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="pn">03 · /animate</div>
+      <div class="pt">La que anima</div>
+      <p>Lee tus escenas y las pone en movimiento: el reel vertical entero, con textos,
+        subtítulos y transiciones.</p>
+      <div class="copia">
+        <div class="copia-hd">
+          <span class="copia-lb">/animate</span>
+          <button class="btn" type="button" data-copia="s3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+            <span>Copiar</span>
+          </button>
+        </div>
+        <pre><code id="s3">/animate
+Con esas piezas ármame el reel vertical de 15 segundos: gancho, producto en uso y cierre con la oferta. Subtítulos incluidos.</code></pre>
+      </div>
+    </div>
+
+    <h2>El encadenado</h2>
+    <div class="h2s">Lo que hace la <em>diferencia</em></div>
+    <table class="tabla">
+      <thead><tr><th>Paso</th><th>Lo que entra y lo que sale</th></tr></thead>
+      <tbody>
+        <tr><td>Fotos</td><td>Entra la foto plana → salen seis visuales de marca</td></tr>
+        <tr><td>Anuncio</td><td>Entran los visuales → salen las piezas con titular</td></tr>
+        <tr><td>Animación</td><td>Entran las piezas → sale el reel montado</td></tr>
+      </tbody>
+    </table>
+    <div class="nota" style="margin-top:18px">Las tres corren <b>en la misma conversación</b>:
+      por eso no escribes ni una línea de prompt entre paso y paso.</div>
+
+    <h2>Antes de la primera tanda</h2>
+    <div class="h2s">Cuatro <em>revisiones</em></div>
+    <ol class="lista">
+      <li><span class="k">01</span><span><b>La marca cargada una vez.</b> Colores, tipografía y
+        tono en el proyecto, no en cada prompt.</span></li>
+      <li><span class="k">02</span><span><b>Una persona por tanda.</b> Si le hablas a todos, no
+        le hablas a nadie.</span></li>
+      <li><span class="k">03</span><span><b>La foto de origen decente.</b> Bien iluminada y
+        enfocada: la IA mejora el fondo, no arregla un desenfoque.</span></li>
+      <li><span class="k">04</span><span><b>Míralo sin sonido</b> antes de subirlo.</span></li>
+    </ol>
+
+    <h2>Cuando no te gusta</h2>
+    <div class="h2s">La <em>segunda</em> pasada es la que sirve</div>
+    <p class="lead" style="font-size:15.5px;margin-top:4px">No arranques de cero. Esto es lo que
+      le dices según lo que veas:</p>
+    <table class="tabla">
+      <thead><tr><th>Lo que ves</th><th>Lo que le dices</th></tr></thead>
+      <tbody>
+        <tr><td>El titular no se lee en el teléfono</td><td>Titular de máximo cinco palabras y más grande.</td></tr>
+        <tr><td>El producto se pierde</td><td>Producto al 60 % del alto, centrado.</td></tr>
+        <tr><td>Parece plantilla genérica</td><td>Quita los degradados y usa solo mis dos colores.</td></tr>
+        <tr><td>Las cinco variantes son iguales</td><td>Cada variante con otro ángulo, no otro color.</td></tr>
+        <tr><td>El reel arranca lento</td><td>El gancho en el primer segundo y sin intro.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Los errores</h2>
+    <div class="h2s">Los cuatro que hacen que se <em>vea</em> a IA</div>
+    <ol class="lista">
+      <li><span class="k">01</span><span><b>Dejarle inventar el texto del producto.</b> Los
+        precios, los plazos y las garantías se los das tú, siempre.</span></li>
+      <li><span class="k">02</span><span><b>Aceptar la primera versión.</b> La segunda pasada
+        —«el titular más corto, el producto más grande»— es la que sirve.</span></li>
+      <li><span class="k">03</span><span><b>Cinco variantes que dicen lo mismo.</b> Variante es
+        otro ángulo, no otro color de botón.</span></li>
+      <li><span class="k">04</span><span><b>Saltarse el paso de las fotos.</b> Si el anuncio
+        arranca con una foto mala, todo lo que viene después hereda esa foto.</span></li>
+    </ol>
+
+    <div class="nota" style="margin-top:22px"><b>Guarda lo que funciona.</b> Cuando una pieza
+      rinda, pídele que te guarde ese formato como plantilla. La segunda tanda te toma minutos
+      en vez de una tarde.</div>
+
+    <div class="cta">
+      <div class="ct">¿Quieres elevar tu negocio al <em>siguiente</em> nivel?</div>
+      <p>Habla con Sofía, de nuestro equipo, y te atiende.</p>
+      <!-- ⚠️ PENDIENTE · código de tracking propio de este recurso. Hoy usa
+           _0RM, que es "Recursos Gratis Post Juan (PSJU)": los leads entran
+           marcados como si vinieran de un post. Karen lo aprobó así por ahora. -->
+      <a id="cta" href="https://app.saleads.co/_0RM" target="_blank" rel="noopener">
+        Hablar con Sofía
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <a class="volver" href="/recursos/">← Ver todos los recursos</a>
+    <p class="foot">Juan ADS · Piensa mejor, decide mejor</p>
+
+  </main>
+<script src="/recursos/medicion.js" defer></script>
+<script src="/recursos/recurso.js" defer></script>
+</body>
+</html>
