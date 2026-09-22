@@ -44,19 +44,84 @@
     <div class="eyebrow">Recurso · Optimizar texto por persona</div>
     <h1>La configuración que <em>mata</em> tus resultados en anuncios de META</h1>
 
-    <!-- ══ La tripa de la portada del PDF: lo que escribiste, la casilla,
-            lo que se publica. Tres paneles con rótulo arriba y chip abajo. ══ -->
-    <div class="eyebrow" style="margin-top:30px;margin-bottom:0;font-size:9.5px;color:#8b7f74">
-      Lo que escribiste, la casilla, lo que se publica</div>
-    <div class="tripa">
-      <div class="tp"><div class="tl">Tu anuncio</div>
-        <div class="tv">Tu texto</div><span class="tc">El que probaste</span></div>
-      <div class="ta">→</div>
-      <div class="tp"><div class="tl">La casilla</div>
-        <div class="tv">Encendida</div><span class="tc">Advantage+</span></div>
-      <div class="ta">→</div>
-      <div class="tp"><div class="tl">Lo que se publica</div>
-        <div class="tv">Versiones distintas</div><span class="tc">Sin avisarte</span></div>
+    <!-- ══════════════════════════════════════════════════════════════════
+         DIAGRAMA DE LA PORTADA — réplica exacta del PDF. Karen lo pidió tal
+         cual, con su cian y su naranja. Los estilos viven en recurso.css bajo
+         .dg / .mq / .cs / .vs y no afectan al resto de la página.
+         ══════════════════════════════════════════════════════════════════ -->
+    <div class="dg">
+      <div class="dg-lb">Lo que escribiste, la casilla, lo que se publica</div>
+      <div class="dg-row">
+
+        <div class="dg-col">
+          <div class="dg-box">
+            <span class="dg-bl">Tu anuncio</span>
+            <div class="mq">
+              <div class="mq-hd">
+                <span class="mq-av"></span>
+                <span class="mq-n">Tu marca<span>Publicidad</span></span>
+              </div>
+              <div class="mq-g">Tu gancho probado</div>
+              <div class="mq-b"></div><div class="mq-b c"></div>
+              <div class="mq-img"><i></i></div>
+              <div class="mq-o">Tu oferta</div>
+              <div class="mq-cta">Comprar</div>
+            </div>
+            <span class="dg-arr">→</span>
+          </div>
+          <div class="dg-t">Tu texto</div>
+          <span class="dg-chip hueco">El que probaste</span>
+        </div>
+
+        <div class="dg-col">
+          <div class="dg-box on">
+            <span class="dg-bl">La casilla</span>
+            <div class="cs">
+              <div class="cs-top">
+                <span class="cs-sp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5c.5 4.2 2.8 6.5 7 7-4.2.5-6.5 2.8-7 7-.5-4.2-2.8-6.5-7-7 4.2-.5 6.5-2.8 7-7z"/></svg></span>
+                <span class="cs-t">Optimizar texto<br>por persona</span>
+              </div>
+              <div class="cs-sw"></div>
+              <div class="cs-l">Activada</div>
+            </div>
+            <span class="dg-arr">→</span>
+          </div>
+          <div class="dg-t">Encendida</div>
+          <span class="dg-chip naranja">Advantage+</span>
+        </div>
+
+        <div class="dg-col">
+          <div class="dg-box">
+            <span class="dg-bl">Lo que se publica</span>
+            <div class="vs">
+            <div class="vs-r">
+              <span class="vs-av a"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4"/><path d="M4 24c0-4.4 3.6-8 8-8s8 3.6 8 8z"/></svg></span>
+              <div class="vs-c">
+                <div class="vs-h a">Versión A</div>
+                <div class="vs-b"></div><div class="vs-b c"></div>
+              </div>
+            </div>
+            <div class="vs-r">
+              <span class="vs-av b"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4"/><path d="M4 24c0-4.4 3.6-8 8-8s8 3.6 8 8z"/></svg></span>
+              <div class="vs-c">
+                <div class="vs-h b">Versión B</div>
+                <div class="vs-b"></div><div class="vs-b c"></div>
+              </div>
+            </div>
+            <div class="vs-r">
+              <span class="vs-av c"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4"/><path d="M4 24c0-4.4 3.6-8 8-8s8 3.6 8 8z"/></svg></span>
+              <div class="vs-c">
+                <div class="vs-h c">Versión C</div>
+                <div class="vs-b"></div><div class="vs-b c"></div>
+              </div>
+            </div>
+            </div>
+          </div>
+          <div class="dg-t">Versiones distintas</div>
+          <span class="dg-chip rojo">Sin avisarte</span>
+        </div>
+
+      </div>
     </div>
 
     <p class="lead" style="margin-top:26px">Dentro de las <b>mejoras creativas de Advantage+</b>
@@ -68,18 +133,43 @@
       <span class="chip">Meta Ads</span><span class="chip">Advantage+</span>
       <span class="chip">15 min</span><span class="chip">Anuncio por anuncio</span></div>
 
-    <h2>Qué te toca</h2>
-    <div class="h2s">Lo que puede cambiar <em>sin</em> preguntarte</div>
-    <ol class="lista">
-      <li><span class="k">01</span><span><b>El gancho.</b> La primera línea, que es la que
-        decide si te ven o te pasan, la puede reescribir.</span></li>
-      <li><span class="k">02</span><span><b>La oferta.</b> Cambia cómo está dicho lo que vendes
-        — y a veces lo que se entiende que vendes.</span></li>
-      <li><span class="k">03</span><span><b>El lenguaje que ya probaste.</b> Ese copy que ganó
-        después de veinte pruebas lo reemplaza por algo generativo.</span></li>
-    </ol>
+    <h2>Lo que puede cambiar</h2>
+    <div class="h2s">Qué te toca <em>sin</em> preguntarte</div>
+    <div class="gsec salmon">
+      <div class="dosc">
+        <div class="dl">
+          <div class="marco" style="margin-top:0;display:flex;align-items:center;justify-content:center">
+            <span class="ml">Tu anuncio</span>
+            <div class="mq">
+              <div class="mq-hd">
+                <span class="mq-av"></span>
+                <span class="mq-n">Tu marca<span>Publicidad</span></span>
+              </div>
+              <div class="mq-g">Tu gancho probado</div>
+              <div class="mq-b"></div><div class="mq-b c"></div>
+              <div class="mq-img"><i></i></div>
+              <div class="mq-o">Tu oferta</div>
+              <div class="mq-cta">Comprar</div>
+            </div>
+          </div>
+        </div>
+        <div class="numlist">
+          <div><span class="nn">01</span><div>
+            <div class="nt2">El gancho</div>
+            <p>La primera línea, que es la que decide si te ven o te pasan, la puede reescribir.</p>
+          </div></div>
+          <div><span class="nn">02</span><div>
+            <div class="nt2">La oferta</div>
+            <p>Cambia cómo está dicho lo que vendes — y a veces lo que se entiende que vendes.</p>
+          </div></div>
+          <div><span class="nn">03</span><div>
+            <div class="nt2">El lenguaje que ya probaste</div>
+            <p>Ese copy que ganó después de veinte pruebas lo reemplaza por algo generativo.</p>
+          </div></div>
+        </div>
+      </div>
+    </div>
 
-    <!-- ══ 01 · DÓNDE SE VE — con el riel numerado y las réplicas de la interfaz ══ -->
     <h2>01 · Dónde se ve</h2>
     <div class="h2s">La ruta <em>literal</em></div>
 
@@ -107,12 +197,15 @@
         <div class="rt">Baja a <em>Contenido del anuncio</em></div>
         <p>Ahí ves si <b>Optimizar texto por persona</b> está activada. <b>Ojo: verla no es
           apagarla.</b> Desde esta sección no se desactivan todas.</p>
-        <div class="ui">
-          <div class="ui-t">Contenido del anuncio</div>
-          <div class="ui-l">Texto principal</div>
-          <div class="ui-barra"></div>
-          <div class="ui-fila">
-            <span class="chispa">✦</span> Optimizar texto por persona <span class="sw"></span>
+        <div class="marco">
+          <span class="ml">Contenido del anuncio</span>
+          <div class="ui">
+            <div class="ui-t">Contenido del anuncio</div>
+            <div class="ui-l">Texto principal</div>
+            <div class="ui-barra"></div>
+            <div class="ui-fila marcada">
+              <span class="chispa">✦</span> Optimizar texto por persona <span class="sw"></span>
+            </div>
           </div>
         </div>
       </div>
@@ -138,17 +231,26 @@
         <div class="rn">01</div>
         <div class="rt">En <em>Vista previa del anuncio</em>, dale a <em>Expandir</em></div>
         <p>Es el recuadro de la derecha, donde ves cómo queda el anuncio.</p>
+        <div class="marco">
+          <div class="ui">
+            <div class="ui-cab">
+              <span class="uct">Vista previa del anuncio</span>
+              <span class="ui-btn hueco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 15v5h-5"/><path d="M4 4l6 6M20 20l-6-6"/></svg> Expandir</span>
+            </div>
+            <div class="ui-mini">
+              <div class="um1"></div><div class="um2"><i></i></div><div class="um3"></div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="rp">
         <div class="rn">02</div>
         <div class="rt">Abre la <em>Vista previa avanzada</em></div>
-        <div class="flujo" style="margin-top:14px">
-          <div class="fp"><div class="fv">Vista previa<span class="fs">del anuncio</span></div></div>
-          <div class="fa">→</div>
-          <div class="fp"><div class="fv">Expandir</div></div>
-          <div class="fa">→</div>
-          <div class="fp"><div class="fv">Vista previa<span class="fs">avanzada</span></div></div>
+        <div class="migas">
+          <span class="mp">Vista previa del anuncio</span><span class="ma">→</span>
+          <span class="mp">Expandir</span><span class="ma">→</span>
+          <span class="mp">Vista previa avanzada</span>
         </div>
       </div>
 
@@ -156,16 +258,20 @@
         <div class="rn">03</div>
         <div class="rt">Pestaña <em>Contenido Advantage+</em></div>
         <p>Ahí sí aparece <b>la lista completa</b> de mejoras, cada una con su interruptor.</p>
-        <div class="ui">
-          <div class="ui-t">Vista previa avanzada</div>
-          <div class="ui-tabs" style="padding:10px 14px 4px">
-            <span>Vista previa</span><span class="aqui">Contenido Advantage+</span>
+        <div class="marco">
+          <span class="ml">Vista previa avanzada</span>
+          <div class="ui">
+            <div class="ui-t">Vista previa avanzada</div>
+            <div class="ui-nav">
+              <span>Vista previa</span><span class="aqui">Contenido Advantage+</span>
+            </div>
+            <div class="ui-fila marcada">Todas las optimizaciones <span class="sw off"></span></div>
+            <div class="ui-fila plano">Comentarios relevantes <span class="sw off"></span></div>
+            <div class="ui-fila plano">Mejoras en el texto <span class="sw off"></span></div>
+            <div class="ui-fila plano">Retoques visuales <span class="sw off"></span></div>
+            <div class="ui-fila plano">Agregar superposiciones <span class="ui-tag">Solo imagen</span> <span class="sw off"></span></div>
+            <div class="ui-pie"><span class="ui-btn">Guardar</span></div>
           </div>
-          <div class="ui-fila plano">Todas las optimizaciones <span class="sw"></span></div>
-          <div class="ui-fila plano">Comentarios relevantes <span class="sw"></span></div>
-          <div class="ui-fila plano">Mejoras en el texto <span class="sw"></span></div>
-          <div class="ui-fila plano">Retoques visuales <span class="sw"></span></div>
-          <div class="ui-fila plano">Agregar superposiciones <span class="sw off"></span></div>
         </div>
       </div>
 
@@ -173,37 +279,57 @@
         <div class="rn">04</div>
         <div class="rt">Apaga y <em>guarda</em></div>
         <p>Dos caminos, según lo que quieras:</p>
-        <div class="sino">
-          <div class="si"><div class="lb">Una por una</div><ul>
-            <li>Comentarios relevantes</li>
-            <li>Mejoras en el texto</li>
-            <li>Retoques visuales</li>
-            <li>Agregar superposiciones <span style="color:#8b7f74">(si es imagen)</span></li>
-          </ul></div>
-          <div class="no" style="opacity:.95"><div class="lb" style="color:var(--gold-1)">Todo de una</div>
-            <ul style="list-style:none"><li style="text-decoration:none;color:#cdc3b6">El interruptor
-              <b style="color:var(--ink)">Todas las optimizaciones</b></li></ul></div>
+        <div class="gsec" style="margin-top:0">
+          <div class="cajas dos">
+            <div class="caja">
+              <div class="cl">Una por una</div>
+              <div class="ct2">Retoques visuales · Comentarios relevantes · Mejoras en el texto</div>
+            </div>
+            <div class="caja">
+              <div class="cl">Todo de una</div>
+              <div class="ct2">El interruptor <b>Todas las optimizaciones</b></div>
+            </div>
+          </div>
+          <div class="notag">
+            <div class="nt">Si el anuncio es de imagen, se suma Agregar superposiciones.</div>
+            <p>Y no te vayas sin darle a Guardar.</p>
+          </div>
         </div>
-        <div class="nota"><b>Y no te vayas sin darle a Guardar.</b></div>
       </div>
     </div>
 
-    <h2>Qué hace cada una</h2>
-    <div class="h2s">La mejora y lo que te <em>cambia</em></div>
-    <table class="tabla">
-      <thead><tr><th>Mejora</th><th>Qué te cambia</th></tr></thead>
-      <tbody>
-        <tr><td>Comentarios relevantes</td><td><b>Es la primera que hay que tocar:</b> debajo de ella quedan escondidas las demás.</td></tr>
-        <tr><td>Mejoras en el texto</td><td>Reescribe el copy — el gancho, la descripción, el titular.</td></tr>
-        <tr><td>Retoques visuales</td><td>Recorta, cambia el brillo y le mete efectos al video o a la imagen que subiste.</td></tr>
-        <tr><td>Agregar superposiciones</td><td>Solo en imagen: le pone textos y etiquetas encima de tu creativo.</td></tr>
-      </tbody>
-    </table>
-    <div class="nota" style="margin-top:18px"><b>Hazlo anuncio por anuncio.</b> Esto no es un
-      interruptor de la cuenta: vive en cada anuncio. Los que ya están corriendo siguen con la
-      mejora encendida hasta que entres a cada uno.</div>
+    <h2>Mejora y lo que te cambia</h2>
+    <div class="h2s">Qué hace <em>cada una</em></div>
+    <div class="gsec dorado">
+      <div class="cajas dos">
+        <div class="caja">
+          <div class="cn">01</div>
+          <div class="ct2">Comentarios relevantes</div>
+          <p>Es la primera que hay que tocar: debajo de ella quedan escondidas las demás.</p>
+        </div>
+        <div class="caja">
+          <div class="cn">02</div>
+          <div class="ct2">Mejoras en el texto</div>
+          <p>Reescribe el copy — el gancho, la descripción, el titular.</p>
+        </div>
+        <div class="caja">
+          <div class="cn">03</div>
+          <div class="ct2">Retoques visuales</div>
+          <p>Recorta, cambia el brillo y le mete efectos al video o a la imagen que subiste.</p>
+        </div>
+        <div class="caja">
+          <div class="cn">04</div>
+          <div class="ct2">Agregar superposiciones</div>
+          <p>Solo en imagen: le pone textos y etiquetas encima de tu creativo.</p>
+        </div>
+      </div>
+      <div class="notag">
+        <div class="nt">Hazlo anuncio por anuncio.</div>
+        <p>Esto no es un interruptor de la cuenta: vive en cada anuncio. Los que ya están
+          corriendo siguen con la mejora encendida hasta que entres a cada uno.</p>
+      </div>
+    </div>
 
-    <!-- ══ 03 · POR QUÉ HOY ══ -->
     <h2>03 · Por qué hoy</h2>
     <div class="h2s">Y no cuando tengas <em>tiempo</em></div>
     <p class="lead" style="font-size:15.5px;margin-top:4px">No es que la inteligencia artificial
@@ -218,16 +344,25 @@
         el mundo, y eso es justo lo contrario de lo que estás construyendo.</span></li>
     </ol>
 
-    <h2>Cuándo sí volver a encenderla</h2>
-    <div class="h2s">Tres <em>momentos</em></div>
-    <table class="tabla">
-      <thead><tr><th>Momento</th><th>Qué hacer</th></tr></thead>
-      <tbody>
-        <tr><td>Recién salida</td><td>Apagada. Que la prueben otros y que Meta aprenda con esos datos.</td></tr>
-        <tr><td>Uno o dos meses después</td><td>Ahí ya la puedes probar — pero <b>en un anuncio, no en toda la cuenta</b>.</td></tr>
-        <tr><td>Si la pruebas</td><td>Deja el mismo anuncio con la mejora apagada corriendo al lado. <b>Sin comparación no hay conclusión.</b></td></tr>
-      </tbody>
-    </table>
+    <h2>Cuándo y qué hacer</h2>
+    <div class="h2s">Y cuándo sí <em>volver a encenderla</em></div>
+    <div class="linea3">
+      <div class="l3" style="--c1:#D2685C;--c2:#F59331">
+        <span class="l3n">1</span>
+        <div class="l3t">Recién salida</div>
+        <p><b>Apagada.</b> Que la prueben otros y que Meta aprenda con esos datos.</p>
+      </div>
+      <div class="l3" style="--c1:#F59331;--c2:#2ec8d6">
+        <span class="l3n">2</span>
+        <div class="l3t">Uno o dos meses después</div>
+        <p>Ahí ya la puedes probar — pero en <b>un</b> anuncio, no en toda la cuenta.</p>
+      </div>
+      <div class="l3" style="--c1:#2ec8d6;--c2:#2ec8d6">
+        <span class="l3n">3</span>
+        <div class="l3t">Si la pruebas</div>
+        <p>Deja el mismo anuncio con la mejora apagada corriendo al lado. Sin comparación no hay conclusión.</p>
+      </div>
+    </div>
 
     <h2>Los errores</h2>
     <div class="h2s">Los tres que se <em>repiten</em></div>

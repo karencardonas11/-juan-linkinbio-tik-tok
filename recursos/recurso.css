@@ -259,3 +259,405 @@
   .tripa .tl{margin-bottom:9px}
   .tripa .tv{margin-top:0}
 }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   DIAGRAMA DE TRES PANELES — copiado tal cual del PDF
+   Karen lo pidió idéntico, incluidos el cian del rótulo y el naranja del
+   panel del medio: son los colores de ESTE diagrama, no de la marca. Viven
+   acá adentro y no se filtran al resto de la página.
+   ═══════════════════════════════════════════════════════════════════════ */
+.dg{margin-top:30px}
+.dg-lb{display:flex;align-items:center;gap:14px;font-size:10.5px;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;color:#2ec8d6;white-space:nowrap}
+.dg-lb::after{content:"";flex:1;height:1px;min-width:20px;
+  background:linear-gradient(90deg,#2ec8d6,rgba(46,200,214,0))}
+/* Los tres paneles van a la MISMA altura para que los títulos y los chips
+   queden alineados en una fila, como en el PDF: stretch en la fila y flex:1
+   en la caja. Las flechas van dentro de la caja, centradas sobre ella, porque
+   así quedan a media altura del panel y no del panel más su pie de texto. */
+.dg-row{display:grid;grid-template-columns:repeat(3,1fr);align-items:stretch;
+  gap:34px;margin-top:18px}
+.dg-col{min-width:0;display:flex;flex-direction:column}
+.dg-box{position:relative;flex:1;border:1px solid rgba(255,255,255,.1);border-radius:6px;
+  padding:30px 14px 18px;min-height:210px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(180deg,rgba(255,255,255,.022),rgba(255,255,255,0))}
+.dg-box.on{border-color:rgba(255,138,31,.65);
+  background:linear-gradient(180deg,rgba(255,138,31,.07),rgba(255,138,31,0))}
+.dg-bl{position:absolute;top:11px;left:14px;font-size:8.6px;font-weight:700;
+  letter-spacing:.17em;text-transform:uppercase;color:#7b736b}
+.dg-t{margin-top:15px;font-size:16px;font-weight:800;letter-spacing:-.01em;
+  text-transform:uppercase;line-height:1.15;color:var(--ink)}
+.dg-chip{align-self:flex-start;margin-top:11px;font-size:12.5px;font-weight:600;
+  padding:7px 15px;border-radius:22px}
+.dg-chip.hueco{color:#d8cfc2;border:1px solid rgba(255,255,255,.22)}
+.dg-chip.naranja{color:#2b1400;background:#F59331}
+.dg-chip.rojo{color:#fff;background:#c26256}
+.dg-arr{position:absolute;right:-29px;top:50%;transform:translateY(-50%);
+  width:24px;height:24px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:11px;line-height:1;color:#F59331;
+  border:1px solid rgba(255,138,31,.55);background:var(--void);z-index:2}
+
+/* ── el maquetado del anuncio (panel 1) ── */
+.mq{width:100%;max-width:168px;border-radius:9px;background:#fff;overflow:hidden;
+  font-family:'Outfit',sans-serif;box-shadow:0 14px 34px -16px rgba(0,0,0,.75)}
+.mq-hd{display:flex;align-items:center;gap:8px;padding:10px 10px 8px}
+.mq-av{width:20px;height:20px;border-radius:50%;background:#C9A24B;flex-shrink:0}
+.mq-n{font-size:11.5px;font-weight:700;color:#1c1e21;line-height:1.15}
+.mq-n span{display:block;font-size:9.5px;font-weight:400;color:#65676b}
+.mq-g{margin:0 10px 7px;padding:5px 7px;border-radius:4px;background:#fbead2;
+  font-size:10.5px;font-weight:700;color:#1c1e21}
+.mq-b{margin:0 10px 4px;height:5px;border-radius:3px;background:#e4e6eb}
+.mq-b.c{width:62%;margin-bottom:9px}
+.mq-img{height:104px;background:#eae4d8;display:flex;align-items:center;justify-content:center}
+.mq-img i{display:block;width:30px;height:66px;border-radius:3px;background:#b8a077}
+.mq-o{padding:9px 10px 0;font-size:10.5px;font-weight:700;color:#1c1e21}
+.mq-cta{margin:7px 10px 10px;padding:7px;border-radius:5px;background:#1877f2;
+  text-align:center;font-size:10.5px;font-weight:600;color:#fff}
+
+/* ── la casilla (panel 2) ── */
+.cs{width:100%;max-width:170px;border-radius:11px;background:#fff;padding:15px 13px 12px;
+  text-align:center;font-family:'Outfit',sans-serif;box-shadow:0 14px 34px -16px rgba(0,0,0,.75)}
+.cs-top{display:flex;align-items:center;gap:9px;text-align:left}
+.cs-sp{flex-shrink:0;width:22px;height:22px;color:#a334fa}
+.cs-sp svg{width:100%;height:100%;display:block}
+.cs-t{font-size:12px;font-weight:700;color:#1c1e21;line-height:1.24}
+.cs-sw{position:relative;width:60px;height:27px;border-radius:16px;background:#1877f2;
+  margin:14px auto 0}
+.cs-sw::after{content:"";position:absolute;right:-5px;top:-5px;width:37px;height:37px;
+  border-radius:50%;background:#fff;border:4px solid #F59331;box-sizing:border-box}
+.cs-l{margin-top:12px;font-size:9.5px;font-weight:400;color:#65676b}
+
+/* ── las versiones (panel 3) ── */
+.vs{width:100%;display:flex;flex-direction:column;gap:11px}
+.vs-r{display:flex;align-items:center;gap:9px}
+.vs-av{flex-shrink:0;width:23px;height:23px;border-radius:50%;display:flex;
+  align-items:flex-end;justify-content:center;overflow:hidden}
+.vs-av svg{width:15px;height:15px;display:block;color:#fff}
+.vs-av.a{background:#a78bfa} .vs-av.b{background:#2dd4bf} .vs-av.c{background:#f472b6}
+.vs-c{flex:1;min-width:0;border-radius:6px;background:#fff;padding:7px 8px 9px;
+  box-shadow:0 10px 24px -14px rgba(0,0,0,.7)}
+.vs-h{padding:3px 6px;border-radius:3px;font-size:9.5px;font-weight:600;color:#1c1e21;
+  font-family:'Outfit',sans-serif;margin-bottom:6px}
+.vs-h.a{background:#ddd6fe} .vs-h.b{background:#ccfbf1} .vs-h.c{background:#fce7f3}
+.vs-b{height:4px;border-radius:2px;background:#e4e6eb;margin-bottom:3.5px}
+.vs-b.c{width:58%;margin-bottom:0}
+
+@media (max-width:620px){
+  .dg-row{grid-template-columns:1fr;gap:26px}
+  /* En celular los paneles se apilan y el orden ya cuenta la secuencia, así
+     que las flechas estorban más de lo que aportan. */
+  .dg-arr{display:none}
+  .dg-box{min-height:0;padding:28px 14px 16px}
+  .dg-lb{font-size:9.5px;letter-spacing:.18em;white-space:normal}
+  .dg-lb::after{display:none}
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   RESTO DE LOS GRÁFICOS DEL PDF
+   Cada sección del PDF usa su propio acento: salmón, naranja, dorado, cian.
+   Se pasan por variable (--ac) para no duplicar reglas.
+   ═══════════════════════════════════════════════════════════════════════ */
+.gsec{--ac:#F59331;margin-top:30px}
+.gsec.salmon{--ac:#D2685C}
+.gsec.dorado{--ac:var(--gold-2)}
+.gsec.ciano{--ac:#2ec8d6}
+
+/* Caja oscura con rótulo arriba, la que envuelve las réplicas de interfaz */
+.marco{position:relative;margin-top:16px;border:1px solid rgba(255,255,255,.1);
+  border-radius:6px;padding:28px 16px 18px;
+  background:linear-gradient(180deg,rgba(255,255,255,.022),rgba(255,255,255,0))}
+.marco > .ml{position:absolute;top:10px;left:15px;font-size:8.6px;font-weight:700;
+  letter-spacing:.17em;text-transform:uppercase;color:#7b736b}
+
+/* Nota con barra del color de la sección (la del PDF) */
+.notag{margin-top:20px;border-left:3px solid var(--ac);padding:15px 18px;
+  background:linear-gradient(90deg,rgba(255,147,49,.07),rgba(255,147,49,0))}
+.notag .nt{font-size:15px;font-weight:600;color:var(--ink);line-height:1.35}
+.notag p{margin-top:7px;font-size:14.5px;font-weight:300;color:#cdc3b6;line-height:1.55}
+
+/* Rejilla de cajas con número grande — páginas 9 y 10 del PDF */
+.cajas{display:grid;gap:12px;margin-top:18px}
+.cajas.dos{grid-template-columns:1fr 1fr}
+.caja{border:1px solid rgba(255,255,255,.11);border-radius:6px;padding:16px 17px 18px;
+  background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0))}
+.caja .cn{font-size:26px;font-weight:800;letter-spacing:-.03em;color:var(--ac);line-height:1}
+.caja .cl{font-size:8.6px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;
+  color:var(--ac)}
+.caja .ct2{margin-top:10px;font-size:14.5px;font-weight:600;color:var(--ink);line-height:1.3}
+.caja p{margin-top:8px;font-size:13.5px;font-weight:300;color:#a99f93;line-height:1.55}
+.caja p b{font-weight:600;color:#d8cfc2}
+@media (max-width:560px){ .cajas.dos{grid-template-columns:1fr} }
+
+/* Línea de tiempo de tres círculos con degradado — página 13 */
+.linea3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+.l3{position:relative;padding-top:46px}
+.l3::before{content:"";position:absolute;top:16px;left:15px;right:-16px;height:2px;
+  background:linear-gradient(90deg,var(--c1),var(--c2))}
+.l3:last-child::before{right:0;background:linear-gradient(90deg,var(--c1),transparent)}
+.l3 .l3n{position:absolute;top:0;left:0;width:31px;height:31px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:700;
+  color:var(--c1);border:1.5px solid var(--c1);background:var(--void);z-index:2}
+.l3 .l3t{font-size:15px;font-weight:800;letter-spacing:-.01em;text-transform:uppercase;
+  line-height:1.2;color:var(--ink)}
+.l3 p{margin-top:8px;font-size:13.5px;font-weight:300;color:#a99f93;line-height:1.55}
+.l3 p b{font-weight:600;color:#d8cfc2}
+@media (max-width:560px){
+  .linea3{grid-template-columns:1fr;gap:22px}
+  .l3{padding-top:0;padding-left:46px}
+  .l3::before,.l3:last-child::before{top:31px;bottom:-22px;left:15px;right:auto;
+    width:2px;height:auto;background:linear-gradient(180deg,var(--c1),var(--c2))}
+  .l3:last-child::before{display:none}
+}
+
+/* Dos columnas: maquetado a la izquierda, lista numerada a la derecha — página 2 */
+.dosc{display:grid;grid-template-columns:minmax(0,200px) 1fr;gap:26px;margin-top:20px;
+  align-items:start}
+.dosc .dl{display:flex;flex-direction:column}
+.numlist > div{padding:15px 0;border-top:1px solid rgba(255,255,255,.1);display:flex;gap:16px}
+.numlist > div:first-child{border-top:none;padding-top:0}
+.numlist .nn{flex-shrink:0;font-size:22px;font-weight:800;letter-spacing:-.03em;
+  color:var(--ac);line-height:1;min-width:34px}
+.numlist .nt2{font-size:14.5px;font-weight:600;color:var(--ink);line-height:1.3}
+.numlist p{margin-top:7px;font-size:13.5px;font-weight:300;color:#a99f93;line-height:1.55}
+@media (max-width:620px){ .dosc{grid-template-columns:1fr;gap:20px} }
+
+/* Migas de pan con pastillas del color de la sección — página 7 */
+.migas{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin-top:16px}
+.migas .mp{font-size:12.5px;font-weight:500;color:#d8cfc2;padding:7px 14px;border-radius:22px;
+  border:1px solid var(--ac);white-space:nowrap}
+.migas .ma{color:var(--ac);font-size:12px}
+
+/* ── Añadidos a la réplica de interfaz: pestañas, botón y etiqueta ── */
+.ui-nav{display:flex;gap:20px;padding:11px 16px 0;border-bottom:1px solid #dadde1;margin-bottom:12px}
+.ui-nav span{position:relative;padding-bottom:9px;font-size:13px;font-weight:500;color:#65676b;
+  white-space:nowrap}
+.ui-nav span.aqui{color:#1877f2;font-weight:600}
+.ui-nav span.aqui::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2.5px;
+  background:#1877f2;border-radius:2px}
+.ui-fila.marcada{background:#fdf3e6;border:1.5px solid #F59331}
+.ui-tag{margin-left:7px;font-size:9.5px;font-weight:500;color:#65676b;background:#e4e6eb;
+  padding:2px 6px;border-radius:4px;white-space:nowrap}
+.ui-pie{display:flex;justify-content:flex-end;padding:4px 14px 14px}
+.ui-btn{font-size:12.5px;font-weight:600;color:#fff;background:#1877f2;padding:8px 18px;
+  border-radius:7px;box-shadow:0 0 0 2px #F59331}
+.ui-btn.hueco{color:#1c1e21;background:#fff;box-shadow:none;border:1.5px solid #F59331;
+  display:inline-flex;align-items:center;gap:7px}
+.ui-btn.hueco svg{width:13px;height:13px}
+.ui-cab{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 14px 4px}
+.ui-cab .uct{font-size:14px;font-weight:600;color:#1c1e21}
+/* Mini vista previa dentro de la réplica */
+.ui-mini{margin:10px auto 14px;width:132px;border-radius:6px;overflow:hidden;
+  border:1px solid #dadde1;background:#f0f2f5}
+.ui-mini .um1{height:11px;background:#dfe3e8}
+.ui-mini .um2{height:58px;background:#eae4d8;display:flex;align-items:center;justify-content:center}
+.ui-mini .um2 i{display:block;width:20px;height:38px;border-radius:2px;background:#b8a077}
+.ui-mini .um3{height:10px;margin:7px 9px 9px;border-radius:3px;background:#1877f2}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   GRÁFICOS DEL RECURSO «EL ESTUDIO DE ANUNCIOS DENTRO DE CLAUDE»
+   Réplica del PDF de 12 páginas. Sus acentos medidos del archivo:
+   naranja #FF8A1F · naranja claro #FFB65E · cian #3BE9F0 · oro #C9A227.
+   Van contenidos acá adentro; el resto de la página sigue en los dorados
+   de la marca.
+   ═══════════════════════════════════════════════════════════════════════ */
+.est{--na:#FF8A1F;--nc:#FFB65E;--ci:#3BE9F0;--or:#C9A227}
+
+/* ── La tira de la portada: cuatro paneles con flecha ── */
+.tira{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;
+  align-items:stretch;gap:8px;margin-top:18px}
+.tira .tcol{min-width:0;display:flex;flex-direction:column}
+.tira .tbox{position:relative;flex:1;border:1px solid rgba(255,255,255,.1);border-radius:6px;
+  padding:26px 12px 16px;display:flex;align-items:center;justify-content:center;min-height:168px;
+  background:linear-gradient(180deg,rgba(255,255,255,.022),rgba(255,255,255,0))}
+.tira .tbl{position:absolute;top:9px;left:12px;font-size:7.8px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:#7b736b}
+.tira .tnm{margin-top:12px;font-size:13px;font-weight:800;text-transform:uppercase;
+  letter-spacing:-.005em;line-height:1.2;color:var(--ink)}
+.tira .tch{align-self:flex-start;margin-top:8px;font-size:11px;font-weight:600;
+  padding:4px 11px;border-radius:20px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.tira .tch.hueco{color:#d8cfc2;border:1px solid rgba(255,255,255,.22);font-family:'Outfit',sans-serif}
+.tira .tch.na{color:#2b1400;background:var(--na)}
+.tira .tch.ci{color:#04282b;background:var(--ci)}
+.tira .tar{align-self:center;color:var(--na);font-size:13px;margin-bottom:54px}
+@media (max-width:760px){
+  .tira{grid-template-columns:1fr 1fr;gap:10px}
+  .tira .tar{display:none}
+}
+@media (max-width:420px){ .tira{grid-template-columns:1fr} }
+
+/* ── Maquetas (todas dibujadas, como en el PDF) ── */
+.mk{--w:78px}
+.bot{display:block;width:16px;height:38px;margin:0 auto}
+/* teléfono con la foto plana */
+.mk-fono{width:74px;border-radius:9px;border:1.5px solid #cfc7bc;background:#fff;padding:5px 5px 9px;
+  box-shadow:0 12px 28px -14px rgba(0,0,0,.8)}
+.mk-fono .pant{height:62px;border-radius:5px;background:#e8e2d6;display:flex;align-items:center;
+  justify-content:center}
+.mk-fono .home{width:11px;height:11px;border-radius:50%;border:1.5px solid #cfc7bc;margin:6px auto 0}
+/* rejilla de seis fotos */
+.mk-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px;width:86px}
+.mk-grid i{display:flex;align-items:center;justify-content:center;height:30px;border-radius:3px;
+  background:#e8e2d6}
+.mk-grid i:nth-child(2n){background:#f3efe6}
+.mk-grid i svg{width:11px;height:26px}
+/* tarjeta de anuncio */
+.mk-ad{position:relative;width:78px;border-radius:7px;background:#fff;overflow:hidden;
+  box-shadow:0 12px 28px -14px rgba(0,0,0,.8)}
+.mk-ad .ah{display:flex;align-items:center;gap:4px;padding:5px 5px 3px}
+.mk-ad .ah i{width:9px;height:9px;border-radius:50%;background:var(--na);flex-shrink:0}
+.mk-ad .ah span{font-size:5.6px;font-weight:600;color:#65676b;font-family:'Outfit',sans-serif}
+.mk-ad .ai{height:50px;background:#e8e2d6;display:flex;align-items:center;justify-content:center}
+.mk-ad .ab{margin:4px 5px;height:3px;border-radius:2px;background:#e4e6eb}
+.mk-ad .ab.c{width:56%}
+.mk-ad .ac{margin:5px 5px 6px;padding:4px;border-radius:3px;background:var(--na);text-align:center;
+  font-size:6px;font-weight:700;color:#2b1400;font-family:'Outfit',sans-serif}
+.mk-ad .x5{position:absolute;top:-6px;right:-6px;width:22px;height:22px;border-radius:50%;
+  background:var(--ci);color:#04282b;font-size:8.5px;font-weight:800;display:flex;
+  align-items:center;justify-content:center;font-family:'Outfit',sans-serif}
+/* reel vertical */
+.mk-reel{width:66px;border-radius:7px;background:#14100c;border:1px solid #3a332a;overflow:hidden;
+  box-shadow:0 12px 28px -14px rgba(0,0,0,.8)}
+.mk-reel .rh{display:flex;justify-content:space-between;padding:4px 5px;font-size:5.4px;
+  font-weight:600;color:#a99f93;font-family:'Outfit',sans-serif}
+.mk-reel .rb{height:56px;background:#241c14;display:flex;align-items:center;justify-content:center}
+.mk-reel .rb .play{width:16px;height:16px;border-radius:50%;background:rgba(255,255,255,.9);
+  display:flex;align-items:center;justify-content:center}
+.mk-reel .rb .play::after{content:"";width:0;height:0;border-left:5px solid #14100c;
+  border-top:3.5px solid transparent;border-bottom:3.5px solid transparent;margin-left:1.5px}
+.mk-reel .rl{margin:4px 5px;height:2.5px;border-radius:2px;background:#443a2e}
+.mk-reel .rl.c{width:52%}
+.mk-reel .rf{display:flex;gap:2px;margin:5px}
+.mk-reel .rf i{flex:1;height:3px;border-radius:2px;background:#443a2e}
+.mk-reel .rf i.on{background:var(--ci)}
+
+/* ── Rejilla de cifras (página 2) ── */
+.cifras{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:18px}
+.cifras > div{padding:20px 20px 22px;border-top:1px solid rgba(255,255,255,.1)}
+.cifras > div:nth-child(odd){border-right:1px solid rgba(255,255,255,.1);padding-left:0}
+.cifras .cf{font-size:40px;font-weight:800;letter-spacing:-.04em;line-height:.95}
+.cifras .cl{margin-top:9px;font-size:8.6px;font-weight:700;letter-spacing:.17em;
+  text-transform:uppercase}
+.cifras p{margin-top:9px;font-size:13.5px;font-weight:300;color:#a99f93;line-height:1.5}
+@media (max-width:560px){
+  .cifras{grid-template-columns:1fr}
+  .cifras > div,.cifras > div:nth-child(odd){border-right:none;padding:18px 0 20px}
+  .cifras .cf{font-size:34px}
+}
+
+/* ── La cadena vertical (página 5) ── */
+.cadena{margin-top:20px}
+.cad{display:grid;grid-template-columns:minmax(0,190px) 1fr;gap:24px;align-items:center}
+.cad-box{position:relative;border:1px solid rgba(255,255,255,.1);border-radius:6px;
+  padding:26px 14px 16px;display:flex;align-items:center;justify-content:center;min-height:132px;
+  background:linear-gradient(180deg,rgba(255,255,255,.022),rgba(255,255,255,0))}
+.cad-box .cbl{position:absolute;top:9px;left:13px;font-size:7.8px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:#7b736b}
+.cad-t{font-size:19px;font-weight:800;letter-spacing:-.012em;text-transform:uppercase;line-height:1.2}
+.cad-t em{font-family:'Fraunces',serif;font-style:italic;font-weight:400;text-transform:none}
+.cad-t em.na{color:var(--nc)} .cad-t em.ci{color:var(--ci)} .cad-t em.or{color:var(--or)}
+.cad p{margin-top:8px;font-size:14px;font-weight:300;color:#a99f93;line-height:1.55}
+.cad .puntos{display:flex;flex-wrap:wrap;gap:14px;margin-top:11px}
+.cad .puntos span{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;
+  font-weight:500;color:#cdc3b6}
+.cad .puntos span::before{content:"";width:9px;height:3px;border-radius:2px;background:var(--na)}
+.cad .puntos span:nth-child(2)::before{background:var(--ci)}
+.cad .puntos span:nth-child(3)::before{background:var(--or)}
+/* El chip que une un eslabón con el siguiente, montado sobre la línea que
+   baja de un panel al otro — así se ve en el PDF. */
+.cad-link{position:relative;display:grid;grid-template-columns:minmax(0,190px) 1fr;gap:24px}
+.cad-link::before{content:"";position:absolute;left:95px;top:0;bottom:0;width:1px;
+  background:rgba(255,255,255,.14)}
+.cad-link > span{position:relative;z-index:2;justify-self:center;font-size:11.5px;
+  font-weight:600;padding:4px 12px;border-radius:20px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;margin:9px 0}
+.cad-link > span.na{color:#2b1400;background:var(--na)}
+.cad-link > span.ci{color:#04282b;background:var(--ci)}
+@media (max-width:620px){
+  .cad,.cad-link{grid-template-columns:1fr;gap:14px}
+  .cad-link > span{justify-self:start;margin-left:0}
+  .cad-link::before{left:14px}
+}
+
+/* ── Ficha de skill (páginas 6-8) ── */
+.skill{display:grid;grid-template-columns:minmax(0,230px) 1fr;gap:26px;margin-top:18px;
+  align-items:start}
+.skill-sale{position:relative;border:1px solid rgba(255,255,255,.1);border-radius:6px;
+  padding:28px 16px 16px;background:linear-gradient(180deg,rgba(255,255,255,.022),rgba(255,255,255,0))}
+.skill-sale .ssl{position:absolute;top:10px;left:15px;font-size:7.8px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:#7b736b}
+.skill-sale .ssm{display:flex;align-items:center;justify-content:center;padding:8px 0 14px}
+.skill-sale p{font-size:12.5px;font-weight:300;color:#a99f93;line-height:1.5}
+.skill-pill{display:inline-block;font-size:13px;font-weight:600;padding:6px 15px;border-radius:22px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;border:1px solid var(--na);color:var(--nc)}
+.skill-pill.ci{border-color:var(--ci);color:var(--ci)}
+.skill-pill.or{border-color:var(--or);color:var(--or)}
+.es-sale{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:18px}
+.es-sale > div{border-top:1px solid rgba(255,255,255,.14);padding-top:11px}
+.es-sale .el{font-size:8.6px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;
+  color:#7b736b}
+.es-sale .ev{margin-top:7px;font-size:14px;font-weight:600;color:var(--ink);line-height:1.3}
+@media (max-width:620px){ .skill{grid-template-columns:1fr;gap:18px} }
+
+/* ── Tabla ves → dices, con flecha (página 10) ── */
+.vsd{width:100%;border-collapse:collapse;margin-top:18px;font-size:14.5px}
+.vsd th{text-align:left;font-size:8.6px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;
+  color:#7b736b;padding:0 12px 9px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.vsd td{padding:13px 12px 13px 0;border-bottom:1px solid rgba(255,255,255,.08);
+  font-weight:300;color:#cdc3b6;vertical-align:top;line-height:1.45}
+.vsd td:first-child{font-weight:600;color:var(--ink);padding-right:8px}
+.vsd td.fl{width:26px;color:var(--na);font-weight:400;padding-right:14px}
+@media (max-width:560px){ .vsd{font-size:13.6px} .vsd td.fl{width:20px;padding-right:9px} }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   CAPTURAS DE PANTALLA REALES
+   Cuando el PDF trae capturas de una app, se sirven como imagen y no se
+   replican: la persona tiene que reconocer la pantalla exacta. Van dentro
+   de un marco con su rótulo, igual que en el PDF.
+   ═══════════════════════════════════════════════════════════════════════ */
+.captura{position:relative;margin-top:16px;border:1px solid rgba(255,255,255,.1);
+  border-radius:8px;padding:30px 12px 12px;overflow:hidden;
+  background:linear-gradient(180deg,rgba(255,255,255,.022),rgba(255,255,255,0))}
+.captura .cpl{position:absolute;top:10px;left:14px;font-size:8.6px;font-weight:700;
+  letter-spacing:.17em;text-transform:uppercase;color:var(--gold-1)}
+.captura img{display:block;width:100%;height:auto;border-radius:5px;
+  border:1px solid rgba(255,255,255,.08)}
+.captura figcaption{margin-top:10px;font-size:12.5px;font-weight:300;color:#8b7f74;
+  line-height:1.45}
+
+/* Dos cifras grandes lado a lado con filete arriba — página 2 del PDF */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:22px}
+.duo > div{border-top:1px solid var(--gold-1);padding-top:15px}
+.duo .dl{font-size:8.6px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;
+  color:var(--gold-1)}
+.duo .dv{margin-top:11px;font-size:34px;font-weight:800;letter-spacing:-.035em;line-height:1.02;
+  color:var(--ink)}
+.duo .dv em{font-family:'Fraunces',serif;font-style:italic;font-weight:400;
+  color:var(--gold-2);letter-spacing:-.01em}
+.duo p{margin-top:10px;font-size:13.5px;font-weight:300;color:#a99f93;line-height:1.5}
+@media (max-width:560px){ .duo{grid-template-columns:1fr;gap:22px} .duo .dv{font-size:29px} }
+
+/* Tarjetas de perfil — página 8 del PDF */
+.perfiles{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+.perfil{border:1px solid rgba(255,255,255,.11);border-radius:10px;padding:16px 16px 15px;
+  background:linear-gradient(180deg,rgba(255,255,255,.028),rgba(255,255,255,0))}
+.perfil .ph{display:flex;align-items:center;gap:11px}
+.perfil .pav{flex-shrink:0;width:38px;height:38px;border-radius:50%;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;background:#2a2118}
+.perfil .pav img,.perfil .pav svg{width:100%;height:100%;display:block;object-fit:cover}
+.perfil .pav.sa{background:#6429CD;padding:7px}
+/* .pnm y no .pn: ya existe un .pn para el número de paso, con
+   letter-spacing .2em, y el nombre de usuario salía con las letras
+   separadas porque esa propiedad se colaba por cascada. */
+.perfil .pnm{font-size:15px;font-weight:700;letter-spacing:-.01em;color:var(--ink);
+  display:flex;align-items:center;gap:6px}
+.perfil .pv{color:#1d9bf0;font-size:12px}
+.perfil .pst{display:flex;gap:22px;margin-top:15px}
+.perfil .pst > span{display:block}
+.perfil .pst b{display:block;font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.15}
+.perfil .pst i{display:block;margin-top:2px;font-size:10.5px;font-style:normal;font-weight:300;
+  color:#8b7f74}
+.perfil .pb{margin-top:14px;font-size:12.5px;font-weight:300;color:#cdc3b6;line-height:1.45}
+.perfil .pc{margin-top:5px;font-size:11.5px;font-weight:300;color:#8b7f74}
+.perfil .pf{display:block;margin-top:14px;padding:9px;border-radius:7px;background:#1877f2;
+  text-align:center;font-size:13px;font-weight:600;color:#fff;text-decoration:none}
+@media (max-width:560px){ .perfiles{grid-template-columns:1fr} }
