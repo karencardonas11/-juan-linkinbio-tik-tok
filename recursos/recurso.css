@@ -661,3 +661,104 @@
 .perfil .pf{display:block;margin-top:14px;padding:9px;border-radius:7px;background:#1877f2;
   text-align:center;font-size:13px;font-weight:600;color:#fff;text-decoration:none}
 @media (max-width:560px){ .perfiles{grid-template-columns:1fr} }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   AUDIENCE NETWORK — gráficos del PDF «El iconito que te delata»
+   Réplicas de pantallas de Meta, así que llevan los colores de Meta
+   (#1877F2 en casillas y radios) y no los dorados: si se doran, la persona
+   deja de reconocer la pantalla que está buscando. Todo vive bajo .an- y
+   no se filtra al resto del sitio.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── la fila de iconos de plataforma de la Biblioteca de anuncios ── */
+.an-plat{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.an-plat i{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;flex-shrink:0}
+.an-plat i svg{width:22px;height:22px;display:block}
+/* el tercero es el que delata: aro naranja, como en el PDF */
+.an-plat i.senalado{position:relative;box-shadow:0 0 0 2.5px #F59331}
+
+/* ── tarjeta de la Biblioteca de anuncios ── */
+.an-card{max-width:340px;margin:0 auto;border-radius:11px;background:#fff;color:#1c1e21;
+  overflow:hidden;box-shadow:0 18px 44px -20px rgba(0,0,0,.85)}
+.an-card .ac-b{padding:15px 17px 14px}
+.an-card .ac-st{display:flex;align-items:center;gap:7px;font-size:15px;font-weight:700;
+  color:#31a24c}
+.an-card .ac-st::before{content:"";width:9px;height:9px;border-radius:50%;background:#31a24c}
+.an-card .ac-d{margin-top:9px;font-size:12.6px;font-weight:400;color:#1c1e21;line-height:1.55}
+.an-card .ac-p{display:flex;align-items:center;gap:10px;margin-top:11px;
+  font-size:13px;font-weight:700}
+.an-card .ac-f{display:flex;align-items:center;gap:9px;padding:11px 17px;
+  border-top:1px solid #e4e6eb}
+.an-card .ac-av{width:26px;height:26px;border-radius:50%;background:#d9b877;flex-shrink:0}
+.an-card .ac-nm{font-size:12.6px;font-weight:700;line-height:1.25}
+.an-card .ac-nm span{display:block;font-size:11px;font-weight:400;color:#65676b}
+.an-card .ac-img{height:86px;background:#e8e2d6;display:flex;align-items:center;
+  justify-content:center}
+.an-card .ac-img i{width:46px;height:46px;border-radius:4px;background:#c9a877;display:block}
+
+/* ── el rótulo que sale al pasar el cursor ── */
+.an-tip{display:flex;flex-direction:column;align-items:center;gap:12px;padding:6px 0}
+.an-tip .at-l{font-size:13px;font-weight:600;color:#1c1e21;background:#fff;
+  padding:8px 15px;border-radius:8px;box-shadow:0 10px 26px -12px rgba(0,0,0,.9)}
+.an-tip .at-i{width:62px;height:62px;border-radius:50%;background:#fff;
+  display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px #F59331}
+.an-tip .at-i svg{width:38px;height:38px;color:#1c1e21}
+
+/* ── panel de Ubicaciones, con los dos radios ── */
+.an-ui{margin-top:16px;border-radius:12px;background:#fff;color:#1c1e21;overflow:hidden;
+  box-shadow:0 18px 44px -20px rgba(0,0,0,.8)}
+.an-ui .au-t{padding:15px 17px 4px;font-size:15.5px;font-weight:700}
+.an-row{display:flex;align-items:center;gap:11px;margin:10px 13px;padding:12px 13px;
+  border-radius:9px;font-size:13.6px;font-weight:500;line-height:1.35}
+.an-row .ar-s{font-size:11.6px;font-weight:400;color:#65676b;display:block;margin-top:2px}
+.an-row .ar-tag{margin-left:auto;flex-shrink:0;font-size:10px;font-weight:700;color:#2b1400;
+  background:#F59331;padding:4px 9px;border-radius:5px;white-space:nowrap}
+.an-row.marcada{background:#fdf3e6;border:1.5px solid #F59331}
+/* el radio: azul de Meta cuando está marcado */
+.an-rd{width:19px;height:19px;border-radius:50%;flex-shrink:0;border:2px solid #bcc0c4;
+  position:relative}
+.an-rd.on{border-color:#1877f2}
+.an-rd.on::after{content:"";position:absolute;inset:3px;border-radius:50%;background:#1877f2}
+
+/* ── lista de plataformas con casillas ── */
+.an-chk{width:17px;height:17px;border-radius:4px;flex-shrink:0;background:#1877f2;
+  position:relative}
+.an-chk::after{content:"";position:absolute;left:5.5px;top:2.5px;width:5px;height:9px;
+  border:solid #fff;border-width:0 2px 2px 0;transform:rotate(42deg)}
+.an-chk.off{background:#fff;border:1.6px solid #8a8d91}
+.an-chk.off::after{display:none}
+.an-row .ar-off{margin-left:auto;flex-shrink:0;font-size:12px;font-weight:700;color:#c0392b}
+.an-row.apagada{background:#fdeceb;border:1.5px solid #e2a9a2}
+
+/* ── el celular de la app de terceros ── */
+.an-fono{width:168px;margin:0 auto;border-radius:16px;background:#2a2a30;padding:9px;
+  box-shadow:0 20px 44px -20px rgba(0,0,0,.9)}
+.an-fono .af-hd{display:flex;align-items:center;justify-content:space-between;
+  font-size:9.6px;font-weight:700;color:#f7f1e7;padding:1px 3px 7px}
+.an-fono .af-mon{display:flex;align-items:center;gap:4px}
+.an-fono .af-mon i{width:11px;height:11px;border-radius:50%;background:#E6C877;flex-shrink:0}
+.an-fono .af-ad{border-radius:8px;overflow:hidden;background:#e8e2d6;position:relative}
+.an-fono .af-tag{position:absolute;top:5px;left:5px;font-size:7.6px;font-weight:700;
+  color:#f7f1e7;background:rgba(0,0,0,.55);padding:2px 6px;border-radius:3px}
+.an-fono .af-pl{height:84px;display:flex;align-items:center;justify-content:center}
+.an-fono .af-pl svg{width:26px;height:26px;color:#4b4238}
+.an-fono .af-bar{height:4px;background:#F59331}
+.an-fono .af-rw{margin-top:8px;border-radius:8px;background:#3a3a42;padding:8px 9px;
+  font-size:9.6px;font-weight:500;color:#e8e2d6;line-height:1.35}
+.an-fono .af-gan{display:flex;align-items:center;gap:6px;margin-top:6px;
+  font-size:15px;font-weight:800;color:#f7f1e7}
+.an-fono .af-gan i{width:14px;height:14px;border-radius:50%;background:#E6C877;flex-shrink:0}
+.an-fono .af-btn{margin-top:8px;text-align:center;font-size:10.6px;font-weight:700;
+  color:#0e2a1c;background:#3ddc84;padding:7px 0;border-radius:7px}
+
+/* Dentro del diagrama de portada la columna es angosta: sin esto la fila de
+   iconos se parte en dos y deja de leerse como una sola fila, que es el punto. */
+.dg-box .an-card .ac-p{flex-direction:column;align-items:flex-start;font-size:11.6px;gap:6px}
+.dg-box .an-plat{gap:6px;flex-wrap:nowrap}
+.dg-box .an-plat i,.dg-box .an-plat i svg{width:18px;height:18px}
+
+@media (max-width:560px){
+  .an-card{max-width:100%}
+  .an-row{margin:9px 10px;padding:11px 11px;font-size:13px}
+}
