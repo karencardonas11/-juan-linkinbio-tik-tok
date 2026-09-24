@@ -762,3 +762,82 @@
   .an-card{max-width:100%}
   .an-row{margin:9px 10px;padding:11px 11px;font-size:13px}
 }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   HiVA / ADS TRUST — gráficos del PDF «De bronce a platino»
+   Las cuatro tarjetas de nivel llevan el color de su metal (bronce, plata,
+   oro, platino), que es como el video lo cuenta. La réplica del código
+   fuente usa los colores de una pestaña view-source de Chrome, no los
+   dorados de la marca: si se doran deja de parecerse a lo que la persona
+   va a ver en su pantalla. Todo vive bajo .hv- y no se filtra.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── las cuatro tarjetas de nivel de la portada ── */
+.hv-tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+.hv-tier{border:1px solid rgba(255,255,255,.11);border-radius:6px;padding:15px 14px 16px;
+  background:linear-gradient(180deg,rgba(255,255,255,.022),rgba(255,255,255,0));
+  display:flex;flex-direction:column}
+.hv-tier .hr{font-size:8.4px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:#7b736b;line-height:1.35}
+.hv-tier .hn{margin-top:9px;font-size:22px;font-weight:800;letter-spacing:-.03em;
+  color:var(--ink);line-height:1}
+.hv-tier p{margin-top:9px;font-size:12.5px;font-weight:300;color:#a99f93;line-height:1.5}
+.hv-tier .hb{margin-top:auto;padding-top:14px}
+.hv-tier .hb::after{content:"";display:block;height:2.5px;border-radius:2px}
+.hv-tier.bronce .hb::after{background:#C9822B}
+.hv-tier.plata  .hb::after{background:#C9CDD2}
+.hv-tier.oro    .hb::after{background:#E0A81F}
+.hv-tier.platino .hb::after{background:#EDF1F5}
+.hv-tier .hm{margin-top:7px;font-size:9.6px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase}
+.hv-tier.bronce .hm{color:#C9822B}
+.hv-tier.plata  .hm{color:#C9CDD2}
+.hv-tier.oro    .hm{color:#E0A81F}
+.hv-tier.platino .hm{color:#EDF1F5}
+
+/* ── pestaña view-source de Chrome ── */
+.hv-win{margin-top:16px;border-radius:11px;overflow:hidden;background:#1f1f22;
+  box-shadow:0 18px 44px -20px rgba(0,0,0,.9)}
+.hv-win .hw-bar{display:flex;align-items:center;gap:11px;padding:11px 14px;background:#2b2b30}
+.hv-win .hw-dots{display:flex;gap:6px;flex-shrink:0}
+.hv-win .hw-dots i{width:10px;height:10px;border-radius:50%;display:block}
+.hv-win .hw-dots i:nth-child(1){background:#ff5f57}
+.hv-win .hw-dots i:nth-child(2){background:#febc2e}
+.hv-win .hw-dots i:nth-child(3){background:#28c840}
+.hv-win .hw-url{font-size:12.5px;font-weight:500;color:#e6e1d8;word-break:break-all}
+.hv-win .hw-find{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  margin:14px 14px 0;margin-left:auto;max-width:230px;padding:8px 13px;border-radius:8px;
+  background:#fff;color:#1c1e21;font-size:13.5px;font-weight:500;
+  box-shadow:0 0 0 2px #F59331}
+.hv-win .hw-find span{font-size:11.5px;color:#65676b;flex-shrink:0}
+.hv-win .hw-code{padding:16px 14px 18px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:12.4px;line-height:1.85;color:#8fb8d8;word-break:break-all}
+.hv-win .hw-code em{font-style:normal;color:#e8c87d}
+.hv-win .hw-hit{display:inline-block;background:#F59331;color:#1c1004;font-weight:700;
+  padding:1px 5px;border-radius:2px}
+.hv-win .hw-nota{color:#F59331;font-weight:600;white-space:nowrap}
+
+/* ── ventanita de la extensión Ads Trust ── */
+.hv-ext{max-width:340px;margin:0 auto;border-radius:12px;background:#f5f4f2;color:#1c1e21;
+  overflow:hidden;box-shadow:0 18px 44px -20px rgba(0,0,0,.85)}
+.hv-ext .he-hd{display:flex;align-items:center;gap:10px;padding:13px 15px}
+.hv-ext .he-ic{width:24px;height:24px;border-radius:50%;background:#1877f2;color:#fff;
+  font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;
+  flex-shrink:0}
+.hv-ext .he-nm{font-size:14.5px;font-weight:700}
+.hv-ext .he-src{margin-left:auto;font-size:12px;color:#65676b}
+.hv-ext .he-b{padding:0 15px 15px}
+.hv-ext .he-l{font-size:13px;color:#65676b}
+.hv-ext .he-v{margin-top:2px;font-size:16px;font-weight:700;letter-spacing:-.01em}
+.hv-ext .he-tier{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  margin-top:13px;padding:13px 15px;border-radius:9px;background:#fdf3e6;
+  border:1.5px solid #F59331;font-size:14px;font-weight:500}
+.hv-ext .he-tier b{font-size:16px;font-weight:800;color:#c2710f;white-space:nowrap}
+
+@media (max-width:620px){
+  .hv-tiers{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  .hv-win .hw-find{max-width:none;margin-left:14px}
+  .hv-win .hw-code{font-size:11.6px}
+}
