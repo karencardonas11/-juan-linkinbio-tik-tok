@@ -841,3 +841,34 @@
   .hv-win .hw-find{max-width:none;margin-left:14px}
   .hv-win .hw-code{font-size:11.6px}
 }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   CLASIFICACIONES DE META — gráficos del PDF «El puntaje que encarece tu CPM»
+   Este recurso no trae capturas: sus gráficos son tipográficos. Lo único
+   que le faltaba al sistema eran las pastillas monoespaciadas con las que
+   el PDF nombra botones y columnas del administrador, y la escala de los
+   cinco valores posibles. Viven bajo .cl- y no se filtran.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── el nombre exacto de un botón o una columna de Meta, tal cual el PDF ── */
+.cl-ui{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;
+  font-weight:500;color:var(--gold-3);background:rgba(232,200,125,.09);
+  border:1px solid rgba(232,200,125,.2);border-radius:4px;padding:1.5px 6px;
+  white-space:nowrap}
+
+/* ── la escala de los cinco valores: de arriba del promedio a lo peor ── */
+.cl-esc{margin-top:18px;border:1px solid rgba(255,255,255,.11);border-radius:6px;
+  overflow:hidden}
+.cl-esc > div{display:flex;align-items:center;gap:12px;padding:12px 15px;
+  border-top:1px solid rgba(255,255,255,.08);font-size:14px;font-weight:500;
+  color:#cdc3b6;line-height:1.4}
+.cl-esc > div:first-child{border-top:none}
+.cl-esc .cb{flex-shrink:0;width:4px;align-self:stretch;border-radius:2px;min-height:20px}
+.cl-esc .arriba .cb{background:#5FBF8F}
+.cl-esc .medio .cb{background:#C9CDD2}
+.cl-esc .bajo1 .cb{background:#E0A81F}
+.cl-esc .bajo2 .cb{background:#E07B39}
+.cl-esc .bajo3 .cb{background:#C0392B}
+.cl-esc .arriba{color:var(--ink);font-weight:600}
+.cl-esc .bajo3{color:var(--ink);font-weight:600}
+.cl-esc small{display:block;font-size:12.5px;font-weight:300;color:#8f867c;margin-top:2px}
