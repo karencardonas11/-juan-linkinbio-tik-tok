@@ -44,7 +44,7 @@ function reboot(saved, url = URL_BASE) {
   return { w, d: w.document };
 }
 
-const TOTAL = 37;
+const TOTAL = 38;
 const all      = (d) => [...d.querySelectorAll('.res')];
 const visibles = (d) => all(d).filter(c => !c.hidden && c.style.display !== 'none');
 const ord      = (c) => Number(c.style.order);
@@ -94,7 +94,7 @@ console.log('\n── 2. Ruta "Quiero organizar mi negocio con IA" — ordena si
      'orden: ' + ids(ruta).join(' → '));
   is(ruta.map(c => c.querySelector('.stepn').textContent).join() === '1,2,3,4,5', 'numerados 1..5');
   const fuera = resto(d);
-  is(fuera.length === 32, `los otros 32 siguen presentes (vi ${fuera.length})`);
+  is(fuera.length === 33, `los otros 33 siguen presentes (vi ${fuera.length})`);
   is(fuera.every(c => !c.querySelector('.stepn').textContent), 'los de fuera no llevan número');
   is(Math.max(...ruta.map(ord)) < Math.min(...fuera.map(ord)), 'la ruta va por encima del resto');
   is(!d.getElementById('rest-head').hidden, 'separador "el resto" visible');
@@ -103,7 +103,7 @@ console.log('\n── 2. Ruta "Quiero organizar mi negocio con IA" — ordena si
      'el separador queda justo entre ruta y resto');
   is([...d.querySelectorAll('.g-head:not(.rest)')].every(h => h.hidden), 'encabezados de grupo se repliegan');
   is(d.querySelector('[data-path="cero"]').getAttribute('aria-pressed') === 'true', 'botón marcado');
-  is(/Los otros 32 quedan abajo/.test(d.getElementById('ctx-t').textContent), 'el texto avisa que el resto sigue abajo');
+  is(/Los otros 33 quedan abajo/.test(d.getElementById('ctx-t').textContent), 'el texto avisa que el resto sigue abajo');
 }
 
 console.log('\n── 3. Ruta "Quiero conseguir más clientes" ──');
@@ -116,7 +116,7 @@ console.log('\n── 3. Ruta "Quiero conseguir más clientes" ──');
   is(ruta[0].dataset.id === 'captacion', 'el paso 1 es investigar a quién le hablas');
   is(ids(ruta).join() === 'captacion,scraper,estructura,anuncios3,carruseles,paginaventas',
      'orden: ' + ids(ruta).join(' → '));
-  is(resto(d).length === 31, 'y los otros 31 quedan abajo');
+  is(resto(d).length === 32, 'y los otros 32 quedan abajo');
 }
 
 console.log('\n── 4. Ruta "Quiero optimizar lo que invierto en anuncios" ──');
@@ -127,7 +127,7 @@ console.log('\n── 4. Ruta "Quiero optimizar lo que invierto en anuncios" ─
   const ruta = enRuta(d);
   is(ids(ruta).join() === 'mcpoficial,mcp,tutorial,googleads,paidmedia,docsmeta',
      'orden: ' + ids(ruta).join(' → '));
-  is(resto(d).length === 31, 'los otros 31 abajo');
+  is(resto(d).length === 32, 'los otros 32 abajo');
 }
 
 console.log('\n── 4b. Ruta "Quiero invertir mejor mi dinero en anuncios" (nueva) ──');
@@ -189,7 +189,7 @@ console.log('\n── 6. Estado: visitado, avance y prerequisito cumplido ──
   is(mcp.dataset.visited === '1', 'la tarjeta queda marcada');
   is(d.getElementById('tk-done').textContent === '1', 'contador = 1');
   is(!d.getElementById('track').hidden, 'aparece la barra de avance');
-  is(d.getElementById('tk-bar').style.width === (1/37*100) + '%', 'barra al ' + (100/37).toFixed(1) + '%');
+  is(d.getElementById('tk-bar').style.width === (1/38*100) + '%', 'barra al ' + (100/38).toFixed(1) + '%');
   const dep = d.querySelector('[data-prereq="mcp"]');
   is(dep.dataset.prereqDone === '1', 'el dependiente marca el prereq como cumplido');
   is(/Listo: ya abriste/.test(dep.querySelector('.pre').textContent), 'texto cambia a "Listo"');
