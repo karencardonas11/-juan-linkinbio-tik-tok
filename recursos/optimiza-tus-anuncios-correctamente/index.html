@@ -2,11 +2,22 @@
 <html lang="es">
 <head>
 <!-- =====================================================================
-     ⚠️ ESTE RECURSO NO SALIÓ DE UN PDF.
-     Se armó leyendo el video: la transcripción del audio más las placas y
-     capturas que salen en pantalla. Todas las cifras de aquí están en el
-     video; no hay ninguna inventada. Donde el video se contradice a sí
-     mismo, queda anotado en el texto.
+     FUENTE: el PDF oficial «Cuándo apagar un anuncio (mi método de testing)».
+     El título de esta página es el que pidió Karen, no el del PDF.
+
+     Esta página existió antes en una versión armada solo desde el video,
+     cuando el PDF todavía no existía. El oficial corrigió dos cosas que se
+     habían inferido mal y ya NO están acá:
+       · el umbral del CPC no es 3x: es el DOBLE de tu CPC promedio, o la
+         MITAD de tu CTR, medido contra tus propios anuncios que funcionaron;
+       · el caso del día 7 con poco gasto no se resuelve por presupuesto: el
+         oficial fija que por debajo del gasto mínimo no se apaga nada.
+     Además el oficial suma el escalado como excepción, la columna CPM y lo
+     que sí se le deja a Meta.
+
+     Se conservan cuatro gráficos sacados del video, que el PDF no trae:
+     las dos filas del administrador (día 1 contra día 66), el reparto
+     Meta / dueño, la comparación de las dos piezas y la fila del día 7.
      ===================================================================== -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,50 +61,111 @@
 
     <div class="eyebrow">Recurso · Comentaste ANUNCIOS</div>
     <h1>Optimiza tus anuncios <em>correctamente</em></h1>
-    <p class="lead">«Deja que Meta optimice tus campañas» es el chiste más grande de los anuncios
-      en redes. <b>Meta te lo vende como paciencia</b>, y lo que es en realidad es darle más
-      dinero a Facebook sin recibir retorno. Acá está dónde no darle tiempo, por qué métrica
-      cortar y en qué día apagar.</p>
+    <p class="lead">«Deja que Meta optimice» es la frase con la que más dinero se quema.
+      <b>Meta gana cuando tu campaña sigue activa; tú ganas cuando convierte.</b> Este es el
+      método con el que decido, en prueba de creativos y en prueba de páginas de destino, si un
+      anuncio sigue o se apaga. Sin corazonadas: <b>con dos topes y un checklist</b>.</p>
 
     <div class="chips">
       <span class="chip">Meta Ads</span><span class="chip">Testing</span>
       <span class="chip">15 min</span></div>
 
-    <!-- ══ 1 · la objeción ══ -->
+    <!-- ══ 1 · los dos topes ══ -->
     <div class="gsec ciano">
-    <h2>«Pero el algoritmo necesita aprender»</h2>
-    <div class="h2s">Sí que necesita aprender. <em>El problema es quién paga esas semanas</em></div>
-    <p>Claro que necesita aprender. <b>Pero tú no puedes aguantar las pérdidas durante muchas
-      semanas esperando que Meta te devuelva a los clientes. Eso no va a pasar solo.</b></p>
+    <h2>Los dos topes</h2>
+    <div class="h2s">Antes de mirar <em>nada más</em></div>
+    <div class="duo">
+      <div>
+        <div class="dl">Tope 1 · el gasto</div>
+        <div class="dv">US$ 25<em>–30</em></div>
+        <p>Con cinco dólares no hay datos, hay ruido. <b>Ningún anuncio se apaga antes de ese
+          gasto mínimo</b>, por feo que se vea el primer día. La cifra está en la columna
+          <b>Importe gastado</b>.</p>
+      </div>
+      <div>
+        <div class="dl">Tope 2 · el tiempo</div>
+        <div class="dv">7 <em>días</em></div>
+        <p>Ese es el techo. Si al séptimo día no funcionó, no le doy «un poquito más de tiempo
+          para que aprenda». <b>Lo que no pasó en una semana no va a pasar solo en la
+          segunda.</b></p>
+      </div>
+    </div>
+    <div class="nota" style="margin-top:22px"><b>La regla: US$ 25–30 gastados y máximo 7 días.
+      Lo que primero se cumpla, decide.</b></div>
     <div class="notag">
-      <div class="nt">Una campaña en fase de aprendizaje también gasta.</div>
-      <p>Un conjunto de público amplio puede llevar <b>US$ 90 gastados y 0 resultados</b> en su
-        primera semana, con la etiqueta «Fase de aprendizaje» puesta. <b>El aprendizaje no es
-        gratis: lo pagas tú.</b></p>
+      <div class="nt">« El algoritmo necesita aprender ».</div>
+      <p>Sí, y aprende <b>con datos, no con semanas</b>. Aguantar pérdidas esperando que Meta te
+        devuelva los clientes no es paciencia: es presupuesto que se queda en Facebook sin
+        retorno.</p>
     </div>
     </div>
 
-    <!-- ══ 2 · de qué habla exactamente ══ -->
+    <!-- ══ 2 · dónde aplica ══ -->
     <div class="gsec">
-    <h2>Ojo: de qué estamos hablando</h2>
-    <div class="h2s">De <em>pruebas</em>, no de lo que ya vende</div>
-    <p>Esto no aplica a cualquier campaña. Hay dos sitios donde yo no le doy tiempo a Meta:</p>
-    <ol class="lista">
-      <li><span class="k">01</span><span><b>Prueba de creativos.</b> Estás averiguando cuál
-        pieza retiene, no escalando la que ya funciona.</span></li>
-      <li><span class="k">02</span><span><b>Prueba de páginas de destino.</b> Landing page o
-        WhatsApp: lo que se prueba es lo que pasa después del clic.</span></li>
-    </ol>
-    <div class="nota" style="margin-top:22px">Si un anuncio <b>ya está vendiendo</b>, esta regla
-      no es para él. Es para la prueba que todavía no ha demostrado nada.</div>
+    <h2>Dónde aplica y dónde no</h2>
+    <div class="h2s">La misma regla <em>no sirve para todo</em></div>
+    <table class="tabla">
+      <tr><th>Situación</th><th>Qué hago</th></tr>
+      <tr><td>Prueba de creativos</td><td><b>Aplica entera.</b> Cada creativo nuevo tiene sus
+        25–30 dólares y sus 7 días, ni un día más.</td></tr>
+      <tr><td>Prueba de páginas de destino<br><span style="font-weight:300;font-size:13px;color:#a99f93">landing
+        page, WhatsApp</span></td><td><b>Aplica entera.</b> La página se prueba con el mismo
+        tope: si no convierte, se cambia la página, no se «espera».</td></tr>
+      <tr><td>Escalado<br><span style="font-weight:300;font-size:13px;color:#a99f93">un anuncio
+        que ya ganó y le subes presupuesto</span></td><td><b>Ahí sí doy margen:</b> lo dejo
+        gastar un poco más con rendimiento bajo, a ver si sostiene la escala. Es lo único que no
+        se apaga con esta regla.</td></tr>
+    </table>
     </div>
 
-    <!-- ══ 3 · por qué métrica corta ══ -->
+    <!-- ══ 3 · el checklist ══ -->
     <div class="gsec dorado">
-    <h2>Por qué métrica corto</h2>
-    <div class="h2s">Métricas muy duras, y aun así <em>corto por métricas blandas</em></div>
-    <p>No hace falta esperar a que haya o no haya ventas para ver que un anuncio no va.
-      <b>Un costo por clic alto ya lo dice</b>, y lo dice antes.</p>
+    <h2>El checklist</h2>
+    <div class="h2s">Qué métrica manda <em>y dónde está</em></div>
+    <p>Tengo métricas duras —compras, costo por compra— <b>y aun así corto por las blandas,
+      porque avisan antes</b>. Estas son las columnas que miro, con el nombre exacto que tienen
+      en el Administrador de anuncios.</p>
+    <table class="tabla">
+      <tr><th>Columna</th><th>Qué miro</th><th>Qué hago</th></tr>
+      <tr><td>Importe gastado</td><td>¿Ya pasó de US$ 25–30?</td><td>Si no, no toco nada. Si sí,
+        sigo con el checklist.</td></tr>
+      <tr><td>Días activo<br><span style="font-weight:300;font-size:13px;color:#a99f93">la fecha
+        de inicio del conjunto</span></td><td>¿Lleva 7 días?</td><td>Al séptimo día sin
+        resultado, se apaga. Sin excepción.</td></tr>
+      <tr><td>CPC<br><span style="font-weight:300;font-size:13px;color:#a99f93">costo por clic en
+        el enlace</span></td><td>¿Está por encima de mi CPC normal?</td><td>Un CPC alto es la
+        primera señal: el anuncio no convence ni para el clic. Fuera, aunque las duras todavía
+        no hayan hablado.</td></tr>
+      <tr><td>CTR<br><span style="font-weight:300;font-size:13px;color:#a99f93">porcentaje de
+        clics en el enlace</span></td><td>¿Cae por debajo de mi promedio?</td><td>El gancho no
+        frena el scroll. Cambio el creativo, no la puja.</td></tr>
+      <tr><td>CPM<br><span style="font-weight:300;font-size:13px;color:#a99f93">costo por mil
+        impresiones</span></td><td>¿Disparado frente a mis otros anuncios?</td><td>Meta lo está
+        castigando —relevancia o página lenta—. No le doy tiempo: lo cambio.</td></tr>
+      <tr><td>Resultados y costo por resultado</td><td>¿Convirtió dentro del tope?</td><td>Con
+        20–30 dólares gastados y cero resultados, se apaga sin ningún problema.</td></tr>
+    </table>
+    <div class="migas">
+      <span class="mp">Administrador de anuncios</span><span class="ma">→</span>
+      <span class="mp">Columnas</span><span class="ma">→</span>
+      <span class="mp">Rendimiento y clics</span>
+    </div>
+    </div>
+
+    <!-- ══ 4 · tu CPC es el tuyo ══ -->
+    <div class="gsec">
+    <h2>Tu CPC «alto» es el tuyo</h2>
+    <div class="h2s">No el de <em>un video</em></div>
+    <p><b>El umbral no lo saca nadie de una tabla: sale de tu cuenta.</b> Toma tus últimos
+      anuncios que sí funcionaron y mira su CPC y su CTR; ése es tu promedio.</p>
+    <div class="notag">
+      <div class="nt">Un anuncio nuevo que te doble el CPC, o que te parta el CTR a la mitad, con
+        los 25–30 dólares gastados, ya te dijo lo que necesitabas.</div>
+      <p>No hace falta esperar la compra para saberlo.</p>
+    </div>
+
+    <p style="margin-top:26px">Así se ve en dos piezas de una misma prueba, con el mismo
+      producto y el mismo público:</p>
     <table class="tabla">
       <tr><th>La pieza</th><th>CPC del enlace</th><th>Porcentaje de clics</th></tr>
       <tr><td>La de testimonio<br><span style="font-weight:300;font-size:13px;color:#a99f93">Una
@@ -103,75 +175,37 @@
     </table>
     <div class="notag">
       <div class="nt">El clic sale 6,7 veces más caro, con la cuarta parte del interés.</div>
-      <p>Esa diferencia no se arregla con más días: se arregla cambiando la pieza.</p>
+      <p>Muy por encima del doble: ahí no hay nada que pensar. Y eso no se arregla con más
+        días, se arregla cambiando la pieza.</p>
     </div>
-    <!-- ⚠️ INFERIDO — el umbral de 3x no sale en el video: Juan solo dice que corta por un
-         CPC alto y muestra el ejemplo, donde la distancia real es 6,7x. El 3x es la mitad de
-         esa distancia, o sea más prudente que su ejemplo. Confirmar con él. -->
-    <div class="nota" style="margin-top:22px"><b>¿Y cuánto es «muy por encima»?</b> Mi regla:
-      <b>si una pieza me sale el clic más de 3 veces más caro que la mejor de esa misma prueba,
-      la apago</b>. Ajústala a tu cuenta si quieres, pero no la cambies por un número que
-      leas en internet: esto se compara entre tus propias piezas, no contra el promedio
-      de nadie.</div>
     </div>
 
-    <!-- ══ 4 · el piso antes de descartar ══ -->
-    <div class="gsec">
-    <h2>Cuándo se decide</h2>
-    <div class="h2s">No cualquier día: <em>en el disparador</em></div>
-    <p>La prueba se revisa cuando ocurra <b>lo primero</b> de estas dos cosas. Antes de eso no se
-      toca, y da igual lo que muestre el administrador.</p>
-    <div class="duo">
-      <div>
-        <div class="dl">Disparador 1 · el piso</div>
-        <div class="dv">US$ 25<em>–30</em></div>
-        <p>Gastados en esa prueba. Es el permiso para descartar: por debajo no hay dato, hay
-          ruido.</p>
-      </div>
-      <div>
-        <div class="dl">Disparador 2 · el techo</div>
-        <div class="dv">7 <em>días</em></div>
-        <p>Encendida. Es el límite de paciencia: pasado eso no le das más tiempo a Meta.</p>
-      </div>
+    <!-- ══ 5 · la regla cruel ══ -->
+    <div class="gsec salmon">
+    <h2>La regla cruel, en una línea</h2>
+    <div class="h2s">Sin ningún problema <em>y sin culpa</em></div>
+    <p>Si al séptimo día no ha funcionado, o si ya gastaste entre 20 y 30 dólares y no ha
+      convertido, <b>lo apagas</b>.</p>
+
+    <div class="ap-fila">
+      <div class="af-c"><span>Prueba 03</span><span class="af-dia">Día 7</span></div>
+      <table>
+        <tr><th>Importe gastado</th><th>Resultados</th><th>Entrega</th></tr>
+        <tr><td>US$ 30,00</td><td class="cero">0</td><td><span class="sw"></span>Activo</td></tr>
+      </table>
     </div>
     <div class="notag">
-      <div class="nt">El piso y el techo no son lo mismo.</div>
-      <p>El piso dice <b>cuándo puedes</b> apagar. El techo dice <b>cuándo tienes que</b> mirar.
-        Confundirlos es lo que lleva a apagar antes de tiempo o a dejar corriendo lo que ya
-        estaba muerto.</p>
+      <div class="nt">Siete días, treinta dólares, cero resultados, y el interruptor encendido.</div>
+      <p>Ahí se apaga.</p>
+    </div>
     </div>
 
-    <div class="h2s" style="margin-top:30px">La tabla de <em>decisión</em></div>
-    <table class="tabla">
-      <tr><th>Lo que ves en el disparador</th><th>Qué haces</th></tr>
-      <tr><td>Gastó US$ 25–30 y cero conversiones</td><td><b>Apágalo.</b> Es lo que yo llamo la
-        métrica cruel.</td></tr>
-      <tr><td>Llegó al día 7 y no ha convertido</td><td><b>Apágalo.</b> Aunque haya gastado poco:
-        siete días ya son suficientes días.</td></tr>
-      <tr><td>Convirtió al menos una vez, con el piso cumplido</td><td><b>Déjala.</b> Ya no es
-        una prueba muerta: sale de este criterio.</td></tr>
-      <tr><td>Su costo por clic va muy por encima del de sus hermanas</td><td><b>Apágalo</b> sin
-        esperar al día 7: eso no se arregla con más días.</td></tr>
-      <tr><td>Llegó al día 7 con menos de US$ 25 gastados</td><td>El presupuesto es demasiado
-        bajo para probar nada. Súbelo y vuelve a empezar la cuenta, o descarta la prueba por
-        diseño, no por resultado.</td></tr>
-    </table>
-    <!-- ⚠️ INFERIDO — este caso no sale en el video. Juan no dice qué hacer si el día 7
-         llega con menos de US$ 25 gastados. La salida que se da aquí es coherente con el
-         resto de su criterio, pero conviene que él la confirme. -->
-    <div class="nota" style="margin-top:22px"><b>Y ojo con ese último caso.</b> Si tu prueba
-      llegó a siete días sin gastar veinticinco dólares, <b>tu problema no es el creativo: es el
-      presupuesto</b>. Con esa plata al día no alcanzas a probar nada, y cualquier conclusión
-      que saques va a estar mal.</div>
-    </div>
-
-    <!-- ══ 5 · por qué Meta quiere que esperes ══ -->
+    <!-- ══ 6 · por qué Meta pide más tiempo ══ -->
     <div class="gsec ciano">
-    <h2>Para Meta, mucho mejor</h2>
-    <div class="h2s">Su métrica es <em>cuántos días</em> llevas la campaña activa</div>
-    <p>¿Cuál es el negocio de Meta? <b>El lifetime value.</b> Su métrica más importante como
-      negocio es cuánto tiempo dejas tu campaña activa, porque entre más tiempo la dejes, más
-      dinero ganan ellos. <b>Eso no significa que entre más tiempo activa, más ganes tú.</b></p>
+    <h2>Por qué Meta te pide más tiempo</h2>
+    <div class="h2s">Y por qué <em>tú no</em></div>
+    <p>La métrica más importante de Meta como negocio es <b>cuánto tiempo dejas tu campaña
+      activa</b>. Entre más tiempo, más dinero para ellos. Eso no significa más dinero para ti.</p>
 
     <div class="ap-fila">
       <div class="af-c"><span>Campaña · Ventas</span><span class="af-dia">Día 1</span></div>
@@ -180,7 +214,6 @@
         <tr><td>US$ 60</td><td>12</td><td>1,1</td></tr>
       </table>
     </div>
-
     <div class="ap-fila">
       <div class="af-c"><span>La misma campaña, sin tocarla</span><span class="af-dia">Día 66</span></div>
       <table>
@@ -188,7 +221,6 @@
         <tr><td>US$ 6.610</td><td>31</td><td>1,1</td></tr>
       </table>
     </div>
-
     <div class="notag">
       <div class="nt">Sesenta y cinco días después, el ROAS es el mismo: 1,1.</div>
       <p>Lo que cambió es cuánto se gastó. <b>La campaña no aprendió a vender más: solo llevaba
@@ -207,54 +239,42 @@
       <p>Más tiempo activa: más gana Meta, no tú.</p>
     </div>
 
-    <div class="nota" style="margin-top:22px"><b>Así que no, no lo vas a dejar de forma
-      infinita.</b> Lo vas a tener que optimizar tú.</div>
+    <div class="nota" style="margin-top:22px">Por eso ninguna campaña se deja <b>de forma
+      infinita</b>: tú optimizas, Meta no lo va a hacer por ti.</div>
     </div>
 
-    <!-- ══ 6 · la métrica cruel ══ -->
+    <!-- ══ 7 · lo que sí le dejo a Meta ══ -->
+    <div class="gsec dorado">
+    <h2>Lo que sí le dejo a Meta</h2>
+    <div class="h2s">Dos cosas, <em>y nada más</em></div>
+    <ol class="lista">
+      <li><span class="k">01</span><span><b>Encontrar a mi público.</b> Público de Advantage+
+        encendido: ahí la máquina es brillante y le gano tiempo.</span></li>
+      <li><span class="k">02</span><span><b>La puja automática.</b> Mientras esté en prueba, no
+        peleo la puja a mano.</span></li>
+    </ol>
+    <div class="nota" style="margin-top:22px"><b>Nada más.</b> Cuándo cortar, qué creativo sigue
+      y cuánto gasta cada prueba, lo decido yo con el checklist.</div>
+    </div>
+
+    <!-- ══ 8 · los errores ══ -->
     <div class="gsec salmon">
-    <h2>La métrica cruel</h2>
-    <div class="h2s">Día 7 sin funcionar, o el dinero gastado <em>sin convertir</em></div>
-    <p>Ya sabes la métrica cruel: <b>si al séptimo día no ha funcionado, o si ya has gastado
-      entre US$ 20 y 30 y no ha convertido, lo apagas sin ningún problema.</b></p>
-
-    <div class="ap-fila">
-      <div class="af-c"><span>Prueba 03</span><span class="af-dia">Día 7</span></div>
-      <table>
-        <tr><th>Importe gastado</th><th>Resultados</th><th>Entrega</th></tr>
-        <tr><td>US$ 30,00</td><td class="cero">0</td><td><span class="sw"></span>Activo</td></tr>
-      </table>
-    </div>
-
-    <div class="notag">
-      <div class="nt">Así se ve el momento exacto de apagarlo.</div>
-      <p>Siete días, treinta dólares, cero resultados, y el interruptor todavía encendido.</p>
-    </div>
-
-    <!-- ⚠️ En el video la cifra aparece de dos formas: "por lo menos unos 25, 30 dólares"
-         para poder descartar, y "entre 20 y 30 dólares" en la métrica cruel. Acá se resuelve
-         hacia 30, que es el borde más exigente y el único que aparece en las dos versiones. -->
-    <div class="nota" style="margin-top:22px"><b>Si quieres un solo número, quédate con 30.</b>
-      Entre veinte y treinta dólares ya se ve por dónde va la cosa, pero treinta es el borde
-      donde yo ya no le doy más vueltas.</div>
-    </div>
-
-    <!-- ══ 7 · lo que no es ══ -->
-    <div class="gsec">
-    <h2>Lo que esta regla no es</h2>
-    <div class="h2s">No es apagar todo <em>a los siete días</em></div>
-    <div class="sino">
-      <div class="si"><div class="lb">Así sí</div><ul>
-        <li>Apagar la prueba que no convirtió con el gasto mínimo cumplido</li>
-        <li>Cortar por costo por clic cuando la diferencia entre piezas es evidente</li>
-        <li>Dejar corriendo lo que sí vende</li>
-      </ul></div>
-      <div class="no"><div class="lb">Así no</div><ul>
-        <li>Apagar un anuncio que ya está vendiendo porque cumplió siete días</li>
-        <li>Sacar conclusiones con dos dólares gastados</li>
-        <li>Esperar semanas a que «el algoritmo aprenda» mientras el gasto corre</li>
-      </ul></div>
-    </div>
+    <h2>Los tres errores que se repiten</h2>
+    <div class="h2s">Los dos extremos <em>y la confusión</em></div>
+    <ol class="lista">
+      <li><span class="k">01</span><span><b>Apagar a los cinco dólares.</b> Tan malo como
+        aguantar semanas: sin el gasto mínimo no hay datos, y terminas matando anuncios que iban
+        a funcionar.</span></li>
+      <li><span class="k">02</span><span><b>Mirar sólo las duras.</b> Esperar la compra para
+        decidir es esperar a que ya se quemó el dinero. El CPC y el CTR avisan a los dos
+        días.</span></li>
+      <li><span class="k">03</span><span><b>Confundir prueba con escalado.</b> El margen es para
+        el anuncio que ya ganó y estás escalando; a un creativo nuevo no se le da «un día
+        más».</span></li>
+    </ol>
+    <div class="nota" style="margin-top:22px"><b>Y siempre hay que estar probando.</b> El ganador
+      de hoy se va a morir; el checklist es para que la siguiente prueba no te cueste más de lo
+      que debe.</div>
     </div>
 
     <!-- ══ 6 · perfiles ══ -->
