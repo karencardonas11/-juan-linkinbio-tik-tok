@@ -974,3 +974,47 @@
   .ca-cols{grid-template-columns:1fr 1fr}
   .ca-bloq{font-size:13.6px;padding:13px 14px}
 }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   PUNTUACIÓN DE OPORTUNIDAD — gráficos del video (el PDF los describe en
+   palabras; el video trae los números). Dos piezas: la recomendación de
+   Meta descartada y el puntaje con su semáforo. Colores de Meta a
+   propósito: son pantallas de Meta. Viven bajo .op- y no se filtran.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── la recomendación que Meta te pone, y que se descarta ── */
+.op-rec{margin-top:18px;border-radius:9px;background:#e9ebee;color:#1c1e21;
+  padding:14px 16px 13px;position:relative;
+  box-shadow:0 18px 44px -20px rgba(0,0,0,.8)}
+.op-rec .or-t{display:flex;align-items:center;gap:8px;font-size:12.6px;font-weight:700}
+.op-rec .or-t i{font-style:normal;color:#1877f2;font-size:15px;line-height:1}
+.op-rec p{margin-top:7px;font-size:13px;line-height:1.45;font-weight:400}
+.op-rec .or-b{display:flex;gap:9px;margin-top:12px}
+.op-rec .or-b span{font-size:12.4px;font-weight:600;padding:6px 14px;border-radius:6px}
+.op-rec .or-b .ap{color:#1877f2;background:#dfe3e8}
+.op-rec .or-b .ds{color:#1c1e21}
+.op-rec .tach{position:absolute;right:26px;top:50%;transform:translateY(-50%);
+  width:56px;height:56px;border-radius:50%;border:3px solid #c0392b;
+  display:flex;align-items:center;justify-content:center;color:#c0392b;
+  font-size:30px;font-weight:700;line-height:1}
+
+/* ── el interruptor de Advantage+, encendido ── */
+.op-sw{margin-top:18px;display:flex;align-items:center;gap:12px;padding:14px 16px;
+  border-radius:9px;background:#fff;color:#1c1e21;font-size:14px;font-weight:600;
+  box-shadow:0 18px 44px -20px rgba(0,0,0,.8)}
+.op-sw .os-mas{color:#1877f2;font-weight:700}
+.op-sw .os-e{margin-left:auto;display:flex;align-items:center;gap:9px;
+  font-size:12.6px;font-weight:600;color:#1877f2}
+.op-sw .os-e i{display:block;width:34px;height:19px;border-radius:12px;background:#1877f2;
+  position:relative;flex-shrink:0}
+.op-sw .os-e i::after{content:"";position:absolute;right:2.5px;top:2.5px;width:14px;
+  height:14px;border-radius:50%;background:#fff}
+
+/* ── el puntaje, con su punto de color ── */
+.op-pts{display:flex;align-items:baseline;gap:7px;white-space:nowrap}
+.op-pts::before{content:"\25cf";font-size:11px;line-height:1}
+.op-pts.malo::before{color:#c0392b}
+.op-pts.bueno::before{color:#31a24c}
+.op-pts b{font-size:17px;font-weight:800;letter-spacing:-.02em}
+.op-pts span{font-size:12px;color:#65676b}
+.op-fila .rec{display:block;margin-top:3px;font-size:11.5px;color:#1877f2}
