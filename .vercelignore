@@ -7,3 +7,9 @@ node_modules/
 # .gitignore no basta: hace falta esta línea también.
 saleads/fuentes/genova-*.woff2
 
+# "Limpia los metadatos" no pasa el filtro de entrada de la pagina: exige
+# instalar exiftool y ffmpeg y correr un script en la terminal, y el filtro
+# dice "se usa sin terminal, sin instalar, sin programar". La pagina esta
+# construida y lista; esta linea la deja fuera del sitio hasta que Karen
+# decida si hace excepcion o si va a un grupo tecnico aparte.
+saleads/recursos/limpia-los-metadatos/

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- =====================================================================
+     SaleADS.ai · Recurso          bio.saleads.co/saleads/recursos/limpia-los-metadatos
+     El estilo vive en /saleads/recursos/recurso.css y lo comparten todas
+     las páginas de recurso: si cambias algo allá, cambia en todas.
+     ===================================================================== -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Limpia los metadatos en diez segundos · SaleADS.ai</title>
+<meta name="description" content="Cada imagen y cada video que subes lleva datos escondidos: con qué programa se hizo, cuándo, y si lo generó una IA. Limpiarlos toma diez segundos y te quita la duda.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://bio.saleads.co/saleads/recursos/limpia-los-metadatos/">
+<meta property="og:site_name" content="SaleADS.ai">
+<meta property="og:title" content="Limpia los metadatos en diez segundos · SaleADS.ai">
+<meta property="og:description" content="Cada imagen y cada video que subes lleva datos escondidos: con qué programa se hizo, cuándo, y si lo generó una IA. Limpiarlos toma diez segundos y te quita la duda.">
+<meta property="og:image" content="https://bio.saleads.co/saleads/og.jpg">
+<meta property="og:image:width" content="1000">
+<meta property="og:image:height" content="1000">
+<meta property="og:locale" content="es_LA">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://bio.saleads.co/saleads/og.jpg">
+<link rel="stylesheet" href="/saleads/recursos/recurso.css">
+</head>
+<body data-marca="saleads" data-pagina="recurso-limpia-los-metadatos">
+
+<div class="reticula"></div>
+<div class="encendida"></div>
+
+<main class="wrap">
+
+  <div class="top sube d1">
+    <a class="back" href="/saleads/recursos/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Recursos
+    </a>
+    <span class="marca-txt">SaleADS.ai</span>
+  </div>
+
+  <div class="eyebrow sube d2">Guía · Un script listo</div>
+  <h1 class="sube d2">Limpia los metadatos en diez segundos</h1>
+  <p class="lead sube d2">Cada imagen y cada video que subes al Administrador lleva datos escondidos: con qué programa se hizo, cuándo, y si lo generó una IA. <b>Limpiarlos toma diez segundos.</b> Puede que mueva poco la aguja; el punto es que te quita la duda y sigues.</p>
+
+  <div class="chips sube d3"><span class="chip">Creativos</span><span class="chip">10 min</span><span class="chip">Script</span></div>
+
+  <div class="sec">
+    <div class="sec-n">Antes de nada</div>
+    <h2>Lo que esto no hace</h2>
+    <div class="aviso">No arregla una campaña mala, y <b>Meta no ha dicho que penalice los
+      creativos hechos con IA</b>. Se hace porque toma diez segundos y borra la duda.</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-n">Paso 1</div>
+    <h2>Qué lleva escondido el archivo</h2>
+    <div class="sec-q">Los metadatos no se ven en la imagen: van dentro del archivo.</div>
+    <table class="tabla">
+      <tr><th>Campo</th><th>Lo que dice</th></tr>
+      <tr><td>Credit</td><td>«Made with Google AI», lo escriben las imágenes de Gemini.</td></tr>
+      <tr><td>Digital Source Type</td><td>«Created using Generative AI», el rótulo estándar de
+        contenido generado.</td></tr>
+      <tr><td>Software / Creator Tool</td><td>El programa que hizo o tocó el archivo.</td></tr>
+      <tr><td>Credenciales de contenido (C2PA)</td><td>Un certificado dentro del archivo que dice
+        quién lo generó y con qué.</td></tr>
+      <tr><td>Create Date · Modify Date</td><td>Cuándo se creó y cuándo se editó.</td></tr>
+    </table>
+  </div>
+
+  <div class="sec">
+    <div class="sec-n">Paso 2</div>
+    <h2>Antes: instalar dos programas</h2>
+    <div class="sec-q">Una sola vez.</div>
+    <div class="prompt">
+      <div class="prompt-h">Mac, con Homebrew</div>
+      <pre><code>brew install exiftool ffmpeg</code></pre>
+    </div>
+    <div class="prompt">
+      <div class="prompt-h">Windows, con winget desde PowerShell</div>
+      <pre><code>winget install OliverBetz.ExifTool Gyan.FFmpeg</code></pre>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-n">Paso 2 · el script</div>
+    <h2>limpiar-metadatos.sh</h2>
+    <div class="sec-q">Deja al lado una copia limpia con <b>-limpio</b> en el nombre; el original no se toca.</div>
+    <div class="prompt">
+      <div class="prompt-h">El script, tal cual · selecciónalo y cópialo</div>
+      <pre><code>#!/bin/bash
+# Limpia los metadatos de imágenes y videos antes de subirlos a Meta.
+# Uso:  ./limpiar-metadatos.sh anuncio.png video.mp4 otro.jpg
+
+for f in "$@"; do
+  ext="${f##*.}"
+  base="${f%.*}"
+  case "$(echo "$ext" | tr 'A-Z' 'a-z')" in
+    mp4|mov|m4v)
+      ffmpeg -y -loglevel error -i "$f" -map_metadata -1 -map_chapters -1 \
+             -c copy -movflags +faststart "$base-limpio.$ext" ;;
+    *)
+      exiftool -all= -o "$base-limpio.$ext" "$f" ;;
+  esac
+  echo "✓ $base-limpio.$ext"
+done</code></pre>
+    </div>
+    <div class="prompt">
+      <div class="prompt-h">La primera vez, con permiso de ejecución</div>
+      <pre><code>chmod +x limpiar-metadatos.sh && ./limpiar-metadatos.sh anuncio.png video.mp4</code></pre>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-n">Paso 2 · la prueba</div>
+    <h2>Ver y comprobar</h2>
+    <p><b>exiftool -all=</b> borra todos los bloques de metadatos de la imagen (EXIF, IPTC, XMP y
+      el certificado C2PA). <b>ffmpeg -map_metadata -1 -c copy</b> quita los del video sin
+      recomprimirlo: mismos píxeles, mismo peso.</p>
+    <div class="prompt">
+      <div class="prompt-h">Antes y después</div>
+      <pre><code>exiftool anuncio.png         # sale Credit, Digital Source Type, C2PA…
+exiftool anuncio-limpio.png  # sólo nombre, tamaño, dimensiones y tipo</code></pre>
+    </div>
+    <div class="aviso"><b>En Windows</b> el mismo script corre en <b>Git Bash</b>, que viene
+      con Git.</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-n">Si no quieres pelear con la terminal</div>
+    <h2>Dos salidas</h2>
+    <div class="pasos">
+      <div class="paso"><div class="paso-h"><span class="paso-n">01</span><span class="paso-t">Que la herramienta la haga la IA</span></div>
+        <p>Abre Claude Code en una carpeta vacía y pídele una herramienta que reciba una carpeta
+          con imágenes y videos y deje una copia limpia de cada uno en una carpeta «limpios», sin
+          tocar los originales y sin recomprimir los videos. <b>En veinte minutos tienes un
+          programa que corres cada vez que exportas un lote.</b></p></div>
+      <div class="paso"><div class="paso-h"><span class="paso-n">02</span><span class="paso-t">Pagar uno, unos US$ 20 al mes</span></div>
+        <p>Hay servicios en línea que hacen lo mismo por lote. Antes de pagar, comprueba que
+          <b>limpie videos y no sólo imágenes</b>, que <b>no recomprima</b> (sube un video, baja
+          el limpio y compara el peso) y que <b>puedas comprobarlo con exiftool</b> en tu
+          computador.</p></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-n">La revisión</div>
+    <h2>Antes de subir el lote</h2>
+    <div class="sino">
+      <div class="si"><div class="lb">Así sí</div><ul>
+        <li><b>Exporta primero, limpia después</b><span>Cualquier edición vuelve a escribir metadatos: el script es el último paso antes del Administrador.</span></li>
+        <li><b>Sube sólo los «-limpio»</b><span>Es fácil arrastrar el original por costumbre.</span></li>
+        <li><b>No cambies nada más ese día</b><span>Si quieres saber si a ti te mueve la aguja, deja el mismo creativo con y sin metadatos en dos conjuntos iguales y compara el CPM a la semana.</span></li>
+      </ul></div>
+      <div class="no"><div class="lb">Y sigue</div><ul>
+        <li>Ya no hay duda que rumiar: <b>el resto lo deciden la oferta y el creativo</b>.</li>
+      </ul></div>
+    </div>
+  </div>
+
+
+  <div class="cta">
+    <div class="ct">¿Quieres que una plataforma <em>haga tu publicidad</em>?</div>
+    <p>SaleADS.ai te hace los copies, los creativos y la estrategia, y lanza tus campañas en
+      Facebook, Instagram, TikTok y WhatsApp.</p>
+    <a href="https://app.saleads.co/-HSB" target="_blank" rel="noopener">
+      Usa SaleADS.ai
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+
+  <a class="volver" href="/saleads/recursos/">← Ver todos los recursos</a>
+  <p class="pie">SaleADS.ai</p>
+
+</main>
+<script src="/medicion.js" defer></script>
+</body>
+</html>
