@@ -1066,3 +1066,51 @@
   .ab-rep{grid-template-columns:1fr}
   .ab-barras em{font-size:9px}
 }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   EL PLAN DEL JUGADOR — gráficos del video. El libro que no existe, el
+   mensaje que origina el recurso y la tabla teoría contra práctica, que
+   es la única parte con cifras y no está en el PDF.
+   Viven bajo .jg- y no se filtran.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── el mensaje directo que abre el recurso ── */
+.jg-dm{margin-top:18px;max-width:420px;border-radius:12px;background:#fff;color:#1c1e21;
+  padding:13px 15px 14px;box-shadow:0 18px 44px -20px rgba(0,0,0,.85)}
+.jg-dm .jd-h{display:flex;align-items:center;gap:9px}
+.jg-dm .jd-av{width:28px;height:28px;border-radius:50%;background:#c9a877;flex-shrink:0}
+.jg-dm .jd-n{font-size:12.6px;font-weight:700;line-height:1.2}
+.jg-dm .jd-n span{display:block;font-size:10.6px;font-weight:400;color:#65676b}
+.jg-dm .jd-ig{margin-left:auto;width:18px;height:18px;flex-shrink:0}
+.jg-dm p{margin-top:10px;padding:11px 13px;border-radius:9px;background:#f0f2f5;
+  font-size:13.4px;line-height:1.45}
+
+/* ── el libro que no existe ── */
+.jg-libro{margin:20px auto 0;max-width:230px;border-radius:4px;padding:30px 20px 26px;
+  text-align:center;background:linear-gradient(165deg,#1a140c,#0c0907);
+  border:1px solid rgba(232,200,125,.3);position:relative}
+.jg-libro .jl-cap{position:absolute;top:-11px;left:50%;transform:translateX(-50%);
+  white-space:nowrap;font-size:10.6px;font-weight:700;color:#2b1f0c;background:var(--gold-2);
+  padding:4px 11px;border-radius:3px}
+.jg-libro .jl-t{font-size:27px;font-weight:800;line-height:1.02;letter-spacing:-.02em;
+  text-transform:uppercase;color:var(--ink)}
+.jg-libro .jl-s{margin-top:9px;font-size:11.5px;font-weight:400;color:#a99f93}
+.jg-libro .jl-e{margin-top:11px;font-size:13px;color:var(--gold-2);letter-spacing:.22em}
+
+/* ── teoría contra práctica, con cifras ── */
+.jg-tp{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:20px}
+.jg-tp > div{border-radius:7px;overflow:hidden;background:#fff;color:#1c1e21;
+  box-shadow:0 18px 44px -20px rgba(0,0,0,.8)}
+.jg-tp .jt-h{padding:9px 13px;font-size:12.6px;font-weight:800;color:#fff;text-align:center}
+.jg-tp .teoria .jt-h{background:#1e9e5a}
+.jg-tp .practica .jt-h{background:#d6342c}
+.jg-tp dl{margin:0;padding:4px 13px 11px}
+.jg-tp dl > div{display:flex;align-items:baseline;justify-content:space-between;gap:10px;
+  padding:7px 0;border-bottom:1px solid #e4e6eb}
+.jg-tp dl > div:last-child{border-bottom:none}
+.jg-tp dt{font-size:11.6px;font-weight:500;color:#65676b}
+.jg-tp dd{margin:0;font-size:15px;font-weight:800;letter-spacing:-.02em}
+.jg-tp .teoria dd{color:#1e9e5a}
+.jg-tp .practica dd{color:#d6342c}
+
+@media (max-width:560px){ .jg-tp{grid-template-columns:1fr} }
