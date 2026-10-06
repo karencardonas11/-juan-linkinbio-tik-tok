@@ -1114,3 +1114,58 @@
 .jg-tp .practica dd{color:#d6342c}
 
 @media (max-width:560px){ .jg-tp{grid-template-columns:1fr} }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   «ANUNCIOS DE IMAGEN CON IA» — el diseño del PDF, conservado
+   Karen pidió conservar la tipografía y los colores del PDF original. Este
+   bloque sólo afecta a esa página (va atado a su data-recurso) y no toca
+   a las otras 43.
+
+   Del PDF, medido: Archivo Black en titulares · Poppins en el cuerpo ·
+   JetBrains Mono en los bloques de código · ámbar #FFB45A en los titulares
+   · cian #4AE6E2 en los rótulos · dorado #C9A24B, que sí coincide con el
+   de la marca.
+   ═══════════════════════════════════════════════════════════════════════ */
+body[data-recurso="anuncios-de-imagen-con-ia"]{
+  --pdf-ambar:#FFB45A; --pdf-cian:#4AE6E2;
+  font-family:'Poppins',system-ui,sans-serif;
+}
+/* En estas páginas el h2 es el rótulo pequeño y el .h2s es el titular grande,
+   igual que en el PDF: arriba el rótulo en versales cian, debajo el titular
+   en Archivo Black con la segunda mitad en ámbar. */
+body[data-recurso="anuncios-de-imagen-con-ia"] h2{
+  font-family:'Poppins',system-ui,sans-serif;color:var(--pdf-cian)}
+body[data-recurso="anuncios-de-imagen-con-ia"] h2 + .h2s{
+  font-family:'Archivo',system-ui,sans-serif;font-weight:900;
+  font-size:clamp(23px,5.4vw,31px);text-transform:uppercase;
+  letter-spacing:-.018em;line-height:1.08}
+body[data-recurso="anuncios-de-imagen-con-ia"] h2 + .h2s em{
+  font-family:'Archivo',system-ui,sans-serif;font-style:normal;font-weight:900;
+  text-transform:uppercase;color:var(--pdf-ambar)}
+/* Los .h2s sueltos (los que no siguen a un h2) también son titulares. */
+body[data-recurso="anuncios-de-imagen-con-ia"] .h2s{
+  font-family:'Archivo',system-ui,sans-serif;font-weight:900;
+  text-transform:uppercase;letter-spacing:-.018em}
+body[data-recurso="anuncios-de-imagen-con-ia"] .h2s em{
+  font-family:'Archivo',system-ui,sans-serif;font-style:normal;color:var(--pdf-ambar)}
+body[data-recurso="anuncios-de-imagen-con-ia"] h1{
+  font-family:'Archivo',system-ui,sans-serif;font-weight:900;
+  text-transform:uppercase;letter-spacing:-.02em;line-height:1.04;color:var(--ink)}
+body[data-recurso="anuncios-de-imagen-con-ia"] h1 em{
+  font-family:'Archivo',system-ui,sans-serif;font-style:normal;font-weight:900;
+  text-transform:uppercase;color:var(--pdf-ambar)}
+body[data-recurso="anuncios-de-imagen-con-ia"] .eyebrow{color:var(--pdf-ambar)}
+/* El acento de sección pasa al ámbar del PDF; el dorado se queda donde ya coincide. */
+body[data-recurso="anuncios-de-imagen-con-ia"] .gsec{--ac:var(--pdf-ambar)}
+body[data-recurso="anuncios-de-imagen-con-ia"] .gsec.ciano{--ac:var(--pdf-cian)}
+body[data-recurso="anuncios-de-imagen-con-ia"] .gsec.dorado{--ac:var(--gold-1)}
+body[data-recurso="anuncios-de-imagen-con-ia"] .gsec.salmon{--ac:var(--pdf-ambar)}
+body[data-recurso="anuncios-de-imagen-con-ia"] .tabla th{color:var(--pdf-ambar)}
+body[data-recurso="anuncios-de-imagen-con-ia"] ol.lista .k{color:var(--pdf-ambar)}
+body[data-recurso="anuncios-de-imagen-con-ia"] .copia-lb{color:var(--pdf-ambar)}
+body[data-recurso="anuncios-de-imagen-con-ia"] .copia code,
+body[data-recurso="anuncios-de-imagen-con-ia"] .copia pre{
+  font-family:'JetBrains Mono',ui-monospace,Menlo,monospace}
+body[data-recurso="anuncios-de-imagen-con-ia"] .notag .nt,
+body[data-recurso="anuncios-de-imagen-con-ia"] .nota b{font-weight:700}
+body[data-recurso="anuncios-de-imagen-con-ia"] .chip{border-color:rgba(255,180,90,.42)}
