@@ -1190,45 +1190,6 @@ body[data-recurso="anuncios-de-imagen-con-ia"] .chip{border-color:rgba(255,180,9
 .ig-paso.tres .ip-t{color:var(--gold-2)}
 .ig-fl{align-self:center;color:#FFB45A;font-size:17px;line-height:1}
 
-/* ── dos maquetas de anuncio, lado a lado ── */
-.ig-dos{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
-.ig-col > .il{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
-  margin-bottom:9px}
-.ig-col.dir > .il{color:#FFB45A}
-.ig-col.ind > .il{color:#4AE6E2}
-.ig-col > p{margin-top:10px;font-size:13px;line-height:1.5;color:#a99f93}
-
-/* el anuncio directo: 4:5, fondo naranja, lata, titular y botón */
-.ig-ad{aspect-ratio:4/5;border-radius:8px;overflow:hidden;position:relative;
-  background:linear-gradient(135deg,#F07A0E,#F59331);display:flex;flex-direction:column;
-  justify-content:space-between;padding:16px 15px}
-.ig-ad::before{content:"";position:absolute;inset:0;
-  background:linear-gradient(118deg,transparent 46%,#141210 46.6%,#141210 60%,transparent 60.6%)}
-.ig-ad .ia-t{position:relative;z-index:2;font-family:'Archivo',sans-serif;font-weight:900;
-  font-size:clamp(18px,5.4vw,26px);line-height:.95;color:#fff;text-transform:uppercase;
-  letter-spacing:-.02em}
-.ig-ad .ia-s{position:relative;z-index:2;margin-top:6px;font-size:10px;font-weight:600;
-  color:rgba(255,255,255,.88)}
-.ig-ad .ia-lata{position:absolute;z-index:2;right:13%;top:26%;width:21%;height:46%;
-  border-radius:5px;background:linear-gradient(100deg,#2b2b2b,#101010);
-  box-shadow:0 14px 30px -12px rgba(0,0,0,.9)}
-.ig-ad .ia-lata::after{content:"";position:absolute;left:0;right:0;top:44%;height:19%;
-  background:#FFB45A;border-top:1px solid rgba(0,0,0,.45);border-bottom:1px solid rgba(0,0,0,.45)}
-.ig-ad .ia-btn{position:relative;z-index:2;align-self:flex-start;background:#111;color:#fff;
-  font-size:10.5px;font-weight:800;letter-spacing:.1em;padding:8px 15px;border-radius:4px}
-
-/* el anuncio indirecto: se ve como un post cualquiera */
-.ig-post{aspect-ratio:4/5;border-radius:8px;overflow:hidden;background:#fff;color:#1c1e21;
-  display:flex;flex-direction:column}
-.ig-post .ip-h{display:flex;align-items:center;gap:7px;padding:9px 10px}
-.ig-post .ip-av{width:22px;height:22px;border-radius:50%;background:#c9a877;flex-shrink:0}
-.ig-post .ip-nm{font-size:10.6px;font-weight:700}
-.ig-post .ip-img{flex:1;background:linear-gradient(160deg,#d8cec2,#9c8f80);position:relative}
-.ig-post .ip-img::after{content:"";position:absolute;left:18%;right:18%;top:34%;bottom:22%;
-  border-radius:4px;background:rgba(255,255,255,.22)}
-.ig-post .ip-acc{display:flex;gap:9px;padding:8px 10px 4px;color:#65676b;font-size:12px}
-.ig-post .ip-tx{padding:0 10px 11px;font-size:10.6px;line-height:1.4;color:#1c1e21}
-
 /* ── los cuatro documentos que alimentan el gem ── */
 .ig-docs{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:20px}
 .ig-doc{border:1px solid rgba(74,230,226,.34);border-radius:7px;padding:13px 11px 14px;
@@ -1267,11 +1228,7 @@ body[data-recurso="anuncios-de-imagen-con-ia"] .chip{border-color:rgba(255,180,9
   margin-bottom:9px}
 .ig-vs .mal .iv-l{color:#8d8378}
 .ig-vs .bien .iv-l{color:#4AE6E2}
-.ig-foto{aspect-ratio:4/5;border-radius:8px;position:relative;
-  background:linear-gradient(150deg,#cbbfae,#8d8275)}
-.ig-foto::after{content:"";position:absolute;left:24%;right:24%;top:30%;bottom:24%;
-  border-radius:5px;background:rgba(255,255,255,.2)}
-.ig-vs ul{list-style:none;margin-top:11px;font-size:12.4px;line-height:1.45}
+.ig-vs ul{list-style:none;margin-top:9px;font-size:12.4px;line-height:1.45}
 .ig-vs li{padding-left:17px;position:relative;margin-top:6px;color:#a99f93}
 .ig-vs li::before{position:absolute;left:0;font-weight:800}
 .ig-vs .mal li::before{content:"\2715";color:#6f675f}
@@ -1283,5 +1240,5 @@ body[data-recurso="anuncios-de-imagen-con-ia"] .chip{border-color:rgba(255,180,9
   .ig-docs{grid-template-columns:1fr 1fr}
 }
 @media (max-width:460px){
-  .ig-dos,.ig-vs{grid-template-columns:1fr}
+  .ig-vs{grid-template-columns:1fr}
 }
