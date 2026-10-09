@@ -1,0 +1,18 @@
+{
+  "producto-muerto-o-anuncios-malos": {
+    "orden": 13,
+    "nivel": "Intermedio",
+    "tiempo": "25 min",
+    "titulo": "¿Producto muerto o anuncios malos?",
+    "resumen": "Casi siempre es el anuncio o el embudo, rara vez el producto. Las ocho columnas que tienes que ver, las tres divisiones que dicen en qué escalón se te cae el cliente y el árbol que dice qué arreglar primero.",
+    "icono": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#e8c87d\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3.4 4.2h17.2l-6.6 7.8v7l-4 2.6v-9.6Z\"/></svg>"
+  },
+  "arregla-tu-embudo": {
+    "orden": 13,
+    "nivel": "Intermedio",
+    "tiempo": "25 min",
+    "titulo": "Arregla tu embudo con los anuncios que ya tienes",
+    "resumen": "El embudo es el mar y cada creativo es una lancha: si el mar sube, empuja hasta a los malos. Tus cuatro números de los últimos 30 días, los seis embudos que puedes probar y cómo montar la prueba de cada semana sin tocar los anuncios.",
+    "icono": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#e8c87d\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3.6 20.4c2.2-1.6 4.4-1.6 6.6 0s4.4 1.6 6.6 0 4.4-1.6 6.6 0\"/><path d=\"M3.6 15c2.2-1.6 4.4-1.6 6.6 0s4.4 1.6 6.6 0 4.4-1.6 6.6 0\"/><path d=\"M8.4 10V4.6l4.8 2.7V3.4\"/></svg>"
+  }
+}

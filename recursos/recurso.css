@@ -1242,3 +1242,8 @@ body[data-recurso="anuncios-de-imagen-con-ia"] .chip{border-color:rgba(255,180,9
 @media (max-width:460px){
   .ig-vs{grid-template-columns:1fr}
 }
+
+/* ── ¿Producto muerto o anuncios malos? ──────────────────────────────────
+   Dos de sus tablas llevan tres columnas y los rotulos no caben en una
+   linea en pantallas de 390 px. Aqui se les deja partir. */
+body[data-recurso="producto-muerto-o-anuncios-malos"] .tabla th{white-space:normal}

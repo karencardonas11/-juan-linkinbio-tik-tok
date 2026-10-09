@@ -13,3 +13,9 @@ saleads/fuentes/genova-*.woff2
 # construida y lista; esta linea la deja fuera del sitio hasta que Karen
 # decida si hace excepcion o si va a un grupo tecnico aparte.
 saleads/recursos/limpia-los-metadatos/
+herramientas/
+
+# Recursos de Juan ya construidos pero con fecha de salida. Se borra la linea
+# del que toque el dia que se publica (10 y 11 de octubre de 2026).
+recursos/producto-muerto-o-anuncios-malos/
+recursos/arregla-tu-embudo/
